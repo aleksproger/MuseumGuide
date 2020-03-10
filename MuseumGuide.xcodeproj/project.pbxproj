@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		FA56A71824180C8700FAC2CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71724180C8700FAC2CE /* AppDelegate.swift */; };
 		FA56A71A24180C8700FAC2CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71924180C8700FAC2CE /* SceneDelegate.swift */; };
-		FA56A71C24180C8700FAC2CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71B24180C8700FAC2CE /* ViewController.swift */; };
+		FA56A71C24180C8700FAC2CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71B24180C8700FAC2CE /* BaseViewController.swift */; };
 		FA56A71F24180C8700FAC2CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA56A71D24180C8700FAC2CE /* Main.storyboard */; };
 		FA56A72124180C8C00FAC2CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA56A72024180C8C00FAC2CE /* Assets.xcassets */; };
 		FA56A72424180C8C00FAC2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA56A72224180C8C00FAC2CE /* LaunchScreen.storyboard */; };
+		FA56A7382418113200FAC2CE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A7372418113200FAC2CE /* BaseNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA56A71424180C8700FAC2CE /* MuseumGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseumGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA56A71724180C8700FAC2CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA56A71924180C8700FAC2CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA56A71B24180C8700FAC2CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FA56A71B24180C8700FAC2CE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FA56A71E24180C8700FAC2CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA56A72024180C8C00FAC2CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA56A72324180C8C00FAC2CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA56A72524180C8C00FAC2CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA56A7372418113200FAC2CE /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,112 @@
 		FA56A71624180C8700FAC2CE /* MuseumGuide */ = {
 			isa = PBXGroup;
 			children = (
-				FA56A71724180C8700FAC2CE /* AppDelegate.swift */,
-				FA56A71924180C8700FAC2CE /* SceneDelegate.swift */,
-				FA56A71B24180C8700FAC2CE /* ViewController.swift */,
+				FA56A73224180EF100FAC2CE /* Common */,
+				FA56A73124180EE900FAC2CE /* Modules */,
+				FA56A73024180EA900FAC2CE /* PresentationLayer */,
+				FA56A72F24180E9800FAC2CE /* SupportingFiles */,
+				FA56A72E24180E1A00FAC2CE /* Reaources */,
+				FA56A72B24180CDD00FAC2CE /* Application Layer */,
 				FA56A71D24180C8700FAC2CE /* Main.storyboard */,
-				FA56A72024180C8C00FAC2CE /* Assets.xcassets */,
 				FA56A72224180C8C00FAC2CE /* LaunchScreen.storyboard */,
-				FA56A72524180C8C00FAC2CE /* Info.plist */,
 			);
 			path = MuseumGuide;
+			sourceTree = "<group>";
+		};
+		FA56A72B24180CDD00FAC2CE /* Application Layer */ = {
+			isa = PBXGroup;
+			children = (
+				FA56A72D24180D3400FAC2CE /* SceneDelegate */,
+				FA56A72C24180CEE00FAC2CE /* AppDelegate */,
+			);
+			path = "Application Layer";
+			sourceTree = "<group>";
+		};
+		FA56A72C24180CEE00FAC2CE /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FA56A71724180C8700FAC2CE /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FA56A72D24180D3400FAC2CE /* SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FA56A71924180C8700FAC2CE /* SceneDelegate.swift */,
+			);
+			path = SceneDelegate;
+			sourceTree = "<group>";
+		};
+		FA56A72E24180E1A00FAC2CE /* Reaources */ = {
+			isa = PBXGroup;
+			children = (
+				FA56A72024180C8C00FAC2CE /* Assets.xcassets */,
+			);
+			path = Reaources;
+			sourceTree = "<group>";
+		};
+		FA56A72F24180E9800FAC2CE /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FA56A72524180C8C00FAC2CE /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		FA56A73024180EA900FAC2CE /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				FA56A73324180F3F00FAC2CE /* BaseClasses */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		FA56A73124180EE900FAC2CE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		FA56A73224180EF100FAC2CE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FA56A73324180F3F00FAC2CE /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				FA56A735241810F600FAC2CE /* BaseViewController */,
+				FA56A7362418110100FAC2CE /* BaseNavigationViewController */,
+				FA56A73424180F6600FAC2CE /* Protocols */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
+		FA56A73424180F6600FAC2CE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FA56A735241810F600FAC2CE /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA56A71B24180C8700FAC2CE /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		FA56A7362418110100FAC2CE /* BaseNavigationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA56A7372418113200FAC2CE /* BaseNavigationController.swift */,
+			);
+			path = BaseNavigationViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +237,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA56A71C24180C8700FAC2CE /* ViewController.swift in Sources */,
+				FA56A71C24180C8700FAC2CE /* BaseViewController.swift in Sources */,
 				FA56A71824180C8700FAC2CE /* AppDelegate.swift in Sources */,
 				FA56A71A24180C8700FAC2CE /* SceneDelegate.swift in Sources */,
+				FA56A7382418113200FAC2CE /* BaseNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +386,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWCTLCYKBW;
-				INFOPLIST_FILE = MuseumGuide/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MuseumGuide/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWCTLCYKBW;
-				INFOPLIST_FILE = MuseumGuide/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MuseumGuide/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
