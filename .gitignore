@@ -82,3 +82,13 @@ fastlane/test_output
 iOSInjectionProject/
 
 # End of https://www.gitignore.io/api/swift
+*.stringsdict
+Pods/MapboxMobileEvents/MapboxMobileEvents/Resources/logger.html
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/Target Support Files/DITranquillity/DITranquillity-Info.plist
+Pods/Target Support Files/DITranquillity/DITranquillity.xcconfig
+Pods/Target Support Files/Mapbox-iOS-SDK/Mapbox-iOS-SDK.xcconfig
+Pods/Target Support Files/MapboxMobileEvents/MapboxMobileEvents-Info.plist
+Pods/Target Support Files/MapboxMobileEvents/MapboxMobileEvents.xcconfig
+Pods/Target Support Files/Pods-MuseumGuide/Pods-MuseumGuide-Info.plist
+Pods/Target Support Files/SwiftLazy/SwiftLazy.xcconfig
