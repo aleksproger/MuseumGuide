@@ -9,10 +9,20 @@
 import UIKit
 
 @IBDesignable
-class BottomTabBarButton: UIButton {
-    override func draw(_ rect: CGRect) {
-        self.layer.cornerRadius = self.bounds.width / 2
+public class BottomTabBarButton: UIButton {
+    var radius: CGFloat = 35.0
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         self.setImage(UIImage(named: "map_icon"), for: .normal)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Not implemented!")
+    }
+    
+    public override func draw(_ rect: CGRect) {
+        self.layer.cornerRadius = self.bounds.width / 2
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.black.cgColor
     }

@@ -12,7 +12,7 @@ import UIKit
 class BottomTabBar: UITabBar {
     
     private var shapeLayer: CALayer?
-    private var mapButton: BottomTabBarButton?
+    private var mapButton: BottomTabBarButton = BottomTabBarButton()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -25,7 +25,7 @@ class BottomTabBar: UITabBar {
     }
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        let buttonRadius: CGFloat = 35.0
+        let buttonRadius = mapButton.radius
         return abs(self.center.x - point.x) > buttonRadius || abs(point.y) > buttonRadius
     }
     
@@ -40,10 +40,6 @@ class BottomTabBar: UITabBar {
     }
     
     private func setUpMapButton() {
-        self.mapButton = BottomTabBarButton()
-        guard let mapButton = self.mapButton else {
-            return
-        }
         addSubview(mapButton)
         mapButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(
