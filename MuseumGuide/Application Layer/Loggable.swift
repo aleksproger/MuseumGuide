@@ -16,6 +16,7 @@ public enum LogTag: String {
     case view
     case service
     case presenter
+    case viewController
 }
 
 public enum LogLevel: Int {

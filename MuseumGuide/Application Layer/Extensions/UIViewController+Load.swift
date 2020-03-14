@@ -13,8 +13,9 @@ extension UIViewController {
     enum StoryboardType: String {
         case main = "Main"
     }
-    static func loadFromStoryboard(storyboardType: StoryboardType, identifier: String?) -> Self {
+    static func loadFromStoryboard(storyboardType: StoryboardType, identifier: String) -> Self {
         let storyboard = UIStoryboard(name: storyboardType.rawValue, bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: identifier)
+        let vc = storyboard.instantiateViewController(identifier: identifier) as! Self
+        return vc
     }
 }

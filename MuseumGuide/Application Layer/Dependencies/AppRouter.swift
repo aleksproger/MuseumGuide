@@ -17,6 +17,13 @@ public class AppRouter {
     }
     
     func openMap() {
-        //let mapModule = MapAssembly.createModule()
+        let mapModule = MapAssembly.createModule()
+        WindowRouter(target: mapModule, window: window).move()
+    }
+    
+    func openContainer() {
+        let containerModule = ContainerAssembly.createModule()
+        WindowRouter(target: containerModule, window: window).move()
+
     }
 }

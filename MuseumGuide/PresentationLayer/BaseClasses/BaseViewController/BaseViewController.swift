@@ -8,7 +8,9 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, Loggable {
+    var defaultLoggingTag: LogTag { .viewController }
+    
     
     deinit {
         print("[D] \(self) destroyed")
@@ -24,6 +26,8 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        log(.debug, "\(String(describing: self)) didLoad")
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {

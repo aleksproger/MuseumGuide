@@ -14,11 +14,19 @@ class AppCoordinator: Loggable {
     
     public static var shared: AppCoordinator!
     public let container: DIContainer
+    public let router: AppRouter
+    public let configuration: DependenciesConfiguration
     
-    init(window: UIWindow) {
-        self.container = self.configureDependencies()
-        //self.router = AppRouter(window: window)
+    init(window: UIWindow, configuration: DependenciesConfiguration) {
+        self.configuration = configuration
+        self.container = configuration.configuredContainer()
+        self.router = AppRouter(window)
         self.log(.debug, "Dependencies are configured")
+
+    }
+    
+    func start() {
+        router.openContainer()
     }
     
     private func configureDependencies() -> DIContainer {

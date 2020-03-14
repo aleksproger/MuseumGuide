@@ -16,7 +16,9 @@ public class AppFramework: DIFramework {
 }
 
 private class ControllersPart: DIPart {
-    static let parts: [DIPart.Type] = [ MapPart.self ]
+    static let parts: [DIPart.Type] =
+        [ MapPart.self,
+          ContainerPart.self ]
     static func load(container: DIContainer) {
             parts.forEach { part in
                 container.append(part: part)

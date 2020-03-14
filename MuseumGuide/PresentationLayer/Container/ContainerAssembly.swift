@@ -1,25 +1,25 @@
 //
-//  MapAssembly.swift
+//  ContainerAssembly.swift
 //  MuseumGuide
 //
-//  Created by Alex on 10.03.2020.
+//  Created by Alex on 11.03.2020.
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
 import Foundation
 import DITranquillity
 
-final class MapPart: DIPart {
+final class ContainerPart: DIPart {
     class func load(container: DIContainer) {
         container.register {
-            MapViewController.loadFromStoryboard(storyboardType: .main, identifier: String(describing: MapViewController.self))
+            ContainerView.loadFromStoryboard(storyboardType: .main, identifier: String(describing: ContainerView.self))
         }
             .lifetime(.objectGraph)
     }
 }
 
-class MapAssembly {
-    class func createModule() -> MapViewController {
+final class ContainerAssembly {
+    class func createModule() -> ContainerView {
         return AppCoordinator.shared.container.resolve()
     }
 }
