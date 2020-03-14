@@ -12,20 +12,16 @@ import UIKit
 class BottomTabBar: UITabBar {
     
     private var shapeLayer: CALayer?
-    private var centerButton: BottomTabBarButton?
+    private var mapButton: BottomTabBarButton?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.centerButton = BottomTabBarButton(frame: CGRect(x: 0, y: 0, width: 70, height: 70))
-        setupView()
+        setupBarItems()
+        setUpMapButton()
     }
     
     override func draw(_ rect: CGRect) {
         self.addShape()
-        guard let button = centerButton else {
-            return
-        }
-        //self.addSubview(button)
     }
     
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
@@ -33,15 +29,29 @@ class BottomTabBar: UITabBar {
         return abs(self.center.x - point.x) > buttonRadius || abs(point.y) > buttonRadius
     }
     
-    private func setupView() {
-        guard let items = items, let button = centerButton else {
+    
+    private func setupBarItems() {
+        guard let items = items else {
             return
         }
-//        addSubview(button)
         for (index, item) in items.enumerated() {
             item.titlePositionAdjustment = item.customOffset(for: index)
-//            item.imageInsets = item.customInsets(for: index)
         }
+    }
+    
+    private func setUpMapButton() {
+        self.mapButton = BottomTabBarButton()
+        guard let mapButton = self.mapButton else {
+            return
+        }
+        addSubview(mapButton)
+        mapButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate(
+            [mapButton.centerYAnchor.constraint(equalTo: self.topAnchor),
+             mapButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+             mapButton.heightAnchor.constraint(equalToConstant: 70.0),
+             mapButton.widthAnchor.constraint(equalToConstant: 70.0)])
+        
     }
     
     private func addShape() {

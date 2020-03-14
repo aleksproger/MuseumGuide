@@ -12,6 +12,8 @@ import UIKit
 class BottomTabBarButton: UIButton {
     override func draw(_ rect: CGRect) {
         self.layer.cornerRadius = self.bounds.width / 2
-        self.imageView?.image = UIImage(named: "map_icon")
+        self.setImage(UIImage(named: "map_icon"), for: .normal)
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.black.cgColor
     }
 }

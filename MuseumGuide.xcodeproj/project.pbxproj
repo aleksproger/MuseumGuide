@@ -14,7 +14,7 @@
 		FA56A71824180C8700FAC2CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71724180C8700FAC2CE /* AppDelegate.swift */; };
 		FA56A71A24180C8700FAC2CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71924180C8700FAC2CE /* SceneDelegate.swift */; };
 		FA56A71C24180C8700FAC2CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71B24180C8700FAC2CE /* BaseViewController.swift */; };
-		FA56A71F24180C8700FAC2CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA56A71D24180C8700FAC2CE /* Main.storyboard */; };
+		FA56A71F24180C8700FAC2CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA56A71D24180C8700FAC2CE /* Main.storyboard */; settings = {ASSET_TAGS = (bottomTabBar, ); }; };
 		FA56A72124180C8C00FAC2CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA56A72024180C8C00FAC2CE /* Assets.xcassets */; };
 		FA56A72424180C8C00FAC2CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA56A72224180C8C00FAC2CE /* LaunchScreen.storyboard */; };
 		FA56A7382418113200FAC2CE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A7372418113200FAC2CE /* BaseNavigationController.swift */; };
@@ -349,6 +349,9 @@
 		FA56A70C24180C8700FAC2CE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					bottomTabBar,
+				);
 				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = Alex;
