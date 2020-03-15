@@ -32,6 +32,7 @@ class AppCoordinator: Loggable {
     private func configureDependencies() -> DIContainer {
         let container = DIContainer()
         container.append(framework: AppFramework.self)
+        assert(container.validate(checkGraphCycles: true))
         if !container.validate() {
             fatalError()
         }

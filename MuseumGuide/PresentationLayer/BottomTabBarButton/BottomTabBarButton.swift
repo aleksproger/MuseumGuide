@@ -26,4 +26,5 @@ public class BottomTabBarButton: UIButton {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.black.cgColor
     }
+    
 }

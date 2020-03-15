@@ -7,6 +7,6 @@ target 'MuseumGuide' do
 
   # Pods for MuseumGuide
 	pod 'DITranquillity'
-	pod 'Mapbox-iOS-SDK', '~> 5.7'
+	pod 'Mapbox-iOS-SDK'
 
 end

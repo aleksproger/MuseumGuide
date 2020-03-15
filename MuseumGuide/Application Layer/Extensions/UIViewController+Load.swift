@@ -12,6 +12,7 @@ import UIKit
 extension UIViewController {
     enum StoryboardType: String {
         case main = "Main"
+        case map = "Map"
     }
     static func loadFromStoryboard(storyboardType: StoryboardType, identifier: String) -> Self {
         let storyboard = UIStoryboard(name: storyboardType.rawValue, bundle: nil)

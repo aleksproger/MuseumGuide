@@ -27,9 +27,12 @@ class BaseViewController: UIViewController, Loggable {
     override func viewDidLoad() {
         super.viewDidLoad()
         log(.debug, "\(String(describing: self)) didLoad")
-
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        log(.debug, "\(String(describing: self)) willAppear")
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }

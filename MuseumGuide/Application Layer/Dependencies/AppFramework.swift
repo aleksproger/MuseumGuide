@@ -12,6 +12,7 @@ import DITranquillity
 public class AppFramework: DIFramework {
     public static func load(container: DIContainer) {
         container.append(part: ControllersPart.self)
+        container.append(part: OtherPart.self)
     }
 }
 
@@ -23,5 +24,13 @@ private class ControllersPart: DIPart {
             parts.forEach { part in
                 container.append(part: part)
         }
+    }
+}
+
+private class OtherPart: DIPart {
+    static func load(container: DIContainer) {
+        container.register(AlertErrorHandler.init)
+            .as(ErrorHandling.self)
+            .lifetime(.single)
     }
 }

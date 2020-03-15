@@ -13,6 +13,7 @@ class BottomTabBar: UITabBar {
     
     private var shapeLayer: CALayer?
     private var mapButton: BottomTabBarButton = BottomTabBarButton()
+    var handleTap: Action?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -24,11 +25,11 @@ class BottomTabBar: UITabBar {
         self.addShape()
     }
     
-    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
-        let buttonRadius = mapButton.radius
-        return abs(self.center.x - point.x) > buttonRadius || abs(point.y) > buttonRadius
-    }
-    
+//    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+//        let buttonRadius = mapButton.radius
+//        return abs(self.center.x - point.x) > buttonRadius || abs(point.y) > buttonRadius
+//    }
+//    
     
     private func setupBarItems() {
         guard let items = items else {
@@ -47,7 +48,13 @@ class BottomTabBar: UITabBar {
              mapButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
              mapButton.heightAnchor.constraint(equalToConstant: 70.0),
              mapButton.widthAnchor.constraint(equalToConstant: 70.0)])
+        mapButton.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
         
+    }
+    
+    @objc func tapAction() {
+        self.handleTap?()
+        print("tapped  ")
     }
     
     private func addShape() {

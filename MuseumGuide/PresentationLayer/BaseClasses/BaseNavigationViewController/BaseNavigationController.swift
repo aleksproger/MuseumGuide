@@ -55,3 +55,5 @@ extension BaseNavigationController: UIGestureRecognizerDelegate {
 extension BaseNavigationController: UINavigationControllerDelegate {
     
 }
+
+extension BaseNavigationController: Load

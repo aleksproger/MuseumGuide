@@ -33,6 +33,19 @@
 		FA95FEEA2418C049005C0832 /* WindowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95FEE92418C049005C0832 /* WindowRouter.swift */; };
 		FA9A2651241E247D00386AE6 /* Pods_MuseumGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17422BDE0F1ED4EC57387692 /* Pods_MuseumGuide.framework */; };
 		FA9A2652241E247D00386AE6 /* Pods_MuseumGuide.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17422BDE0F1ED4EC57387692 /* Pods_MuseumGuide.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA9A2655241E2D1D00386AE6 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9A2654241E2D1D00386AE6 /* Map.storyboard */; };
+		FA9A2657241E302100386AE6 /* ContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A2656241E302100386AE6 /* ContainerPresenter.swift */; };
+		FA9A2659241E303100386AE6 /* ContainerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A2658241E303100386AE6 /* ContainerRouter.swift */; };
+		FA9A265B241E305600386AE6 /* ContainerContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A265A241E305600386AE6 /* ContainerContracts.swift */; };
+		FA9A265D241E318400386AE6 /* PushRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A265C241E318400386AE6 /* PushRouter.swift */; };
+		FA9A265F241E31FE00386AE6 /* ModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A265E241E31FE00386AE6 /* ModalRouter.swift */; };
+		FA9A2661241E333400386AE6 /* VIPERRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A2660241E333400386AE6 /* VIPERRouter.swift */; };
+		FA9A2663241E339200386AE6 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A2662241E339200386AE6 /* ErrorHandling.swift */; };
+		FA9A2665241E33CA00386AE6 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A2664241E33CA00386AE6 /* Typealiases.swift */; };
+		FA9A2667241E35C100386AE6 /* ViewControllerEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A2666241E35C100386AE6 /* ViewControllerEventHandler.swift */; };
+		FA9DFF7B241E6667008A3C4D /* AlertErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DFF7A241E6667008A3C4D /* AlertErrorHandler.swift */; };
+		FA9DFF7D241E67F7008A3C4D /* UIWindow+VisibleVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DFF7C241E67F7008A3C4D /* UIWindow+VisibleVc.swift */; };
+		FA9DFF7F241E6BD2008A3C4D /* UIApplication+VisibleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DFF7E241E6BD2008A3C4D /* UIApplication+VisibleVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +92,19 @@
 		FA95FEE4241830C7005C0832 /* UIViewController+Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Load.swift"; sourceTree = "<group>"; };
 		FA95FEE62418B61D005C0832 /* DependenciesConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesConfiguration.swift; sourceTree = "<group>"; };
 		FA95FEE92418C049005C0832 /* WindowRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowRouter.swift; sourceTree = "<group>"; };
+		FA9A2654241E2D1D00386AE6 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		FA9A2656241E302100386AE6 /* ContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPresenter.swift; sourceTree = "<group>"; };
+		FA9A2658241E303100386AE6 /* ContainerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRouter.swift; sourceTree = "<group>"; };
+		FA9A265A241E305600386AE6 /* ContainerContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerContracts.swift; sourceTree = "<group>"; };
+		FA9A265C241E318400386AE6 /* PushRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushRouter.swift; sourceTree = "<group>"; };
+		FA9A265E241E31FE00386AE6 /* ModalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalRouter.swift; sourceTree = "<group>"; };
+		FA9A2660241E333400386AE6 /* VIPERRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPERRouter.swift; sourceTree = "<group>"; };
+		FA9A2662241E339200386AE6 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		FA9A2664241E33CA00386AE6 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
+		FA9A2666241E35C100386AE6 /* ViewControllerEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEventHandler.swift; sourceTree = "<group>"; };
+		FA9DFF7A241E6667008A3C4D /* AlertErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertErrorHandler.swift; sourceTree = "<group>"; };
+		FA9DFF7C241E67F7008A3C4D /* UIWindow+VisibleVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+VisibleVc.swift"; sourceTree = "<group>"; };
+		FA9DFF7E241E6BD2008A3C4D /* UIApplication+VisibleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+VisibleVC.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				FA56A71D24180C8700FAC2CE /* Main.storyboard */,
+				FA9A2654241E2D1D00386AE6 /* Map.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -147,6 +174,7 @@
 		FA56A71624180C8700FAC2CE /* MuseumGuide */ = {
 			isa = PBXGroup;
 			children = (
+				FA9DFF78241E6631008A3C4D /* ServiceLayer */,
 				FA56A73224180EF100FAC2CE /* Common */,
 				FA56A73124180EE900FAC2CE /* Modules */,
 				FA56A73024180EA900FAC2CE /* PresentationLayer */,
@@ -236,16 +264,8 @@
 				FA95FEE82418C03B005C0832 /* Router */,
 				FA56A735241810F600FAC2CE /* BaseViewController */,
 				FA56A7362418110100FAC2CE /* BaseNavigationViewController */,
-				FA56A73424180F6600FAC2CE /* Protocols */,
 			);
 			path = BaseClasses;
-			sourceTree = "<group>";
-		};
-		FA56A73424180F6600FAC2CE /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		FA56A735241810F600FAC2CE /* BaseViewController */ = {
@@ -269,6 +289,9 @@
 			children = (
 				FA730206241975EA00BFF567 /* ContainerView.swift */,
 				FA7302082419762800BFF567 /* ContainerAssembly.swift */,
+				FA9A2656241E302100386AE6 /* ContainerPresenter.swift */,
+				FA9A2658241E303100386AE6 /* ContainerRouter.swift */,
+				FA9A265A241E305600386AE6 /* ContainerContracts.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -314,6 +337,9 @@
 			isa = PBXGroup;
 			children = (
 				FA95FEDD24182B1D005C0832 /* Loggable.swift */,
+				FA9A2662241E339200386AE6 /* ErrorHandling.swift */,
+				FA9A2664241E33CA00386AE6 /* Typealiases.swift */,
+				FA9A2666241E35C100386AE6 /* ViewControllerEventHandler.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -324,6 +350,8 @@
 				FA95FEE4241830C7005C0832 /* UIViewController+Load.swift */,
 				FA0F220B241D06BA0087B96D /* UITabBarItem+Layout.swift */,
 				FA0F220D241D0CEE0087B96D /* CGFloat+Degrees.swift */,
+				FA9DFF7C241E67F7008A3C4D /* UIWindow+VisibleVc.swift */,
+				FA9DFF7E241E6BD2008A3C4D /* UIApplication+VisibleVC.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -332,8 +360,27 @@
 			isa = PBXGroup;
 			children = (
 				FA95FEE92418C049005C0832 /* WindowRouter.swift */,
+				FA9A265C241E318400386AE6 /* PushRouter.swift */,
+				FA9A265E241E31FE00386AE6 /* ModalRouter.swift */,
+				FA9A2660241E333400386AE6 /* VIPERRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		FA9DFF78241E6631008A3C4D /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				FA9DFF79241E663E008A3C4D /* ErrorHandling */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		FA9DFF79241E663E008A3C4D /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				FA9DFF7A241E6667008A3C4D /* AlertErrorHandler.swift */,
+			);
+			path = ErrorHandling;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,6 +449,7 @@
 			files = (
 				FA56A72424180C8C00FAC2CE /* LaunchScreen.storyboard in Resources */,
 				FA7302102419785300BFF567 /* BottomTabBarItem.xib in Resources */,
+				FA9A2655241E2D1D00386AE6 /* Map.storyboard in Resources */,
 				FA56A72124180C8C00FAC2CE /* Assets.xcassets in Resources */,
 				FA56A71F24180C8700FAC2CE /* Main.storyboard in Resources */,
 			);
@@ -458,21 +506,33 @@
 			files = (
 				FA95FEE5241830C7005C0832 /* UIViewController+Load.swift in Sources */,
 				FA73020E2419784200BFF567 /* BottomTabBarItem.swift in Sources */,
+				FA9DFF7B241E6667008A3C4D /* AlertErrorHandler.swift in Sources */,
 				FA95FEE72418B61D005C0832 /* DependenciesConfiguration.swift in Sources */,
 				FA56A71C24180C8700FAC2CE /* BaseViewController.swift in Sources */,
+				FA9A2657241E302100386AE6 /* ContainerPresenter.swift in Sources */,
 				FA2AD40E241ACF75004B2DEE /* BottomTabBarButton.swift in Sources */,
 				FA95FED824182A12005C0832 /* MapView.swift in Sources */,
+				FA9DFF7D241E67F7008A3C4D /* UIWindow+VisibleVc.swift in Sources */,
 				FA95FEE224182F87005C0832 /* MapAssembly.swift in Sources */,
+				FA9A2659241E303100386AE6 /* ContainerRouter.swift in Sources */,
 				FA95FED5241828D5005C0832 /* AppFramework.swift in Sources */,
+				FA9A265F241E31FE00386AE6 /* ModalRouter.swift in Sources */,
 				FA95FEEA2418C049005C0832 /* WindowRouter.swift in Sources */,
 				FA7302092419762800BFF567 /* ContainerAssembly.swift in Sources */,
+				FA9A2661241E333400386AE6 /* VIPERRouter.swift in Sources */,
 				FA56A71824180C8700FAC2CE /* AppDelegate.swift in Sources */,
 				FA56A71A24180C8700FAC2CE /* SceneDelegate.swift in Sources */,
+				FA9A2665241E33CA00386AE6 /* Typealiases.swift in Sources */,
 				FA0F220C241D06BA0087B96D /* UITabBarItem+Layout.swift in Sources */,
 				FA95FEE024182E3B005C0832 /* AppRouter.swift in Sources */,
+				FA9A2663241E339200386AE6 /* ErrorHandling.swift in Sources */,
+				FA9A265B241E305600386AE6 /* ContainerContracts.swift in Sources */,
 				FA56A7382418113200FAC2CE /* BaseNavigationController.swift in Sources */,
 				FA73021324197BA500BFF567 /* BottomTabBar.swift in Sources */,
 				FA95FEDE24182B1D005C0832 /* Loggable.swift in Sources */,
+				FA9A265D241E318400386AE6 /* PushRouter.swift in Sources */,
+				FA9A2667241E35C100386AE6 /* ViewControllerEventHandler.swift in Sources */,
+				FA9DFF7F241E6BD2008A3C4D /* UIApplication+VisibleVC.swift in Sources */,
 				FA730207241975EA00BFF567 /* ContainerView.swift in Sources */,
 				FA0F220E241D0CEE0087B96D /* CGFloat+Degrees.swift in Sources */,
 				FA95FEDB24182ABF005C0832 /* AppCoordinator.swift in Sources */,
