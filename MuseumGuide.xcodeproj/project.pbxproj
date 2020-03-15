@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		74B345CB74B4BCD75322DE1B /* Pods_MuseumGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8231DEFD7449B9ACF628023A /* Pods_MuseumGuide.framework */; };
 		FA0F220C241D06BA0087B96D /* UITabBarItem+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F220B241D06BA0087B96D /* UITabBarItem+Layout.swift */; };
 		FA0F220E241D0CEE0087B96D /* CGFloat+Degrees.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F220D241D0CEE0087B96D /* CGFloat+Degrees.swift */; };
 		FA2AD40E241ACF75004B2DEE /* BottomTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AD40D241ACF75004B2DEE /* BottomTabBarButton.swift */; };
@@ -32,12 +31,28 @@
 		FA95FEE5241830C7005C0832 /* UIViewController+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95FEE4241830C7005C0832 /* UIViewController+Load.swift */; };
 		FA95FEE72418B61D005C0832 /* DependenciesConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95FEE62418B61D005C0832 /* DependenciesConfiguration.swift */; };
 		FA95FEEA2418C049005C0832 /* WindowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95FEE92418C049005C0832 /* WindowRouter.swift */; };
+		FA9A2651241E247D00386AE6 /* Pods_MuseumGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17422BDE0F1ED4EC57387692 /* Pods_MuseumGuide.framework */; };
+		FA9A2652241E247D00386AE6 /* Pods_MuseumGuide.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17422BDE0F1ED4EC57387692 /* Pods_MuseumGuide.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FA9A2653241E247D00386AE6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA9A2652241E247D00386AE6 /* Pods_MuseumGuide.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		17422BDE0F1ED4EC57387692 /* Pods_MuseumGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3A5D8746865A8DDB8CC4A0 /* Pods-MuseumGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseumGuide.debug.xcconfig"; path = "Target Support Files/Pods-MuseumGuide/Pods-MuseumGuide.debug.xcconfig"; sourceTree = "<group>"; };
 		5D764358FAB8A04773B54F47 /* Pods-MuseumGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseumGuide.release.xcconfig"; path = "Target Support Files/Pods-MuseumGuide/Pods-MuseumGuide.release.xcconfig"; sourceTree = "<group>"; };
-		8231DEFD7449B9ACF628023A /* Pods_MuseumGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0F220B241D06BA0087B96D /* UITabBarItem+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Layout.swift"; sourceTree = "<group>"; };
 		FA0F220D241D0CEE0087B96D /* CGFloat+Degrees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Degrees.swift"; sourceTree = "<group>"; };
 		FA2AD40D241ACF75004B2DEE /* BottomTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarButton.swift; sourceTree = "<group>"; };
@@ -71,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74B345CB74B4BCD75322DE1B /* Pods_MuseumGuide.framework in Frameworks */,
+				FA9A2651241E247D00386AE6 /* Pods_MuseumGuide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +96,7 @@
 		750D80A2532B10BD07339177 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8231DEFD7449B9ACF628023A /* Pods_MuseumGuide.framework */,
+				17422BDE0F1ED4EC57387692 /* Pods_MuseumGuide.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -333,6 +348,7 @@
 				FA56A71124180C8700FAC2CE /* Frameworks */,
 				FA56A71224180C8700FAC2CE /* Resources */,
 				8833F7BF06CD8151FF6C96F6 /* [CP] Embed Pods Frameworks */,
+				FA9A2653241E247D00386AE6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -604,9 +620,11 @@
 			baseConfigurationReference = 5B3A5D8746865A8DDB8CC4A0 /* Pods-MuseumGuide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWCTLCYKBW;
 				INFOPLIST_FILE = "$(SRCROOT)/MuseumGuide/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -614,8 +632,9 @@
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Alex.MuseumGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -624,9 +643,11 @@
 			baseConfigurationReference = 5D764358FAB8A04773B54F47 /* Pods-MuseumGuide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CWCTLCYKBW;
 				INFOPLIST_FILE = "$(SRCROOT)/MuseumGuide/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -634,8 +655,9 @@
 				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Alex.MuseumGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
