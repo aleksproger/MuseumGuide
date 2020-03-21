@@ -19,8 +19,6 @@
 		FA56A7382418113200FAC2CE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A7372418113200FAC2CE /* BaseNavigationController.swift */; };
 		FA730207241975EA00BFF567 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA730206241975EA00BFF567 /* ContainerView.swift */; };
 		FA7302092419762800BFF567 /* ContainerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7302082419762800BFF567 /* ContainerAssembly.swift */; };
-		FA73020E2419784200BFF567 /* BottomTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73020D2419784200BFF567 /* BottomTabBarItem.swift */; };
-		FA7302102419785300BFF567 /* BottomTabBarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA73020F2419785300BFF567 /* BottomTabBarItem.xib */; };
 		FA73021324197BA500BFF567 /* BottomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73021224197BA500BFF567 /* BottomTabBar.swift */; };
 		FA95FED5241828D5005C0832 /* AppFramework.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95FED4241828D5005C0832 /* AppFramework.swift */; };
 		FA95FED824182A12005C0832 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95FED724182A12005C0832 /* MapView.swift */; };
@@ -45,6 +43,7 @@
 		FA9DFF7B241E6667008A3C4D /* AlertErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DFF7A241E6667008A3C4D /* AlertErrorHandler.swift */; };
 		FA9DFF7D241E67F7008A3C4D /* UIWindow+VisibleVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DFF7C241E67F7008A3C4D /* UIWindow+VisibleVc.swift */; };
 		FA9DFF7F241E6BD2008A3C4D /* UIApplication+VisibleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DFF7E241E6BD2008A3C4D /* UIApplication+VisibleVC.swift */; };
+		FAB0109524263F840015D43E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0109424263F840015D43E /* Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,8 +78,6 @@
 		FA56A7372418113200FAC2CE /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		FA730206241975EA00BFF567 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		FA7302082419762800BFF567 /* ContainerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerAssembly.swift; sourceTree = "<group>"; };
-		FA73020D2419784200BFF567 /* BottomTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarItem.swift; sourceTree = "<group>"; };
-		FA73020F2419785300BFF567 /* BottomTabBarItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomTabBarItem.xib; sourceTree = "<group>"; };
 		FA73021224197BA500BFF567 /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
 		FA95FED4241828D5005C0832 /* AppFramework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFramework.swift; sourceTree = "<group>"; };
 		FA95FED724182A12005C0832 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -103,6 +100,7 @@
 		FA9DFF7A241E6667008A3C4D /* AlertErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertErrorHandler.swift; sourceTree = "<group>"; };
 		FA9DFF7C241E67F7008A3C4D /* UIWindow+VisibleVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+VisibleVc.swift"; sourceTree = "<group>"; };
 		FA9DFF7E241E6BD2008A3C4D /* UIApplication+VisibleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+VisibleVC.swift"; sourceTree = "<group>"; };
+		FAB0109424263F840015D43E /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +230,6 @@
 			children = (
 				FA2AD40C241ACF41004B2DEE /* BottomTabBarButton */,
 				FA73021124197B8400BFF567 /* BottomTabBar */,
-				FA73020A241977EF00BFF567 /* TabBarItem */,
 				FA730205241975BD00BFF567 /* Container */,
 				FA95FED6241829F8005C0832 /* Map */,
 				FA3B839924181D3200EA979D /* Storyboards */,
@@ -291,15 +288,6 @@
 				FA9A265A241E305600386AE6 /* ContainerContracts.swift */,
 			);
 			path = Container;
-			sourceTree = "<group>";
-		};
-		FA73020A241977EF00BFF567 /* TabBarItem */ = {
-			isa = PBXGroup;
-			children = (
-				FA73020D2419784200BFF567 /* BottomTabBarItem.swift */,
-				FA73020F2419785300BFF567 /* BottomTabBarItem.xib */,
-			);
-			path = TabBarItem;
 			sourceTree = "<group>";
 		};
 		FA73021124197B8400BFF567 /* BottomTabBar */ = {
@@ -367,6 +355,8 @@
 		FA9DFF78241E6631008A3C4D /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				FAB01096242640810015D43E /* Geolocation */,
+				FAB0109324263F4B0015D43E /* Requests */,
 				FA9DFF79241E663E008A3C4D /* ErrorHandling */,
 			);
 			path = ServiceLayer;
@@ -378,6 +368,21 @@
 				FA9DFF7A241E6667008A3C4D /* AlertErrorHandler.swift */,
 			);
 			path = ErrorHandling;
+			sourceTree = "<group>";
+		};
+		FAB0109324263F4B0015D43E /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				FAB0109424263F840015D43E /* Request.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		FAB01096242640810015D43E /* Geolocation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Geolocation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,7 +450,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA56A72424180C8C00FAC2CE /* LaunchScreen.storyboard in Resources */,
-				FA7302102419785300BFF567 /* BottomTabBarItem.xib in Resources */,
 				FA56A72124180C8C00FAC2CE /* Assets.xcassets in Resources */,
 				FA56A71F24180C8700FAC2CE /* Main.storyboard in Resources */,
 			);
@@ -501,7 +505,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA95FEE5241830C7005C0832 /* UIViewController+Load.swift in Sources */,
-				FA73020E2419784200BFF567 /* BottomTabBarItem.swift in Sources */,
 				FA9DFF7B241E6667008A3C4D /* AlertErrorHandler.swift in Sources */,
 				FA95FEE72418B61D005C0832 /* DependenciesConfiguration.swift in Sources */,
 				FA56A71C24180C8700FAC2CE /* BaseViewController.swift in Sources */,
@@ -518,6 +521,7 @@
 				FA9A2661241E333400386AE6 /* VIPERRouter.swift in Sources */,
 				FA56A71824180C8700FAC2CE /* AppDelegate.swift in Sources */,
 				FA56A71A24180C8700FAC2CE /* SceneDelegate.swift in Sources */,
+				FAB0109524263F840015D43E /* Request.swift in Sources */,
 				FA9A2665241E33CA00386AE6 /* Typealiases.swift in Sources */,
 				FA0F220C241D06BA0087B96D /* UITabBarItem+Layout.swift in Sources */,
 				FA95FEE024182E3B005C0832 /* AppRouter.swift in Sources */,
