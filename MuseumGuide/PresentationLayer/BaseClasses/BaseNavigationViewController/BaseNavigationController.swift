@@ -56,4 +56,3 @@ extension BaseNavigationController: UINavigationControllerDelegate {
     
 }
 
-extension BaseNavigationController: Load

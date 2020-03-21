@@ -18,11 +18,6 @@ class ContainerPresenter: ContainerEventHandler {
     }
     
     func handleTap() {
-        openMap()
+        //openMap()
     }
-    
-    private func openMap() {
-        router.openMap()
-    }
-    
 }

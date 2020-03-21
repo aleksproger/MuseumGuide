@@ -33,7 +33,6 @@
 		FA95FEEA2418C049005C0832 /* WindowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA95FEE92418C049005C0832 /* WindowRouter.swift */; };
 		FA9A2651241E247D00386AE6 /* Pods_MuseumGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17422BDE0F1ED4EC57387692 /* Pods_MuseumGuide.framework */; };
 		FA9A2652241E247D00386AE6 /* Pods_MuseumGuide.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 17422BDE0F1ED4EC57387692 /* Pods_MuseumGuide.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FA9A2655241E2D1D00386AE6 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9A2654241E2D1D00386AE6 /* Map.storyboard */; };
 		FA9A2657241E302100386AE6 /* ContainerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A2656241E302100386AE6 /* ContainerPresenter.swift */; };
 		FA9A2659241E303100386AE6 /* ContainerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A2658241E303100386AE6 /* ContainerRouter.swift */; };
 		FA9A265B241E305600386AE6 /* ContainerContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A265A241E305600386AE6 /* ContainerContracts.swift */; };
@@ -92,7 +91,6 @@
 		FA95FEE4241830C7005C0832 /* UIViewController+Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Load.swift"; sourceTree = "<group>"; };
 		FA95FEE62418B61D005C0832 /* DependenciesConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependenciesConfiguration.swift; sourceTree = "<group>"; };
 		FA95FEE92418C049005C0832 /* WindowRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowRouter.swift; sourceTree = "<group>"; };
-		FA9A2654241E2D1D00386AE6 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		FA9A2656241E302100386AE6 /* ContainerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerPresenter.swift; sourceTree = "<group>"; };
 		FA9A2658241E303100386AE6 /* ContainerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerRouter.swift; sourceTree = "<group>"; };
 		FA9A265A241E305600386AE6 /* ContainerContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerContracts.swift; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				FA56A71D24180C8700FAC2CE /* Main.storyboard */,
-				FA9A2654241E2D1D00386AE6 /* Map.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -449,7 +446,6 @@
 			files = (
 				FA56A72424180C8C00FAC2CE /* LaunchScreen.storyboard in Resources */,
 				FA7302102419785300BFF567 /* BottomTabBarItem.xib in Resources */,
-				FA9A2655241E2D1D00386AE6 /* Map.storyboard in Resources */,
 				FA56A72124180C8C00FAC2CE /* Assets.xcassets in Resources */,
 				FA56A71F24180C8700FAC2CE /* Main.storyboard in Resources */,
 			);

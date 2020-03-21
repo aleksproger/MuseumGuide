@@ -14,7 +14,10 @@ public class BottomTabBarButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.clipsToBounds = true
         self.setImage(UIImage(named: "map_icon"), for: .normal)
+        self.backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {

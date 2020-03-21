@@ -12,7 +12,7 @@ import DITranquillity
 final class MapPart: DIPart {
     class func load(container: DIContainer) {
         container.register {
-            MapViewController.loadFromStoryboard(storyboardType: .main, identifier: String(describing: MapViewController.self))
+            MapViewController.loadFromStoryboard(storyboardType: .map, identifier: String(describing: MapViewController.self))
         }
             .lifetime(.objectGraph)
     }

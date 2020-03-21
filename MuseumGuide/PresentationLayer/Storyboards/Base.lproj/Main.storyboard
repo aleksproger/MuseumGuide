@@ -34,18 +34,22 @@
         <!--Explore-->
         <scene sceneID="XlQ-kN-eSA">
             <objects>
-                <viewController id="fYF-1R-C40" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="804-9H-khp">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vBU-eN-gp4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="MapViewController" id="fYF-1R-C40" customClass="MapViewController" customModule="MuseumGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="804-9H-khp" customClass="MGLMapView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="LnP-GO-jFO"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/aleksproger/ck7s1ed561dsb1iqrt48qnc7h"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="search_icon" id="lsr-gl-o7l"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vBU-eN-gp4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1058" y="582"/>
+            <point key="canvasLocation" x="1335" y="869"/>
         </scene>
         <!--Events-->
         <scene sceneID="dmK-tV-ebM">
@@ -67,7 +71,7 @@
         <scene sceneID="UMh-Dt-ocw">
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="28u-20-QmU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="che-ot-GQN" customClass="MGLMapView">
+                    <view key="view" contentMode="scaleToFill" id="che-ot-GQN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
