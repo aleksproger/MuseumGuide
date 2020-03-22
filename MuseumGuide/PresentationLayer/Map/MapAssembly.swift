@@ -11,15 +11,32 @@ import DITranquillity
 
 final class MapPart: DIPart {
     class func load(container: DIContainer) {
+        container.register(MapRouter.init(view:errorHandler:))
+            .lifetime(.objectGraph)
+        
+        container.register(MapPresenter.init(view:router:events:effects:))
+            .as(MapEventHandler.self)
+            .lifetime(.objectGraph)
+        
+        container.register(LocationEvents.init)
+            .lifetime(.objectGraph)
+        
+        container.register(LocationEffects.init)
+            .lifetime(.objectGraph)
+        
+        
         container.register {
-            MapViewController.loadFromStoryboard(storyboardType: .map, identifier: String(describing: MapViewController.self))
+            MapViewController.loadFromStoryboard(storyboardType: .main, identifier: String(describing: MapViewController.self))
         }
+//            .as(MapViewBehavior.self)
+            .injection(cycle: true, \.handler)
             .lifetime(.objectGraph)
     }
 }
 
 class MapAssembly {
     class func createModule() -> MapViewController {
-        return AppCoordinator.shared.container.resolve()
+        let module: MapViewController = AppCoordinator.shared.container.resolve()
+        return module
     }
 }

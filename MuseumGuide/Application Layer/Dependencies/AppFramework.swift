@@ -13,6 +13,7 @@ public class AppFramework: DIFramework {
     public static func load(container: DIContainer) {
         container.append(part: ControllersPart.self)
         container.append(part: OtherPart.self)
+        container.append(part: ServicePart.self)
     }
 }
 
@@ -31,6 +32,13 @@ private class OtherPart: DIPart {
     static func load(container: DIContainer) {
         container.register(AlertErrorHandler.init)
             .as(ErrorHandling.self)
+            .lifetime(.single)
+    }
+}
+
+private class ServicePart: DIPart {
+    static func load(container: DIContainer) {
+        container.register(LocationService.init)
             .lifetime(.single)
     }
 }

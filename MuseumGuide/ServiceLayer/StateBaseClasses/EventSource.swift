@@ -53,15 +53,3 @@ class AnyEventSource<S: State>: EventSource {
     }
 }
 
-class LocationEvents: EventSource {
-    typealias S = LocationState
-    //private let store: Store<LocationState, Error>
-    
-    init() {
-        //self.store = store
-    }
-    
-    func configureEventSource(dispatch: @escaping Closure<LocationState.Event>) {
-        //store.statePublisher
-    }
-}

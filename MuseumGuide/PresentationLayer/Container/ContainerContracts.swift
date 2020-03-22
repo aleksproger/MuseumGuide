@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 protocol ContainerViewRouting {
     func openMap()

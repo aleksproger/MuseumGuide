@@ -54,6 +54,11 @@
 		FAB010A7242655700015D43E /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010A6242655700015D43E /* LocationError.swift */; };
 		FAB010A9242662D30015D43E /* EventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010A8242662D30015D43E /* EventSource.swift */; };
 		FAB010AB242694340015D43E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010AA242694340015D43E /* Store.swift */; };
+		FAB010AD2427C74A0015D43E /* LocationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010AC2427C74A0015D43E /* LocationEvents.swift */; };
+		FAB010AF2427D43D0015D43E /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010AE2427D43D0015D43E /* MapPresenter.swift */; };
+		FAB010B12427D4460015D43E /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010B02427D4460015D43E /* MapRouter.swift */; };
+		FAB010B32427D4C90015D43E /* MapContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010B22427D4C90015D43E /* MapContracts.swift */; };
+		FAB010B52427E9750015D43E /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010B42427E9750015D43E /* ViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +126,11 @@
 		FAB010A6242655700015D43E /* LocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
 		FAB010A8242662D30015D43E /* EventSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSource.swift; sourceTree = "<group>"; };
 		FAB010AA242694340015D43E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		FAB010AC2427C74A0015D43E /* LocationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEvents.swift; sourceTree = "<group>"; };
+		FAB010AE2427D43D0015D43E /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		FAB010B02427D4460015D43E /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		FAB010B22427D4C90015D43E /* MapContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContracts.swift; sourceTree = "<group>"; };
+		FAB010B42427E9750015D43E /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +344,9 @@
 			children = (
 				FA95FED724182A12005C0832 /* MapView.swift */,
 				FA95FEE124182F87005C0832 /* MapAssembly.swift */,
+				FAB010AE2427D43D0015D43E /* MapPresenter.swift */,
+				FAB010B02427D4460015D43E /* MapRouter.swift */,
+				FAB010B22427D4C90015D43E /* MapContracts.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -408,6 +421,7 @@
 				FAB010A02426454B0015D43E /* LocationState.swift */,
 				FAB010A424264A5B0015D43E /* LocationEffects.swift */,
 				FAB010A6242655700015D43E /* LocationError.swift */,
+				FAB010AC2427C74A0015D43E /* LocationEvents.swift */,
 			);
 			path = Geolocation;
 			sourceTree = "<group>";
@@ -419,6 +433,7 @@
 				FAB010A2242648950015D43E /* EffectHandler.swift */,
 				FAB010A8242662D30015D43E /* EventSource.swift */,
 				FAB010AA242694340015D43E /* Store.swift */,
+				FAB010B42427E9750015D43E /* ViewState.swift */,
 			);
 			path = StateBaseClasses;
 			sourceTree = "<group>";
@@ -544,12 +559,15 @@
 			files = (
 				FA95FEE5241830C7005C0832 /* UIViewController+Load.swift in Sources */,
 				FA9DFF7B241E6667008A3C4D /* AlertErrorHandler.swift in Sources */,
+				FAB010B32427D4C90015D43E /* MapContracts.swift in Sources */,
 				FA95FEE72418B61D005C0832 /* DependenciesConfiguration.swift in Sources */,
+				FAB010AF2427D43D0015D43E /* MapPresenter.swift in Sources */,
 				FA56A71C24180C8700FAC2CE /* BaseViewController.swift in Sources */,
 				FA9A2657241E302100386AE6 /* ContainerPresenter.swift in Sources */,
 				FA2AD40E241ACF75004B2DEE /* BottomTabBarButton.swift in Sources */,
 				FA95FED824182A12005C0832 /* MapView.swift in Sources */,
 				FAB010A12426454B0015D43E /* LocationState.swift in Sources */,
+				FAB010B52427E9750015D43E /* ViewState.swift in Sources */,
 				FA9DFF7D241E67F7008A3C4D /* UIWindow+VisibleVc.swift in Sources */,
 				FA95FEE224182F87005C0832 /* MapAssembly.swift in Sources */,
 				FAB010A9242662D30015D43E /* EventSource.swift in Sources */,
@@ -558,6 +576,7 @@
 				FA9A265F241E31FE00386AE6 /* ModalRouter.swift in Sources */,
 				FA95FEEA2418C049005C0832 /* WindowRouter.swift in Sources */,
 				FA7302092419762800BFF567 /* ContainerAssembly.swift in Sources */,
+				FAB010B12427D4460015D43E /* MapRouter.swift in Sources */,
 				FA9A2661241E333400386AE6 /* VIPERRouter.swift in Sources */,
 				FAB0109C2426424B0015D43E /* ServiceHandler.swift in Sources */,
 				FAB010A7242655700015D43E /* LocationError.swift in Sources */,
@@ -570,6 +589,7 @@
 				FA0F220C241D06BA0087B96D /* UITabBarItem+Layout.swift in Sources */,
 				FA95FEE024182E3B005C0832 /* AppRouter.swift in Sources */,
 				FAB0109F242644690015D43E /* State.swift in Sources */,
+				FAB010AD2427C74A0015D43E /* LocationEvents.swift in Sources */,
 				FA9A2663241E339200386AE6 /* ErrorHandling.swift in Sources */,
 				FAB010A524264A5B0015D43E /* LocationEffects.swift in Sources */,
 				FA9A265B241E305600386AE6 /* ContainerContracts.swift in Sources */,

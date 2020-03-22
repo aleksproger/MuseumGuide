@@ -54,17 +54,3 @@ struct AnyEffectHandler<S: State, E: Error>: EffectHandler {
         return _box.handle(effect)
     }
 }
-
-//MARK: - LocationEffectHandler move out
-
-class LocationEffectHandler: EffectHandler {
-    func handle(_ effect: LocationState.Effect) -> Future<LocationState.Event, Error>? {
-        return nil
-    }
-    
-    typealias S = LocationState
-    
-    typealias E = Error
-    
-    
-}

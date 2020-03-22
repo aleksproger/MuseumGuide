@@ -16,6 +16,8 @@ class ContainerView: UITabBarController, ContainerViewBehavior, Loggable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let mapVC = MapAssembly.createModule()
+        viewControllers?.append(mapVC)
         handler.didLoad()
         log(.debug, "ContainerView didLoad")
         self.bottomTabBar.handleTap = { [weak self] in
@@ -27,5 +29,6 @@ class ContainerView: UITabBarController, ContainerViewBehavior, Loggable {
     func handleTap() {
         handler.handleTap()
     }
+    
     
 }

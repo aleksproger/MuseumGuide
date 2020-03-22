@@ -25,7 +25,6 @@ final class ContainerPart: DIPart {
         .as(ContainerViewBehavior.self)
         .injection(cycle: true, \.handler)
         .lifetime(.objectGraph)
-
     }
 }
 

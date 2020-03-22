@@ -49,3 +49,13 @@ enum LocationState: State {
     
 }
 
+//extension LocationState {
+//    var location: CLLocation? {
+//        switch self {
+//        case .idle, .loading, .error:
+//            return nil
+//        case .loaded(let location):
+//            return location
+//        }
+//    }
+//}
