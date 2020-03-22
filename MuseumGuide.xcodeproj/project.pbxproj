@@ -43,7 +43,17 @@
 		FA9DFF7B241E6667008A3C4D /* AlertErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DFF7A241E6667008A3C4D /* AlertErrorHandler.swift */; };
 		FA9DFF7D241E67F7008A3C4D /* UIWindow+VisibleVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DFF7C241E67F7008A3C4D /* UIWindow+VisibleVc.swift */; };
 		FA9DFF7F241E6BD2008A3C4D /* UIApplication+VisibleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9DFF7E241E6BD2008A3C4D /* UIApplication+VisibleVC.swift */; };
-		FAB0109524263F840015D43E /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0109424263F840015D43E /* Request.swift */; };
+		FAB0109524263F840015D43E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0109424263F840015D43E /* Result.swift */; };
+		FAB01098242640D60015D43E /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB01097242640D60015D43E /* LocationService.swift */; };
+		FAB0109A2426415C0015D43E /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010992426415C0015D43E /* ServiceRequest.swift */; };
+		FAB0109C2426424B0015D43E /* ServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0109B2426424B0015D43E /* ServiceHandler.swift */; };
+		FAB0109F242644690015D43E /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0109E242644690015D43E /* State.swift */; };
+		FAB010A12426454B0015D43E /* LocationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010A02426454B0015D43E /* LocationState.swift */; };
+		FAB010A3242648950015D43E /* EffectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010A2242648950015D43E /* EffectHandler.swift */; };
+		FAB010A524264A5B0015D43E /* LocationEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010A424264A5B0015D43E /* LocationEffects.swift */; };
+		FAB010A7242655700015D43E /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010A6242655700015D43E /* LocationError.swift */; };
+		FAB010A9242662D30015D43E /* EventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010A8242662D30015D43E /* EventSource.swift */; };
+		FAB010AB242694340015D43E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB010AA242694340015D43E /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,7 +110,17 @@
 		FA9DFF7A241E6667008A3C4D /* AlertErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertErrorHandler.swift; sourceTree = "<group>"; };
 		FA9DFF7C241E67F7008A3C4D /* UIWindow+VisibleVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+VisibleVc.swift"; sourceTree = "<group>"; };
 		FA9DFF7E241E6BD2008A3C4D /* UIApplication+VisibleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+VisibleVC.swift"; sourceTree = "<group>"; };
-		FAB0109424263F840015D43E /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		FAB0109424263F840015D43E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		FAB01097242640D60015D43E /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		FAB010992426415C0015D43E /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		FAB0109B2426424B0015D43E /* ServiceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHandler.swift; sourceTree = "<group>"; };
+		FAB0109E242644690015D43E /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		FAB010A02426454B0015D43E /* LocationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationState.swift; sourceTree = "<group>"; };
+		FAB010A2242648950015D43E /* EffectHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectHandler.swift; sourceTree = "<group>"; };
+		FAB010A424264A5B0015D43E /* LocationEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEffects.swift; sourceTree = "<group>"; };
+		FAB010A6242655700015D43E /* LocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
+		FAB010A8242662D30015D43E /* EventSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSource.swift; sourceTree = "<group>"; };
+		FAB010AA242694340015D43E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,8 +375,9 @@
 		FA9DFF78241E6631008A3C4D /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				FAB0109D242644510015D43E /* StateBaseClasses */,
 				FAB01096242640810015D43E /* Geolocation */,
-				FAB0109324263F4B0015D43E /* Requests */,
+				FAB0109324263F4B0015D43E /* Result */,
 				FA9DFF79241E663E008A3C4D /* ErrorHandling */,
 			);
 			path = ServiceLayer;
@@ -370,19 +391,36 @@
 			path = ErrorHandling;
 			sourceTree = "<group>";
 		};
-		FAB0109324263F4B0015D43E /* Requests */ = {
+		FAB0109324263F4B0015D43E /* Result */ = {
 			isa = PBXGroup;
 			children = (
-				FAB0109424263F840015D43E /* Request.swift */,
+				FAB0109424263F840015D43E /* Result.swift */,
+				FAB010992426415C0015D43E /* ServiceRequest.swift */,
+				FAB0109B2426424B0015D43E /* ServiceHandler.swift */,
 			);
-			path = Requests;
+			path = Result;
 			sourceTree = "<group>";
 		};
 		FAB01096242640810015D43E /* Geolocation */ = {
 			isa = PBXGroup;
 			children = (
+				FAB01097242640D60015D43E /* LocationService.swift */,
+				FAB010A02426454B0015D43E /* LocationState.swift */,
+				FAB010A424264A5B0015D43E /* LocationEffects.swift */,
+				FAB010A6242655700015D43E /* LocationError.swift */,
 			);
 			path = Geolocation;
+			sourceTree = "<group>";
+		};
+		FAB0109D242644510015D43E /* StateBaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				FAB0109E242644690015D43E /* State.swift */,
+				FAB010A2242648950015D43E /* EffectHandler.swift */,
+				FAB010A8242662D30015D43E /* EventSource.swift */,
+				FAB010AA242694340015D43E /* Store.swift */,
+			);
+			path = StateBaseClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,27 +549,37 @@
 				FA9A2657241E302100386AE6 /* ContainerPresenter.swift in Sources */,
 				FA2AD40E241ACF75004B2DEE /* BottomTabBarButton.swift in Sources */,
 				FA95FED824182A12005C0832 /* MapView.swift in Sources */,
+				FAB010A12426454B0015D43E /* LocationState.swift in Sources */,
 				FA9DFF7D241E67F7008A3C4D /* UIWindow+VisibleVc.swift in Sources */,
 				FA95FEE224182F87005C0832 /* MapAssembly.swift in Sources */,
+				FAB010A9242662D30015D43E /* EventSource.swift in Sources */,
 				FA9A2659241E303100386AE6 /* ContainerRouter.swift in Sources */,
 				FA95FED5241828D5005C0832 /* AppFramework.swift in Sources */,
 				FA9A265F241E31FE00386AE6 /* ModalRouter.swift in Sources */,
 				FA95FEEA2418C049005C0832 /* WindowRouter.swift in Sources */,
 				FA7302092419762800BFF567 /* ContainerAssembly.swift in Sources */,
 				FA9A2661241E333400386AE6 /* VIPERRouter.swift in Sources */,
+				FAB0109C2426424B0015D43E /* ServiceHandler.swift in Sources */,
+				FAB010A7242655700015D43E /* LocationError.swift in Sources */,
 				FA56A71824180C8700FAC2CE /* AppDelegate.swift in Sources */,
 				FA56A71A24180C8700FAC2CE /* SceneDelegate.swift in Sources */,
-				FAB0109524263F840015D43E /* Request.swift in Sources */,
+				FAB010AB242694340015D43E /* Store.swift in Sources */,
+				FAB0109A2426415C0015D43E /* ServiceRequest.swift in Sources */,
+				FAB0109524263F840015D43E /* Result.swift in Sources */,
 				FA9A2665241E33CA00386AE6 /* Typealiases.swift in Sources */,
 				FA0F220C241D06BA0087B96D /* UITabBarItem+Layout.swift in Sources */,
 				FA95FEE024182E3B005C0832 /* AppRouter.swift in Sources */,
+				FAB0109F242644690015D43E /* State.swift in Sources */,
 				FA9A2663241E339200386AE6 /* ErrorHandling.swift in Sources */,
+				FAB010A524264A5B0015D43E /* LocationEffects.swift in Sources */,
 				FA9A265B241E305600386AE6 /* ContainerContracts.swift in Sources */,
 				FA56A7382418113200FAC2CE /* BaseNavigationController.swift in Sources */,
 				FA73021324197BA500BFF567 /* BottomTabBar.swift in Sources */,
+				FAB010A3242648950015D43E /* EffectHandler.swift in Sources */,
 				FA95FEDE24182B1D005C0832 /* Loggable.swift in Sources */,
 				FA9A265D241E318400386AE6 /* PushRouter.swift in Sources */,
 				FA9A2667241E35C100386AE6 /* ViewControllerEventHandler.swift in Sources */,
+				FAB01098242640D60015D43E /* LocationService.swift in Sources */,
 				FA9DFF7F241E6BD2008A3C4D /* UIApplication+VisibleVC.swift in Sources */,
 				FA730207241975EA00BFF567 /* ContainerView.swift in Sources */,
 				FA0F220E241D0CEE0087B96D /* CGFloat+Degrees.swift in Sources */,

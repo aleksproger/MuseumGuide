@@ -15,6 +15,7 @@ public enum LogTag: String {
     case viewModel
     case view
     case service
+    case store
     case presenter
     case viewController
     case request

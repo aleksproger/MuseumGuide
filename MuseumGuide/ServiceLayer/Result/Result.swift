@@ -1,5 +1,5 @@
 //
-//  Request.swift
+//  Result.swift
 //  MuseumGuide
 //
 //  Created by Alex on 21.03.2020.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-enum Request<T, E: Error> : Loggable {
-    var defaultLoggingTag: LogTag { .request }
+enum Result<T, E: Error>{
     case success(T)
     case failure(E)
 }
