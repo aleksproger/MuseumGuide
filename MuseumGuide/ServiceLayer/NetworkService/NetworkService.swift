@@ -14,7 +14,7 @@ public struct Response<T> {
     let response: URLResponse
 }
 
-public class NetworkService: Loggable {
+public class NetworkService: Service {
     public var defaultLoggingTag: LogTag { .networkService }
     
     public typealias HTTPHeaders = [String: String]
@@ -47,8 +47,9 @@ public class NetworkService: Loggable {
         createURLRequest(from: request)
             .flatMap(maxPublishers: .max(1)) { request in
                 URLSession.shared.dataTaskPublisher(for: request)
+                .print()
                 .mapError { error -> NetworkError in
-                         return NetworkError.responseError(error: error)
+                    return NetworkError.responseError(error.localizedDescription)
                 }
             }
             .tryMap { result -> Response<T> in
@@ -77,6 +78,7 @@ public class NetworkService: Loggable {
             return configureParameters(bodyParameters: bodyParameters, urlParameters:                                    urlParameters, request: request)
                                        .eraseToAnyPublisher()
         case .requestParametersAndHeaders(let bodyParameters, let urlParameters, let additionalHeaders):
+            log(.debug, "AdditionalHeaders ->\(String(describing: bodyParameters))")
             return addAdditionalHeader(additionalHeaders, request: request)
                 .setFailureType(to: NetworkError.self)
                 .flatMap { [unowned self] request in
@@ -96,7 +98,6 @@ public class NetworkService: Loggable {
             .flatMap { request in
                 JSONParameterEncoder.encode(request: request, with: bodyParameters)
             }
-            .print()
             .eraseToAnyPublisher()
     }
     

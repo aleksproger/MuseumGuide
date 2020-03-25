@@ -12,6 +12,6 @@ public enum NetworkError: Error {
     case parametersNil
     case encodingFailed
     case missingURL
-    case responseError(error: Error)
+    case responseError(_ error: String)
     case decodingFailed
 }

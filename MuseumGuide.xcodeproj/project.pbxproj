@@ -11,6 +11,7 @@
 		FA07C726242B717400CF2A01 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C725242B717400CF2A01 /* NetworkManager.swift */; };
 		FA07C729242B727200CF2A01 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */; };
 		FA07C72C242B729600CF2A01 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C72B242B729600CF2A01 /* NetworkError.swift */; };
+		FA07C72F242BBA3200CF2A01 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C72E242BBA3200CF2A01 /* Service.swift */; };
 		FA0F220C241D06BA0087B96D /* UITabBarItem+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F220B241D06BA0087B96D /* UITabBarItem+Layout.swift */; };
 		FA0F220E241D0CEE0087B96D /* CGFloat+Degrees.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F220D241D0CEE0087B96D /* CGFloat+Degrees.swift */; };
 		FA2AD40E241ACF75004B2DEE /* BottomTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AD40D241ACF75004B2DEE /* BottomTabBarButton.swift */; };
@@ -95,6 +96,7 @@
 		FA07C725242B717400CF2A01 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
 		FA07C72B242B729600CF2A01 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FA07C72E242BBA3200CF2A01 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		FA0F220B241D06BA0087B96D /* UITabBarItem+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Layout.swift"; sourceTree = "<group>"; };
 		FA0F220D241D0CEE0087B96D /* CGFloat+Degrees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Degrees.swift"; sourceTree = "<group>"; };
 		FA2AD40D241ACF75004B2DEE /* BottomTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarButton.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 				FA9A2662241E339200386AE6 /* ErrorHandling.swift */,
 				FA9A2664241E33CA00386AE6 /* Typealiases.swift */,
 				FA9A2666241E35C100386AE6 /* ViewControllerEventHandler.swift */,
+				FA07C72E242BBA3200CF2A01 /* Service.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				FAB010A12426454B0015D43E /* LocationState.swift in Sources */,
 				FAB010B52427E9750015D43E /* ViewState.swift in Sources */,
 				FA9DFF7D241E67F7008A3C4D /* UIWindow+VisibleVc.swift in Sources */,
+				FA07C72F242BBA3200CF2A01 /* Service.swift in Sources */,
 				FA95FEE224182F87005C0832 /* MapAssembly.swift in Sources */,
 				FAB010A9242662D30015D43E /* EventSource.swift in Sources */,
 				FA9A2659241E303100386AE6 /* ContainerRouter.swift in Sources */,

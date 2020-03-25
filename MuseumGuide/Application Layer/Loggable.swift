@@ -19,6 +19,7 @@ public enum LogTag: String {
     case viewController
     case request
     case networkService
+    case parameterEncoder
 }
 
 public enum LogLevel: Int {

@@ -9,8 +9,12 @@
 import Foundation
 import Combine
 
-public protocol ParameterEncoder {
+public protocol ParameterEncoder: Loggable {
     static func encode(request: URLRequest, with parameters: NetworkService.Parameters?) -> AnyPublisher<URLRequest, NetworkError>
+}
+
+extension ParameterEncoder {
+    public var defaultLoggingTag: LogTag { .parameterEncoder }
 }
 
 
@@ -32,6 +36,7 @@ public class URLParameterEncoder: ParameterEncoder {
                     urlComponents.queryItems?.append(URLQueryItem(name: key, value: "\(value)"))
                 }
                 encodedRequest.url = urlComponents.url
+                print("EncodedRequest: URL -> \(encodedRequest.url), PARAMS: \(encodedRequest.debugDescription)")
                 if encodedRequest.value(forHTTPHeaderField: "ContentT-ype") == nil {
                     encodedRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "ContentT-ype")
                 }

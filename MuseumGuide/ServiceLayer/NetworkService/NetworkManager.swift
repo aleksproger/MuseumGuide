@@ -29,13 +29,14 @@ class NetworkManager {
             self.requestBeer()
                 .receive(on: DispatchQueue.main)
                 .sink(receiveCompletion: { completion in
-                    switch completion {
-                    case .failure(let error):
+                    if case .failure(let error) = completion {
                         promise(.failure(error))
-                    case .finished:
-                        break
                     }
                 }, receiveValue: { response in
+                    if case .failure(let error) = self.handleNetworkResponse(response.response as! HTTPURLResponse) {
+                        let errorText = error.rawValue
+                        promise(.failure(.responseError(errorText)))
+                    }
                     promise(.success(response.value))
                 })
                 .store(in: &self.subscriptions)
@@ -48,14 +49,14 @@ class NetworkManager {
             .eraseToAnyPublisher()
     }
 
-//    private func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String, NetworkResponseError> {
-//        switch response.statusCode {
-//        case 200...299:
-//            return .success(NetworkResponse.success.rawValue)
-//        case 401...500: return .failure()
-//        default:
-//            .failure(NetworkResponseError.failed)
-//        }
-//    }
+    private func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String, NetworkResponseError> {
+        switch response.statusCode {
+        case 200...299: return .success("Success.")
+        case 401...500: return .failure(NetworkResponseError.authenticationError)
+        case 501...599: return .failure(NetworkResponseError.badRequest)
+        case 600: return .failure(NetworkResponseError.outdated)
+        default: return .failure(NetworkResponseError.failed)
+        }
+    }
 
 }
