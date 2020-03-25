@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ViewControllerEventHandler: class {
+public protocol ViewControllerEventHandler: class, Loggable {
     func didLoad()
     func willAppear()
     func didAppear()
@@ -18,6 +18,7 @@ public protocol ViewControllerEventHandler: class {
 }
 
 extension ViewControllerEventHandler {
+    var defaultLoggingTag: LogTag { .presenter }
     public func didLoad() {}
     public func willAppear() {}
     public func didAppear() {}

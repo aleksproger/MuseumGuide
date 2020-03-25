@@ -18,10 +18,10 @@ final class MapPart: DIPart {
             .as(MapEventHandler.self)
             .lifetime(.objectGraph)
         
-        container.register(LocationEvents.init)
+        container.register(MapEvents.init)
             .lifetime(.objectGraph)
         
-        container.register(LocationEffects.init)
+        container.register(MapEffects.init)
             .lifetime(.objectGraph)
         
         

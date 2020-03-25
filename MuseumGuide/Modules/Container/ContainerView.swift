@@ -9,6 +9,8 @@
 import UIKit
 
 class ContainerView: UITabBarController, ContainerViewBehavior, Loggable {
+    
+
     var defaultLoggingTag: LogTag = .viewController
     
     @IBOutlet weak var bottomTabBar: BottomTabBar!

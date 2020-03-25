@@ -42,6 +42,9 @@
                         <viewLayoutGuide key="safeArea" id="LnP-GO-jFO"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/aleksproger/ck7s1ed561dsb1iqrt48qnc7h"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
+                                <real key="value" value="14"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="search_icon" id="lsr-gl-o7l"/>

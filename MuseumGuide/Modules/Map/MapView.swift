@@ -14,6 +14,9 @@ class MapViewController: BaseViewController, MapViewBehavior {
     var handler: MapEventHandler!
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = handler as? MGLMapViewDelegate
+        mapView.userTrackingMode = .followWithHeading
+        mapView.showsUserHeadingIndicator = true
         handler.didLoad()
     }
 }
@@ -28,8 +31,11 @@ extension MapViewController: StatefulView {
     func render(state: MapViewState) {
         switch state {
         case .fetched(let location):
-            //mapView.setCenter(location.coordinate, animated: false)
-            mapView.setCenter(location.coordinate, zoomLevel: 14, animated: true)
+            break
+//            mapView.updateUserLocationAnnotationView()
+
+//            mapView.setCenter(location.coordinate,
+                              //animated: false)
         default:
             break
         }

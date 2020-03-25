@@ -9,7 +9,6 @@
 import Foundation
 
 public enum LogTag: String {
-    case unnamed
     case observable
     case model
     case viewModel
@@ -19,6 +18,7 @@ public enum LogTag: String {
     case presenter
     case viewController
     case request
+    case networkService
 }
 
 public enum LogLevel: Int {
@@ -42,6 +42,7 @@ public extension Loggable {
     }
 
     func log(_ level: LogLevel, tag: LogTag, _ message: String) {
-        print("\([tag.rawValue]) - \(message)")
+        print("[LOG:] \([tag.rawValue]) - \(message)")
     }
 }
+
