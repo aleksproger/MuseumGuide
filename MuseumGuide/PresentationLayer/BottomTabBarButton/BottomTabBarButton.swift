@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 public class BottomTabBarButton: UIButton {
-    var radius: CGFloat = 35.0
+    var radius: CGFloat { bounds.width / 2}
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,8 +26,8 @@ public class BottomTabBarButton: UIButton {
     
     public override func draw(_ rect: CGRect) {
         self.layer.cornerRadius = self.bounds.width / 2
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.black.cgColor
+//        self.layer.borderWidth = 1
+//        self.layer.borderColor = UIColor.black.cgColor
     }
     
 }

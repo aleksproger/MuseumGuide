@@ -60,6 +60,7 @@ extension MapPresenter: MGLMapViewDelegate {
     
     // Tap the user location annotation to toggle heading tracking mode.
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
+        log(.debug, "didSelect annotation")
         if annotation is MGLUserLocation && mapView.userLocation != nil {
             if mapView.userTrackingMode != .followWithHeading {
                 mapView.userTrackingMode = .followWithHeading
@@ -67,6 +68,8 @@ extension MapPresenter: MGLMapViewDelegate {
                 mapView.resetNorth()
             }
             mapView.deselectAnnotation(annotation, animated: false)
+        } else {
+            showInfo()
         }
     }
     
@@ -81,6 +84,10 @@ extension MapPresenter: MGLMapViewDelegate {
                     let feature = MGLPointFeature()
                     feature.coordinate = CLLocationCoordinate2D(latitude: museum.lat, longitude: museum.lon)
                     feature.title = museum.name
+                    feature.attributes = [
+                        "name": museum.name
+                    ]
+                    print("[LOG:]",feature.title)
                     return feature
                 }
                 self.addItemsToMap(features: features)
@@ -92,8 +99,9 @@ extension MapPresenter: MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
+        log(.debug, "didDeselect annotation")
         mapView.removeAnnotations([annotation])
-        print(mapView.selectedAnnotations)
+        hideInfo()
     }
     
 }
@@ -162,8 +170,16 @@ private extension MapPresenter {
     
     private func showCallout(feature: MGLPointFeature) {
         let point = MGLPointFeature()
-        point.title = "museum"//feature.attributes["name"] as? String
+        point.title = feature.attributes["name"] as? String
         point.coordinate = feature.coordinate
         view.mapView.selectAnnotation(point, animated: true, completionHandler: nil)
+    }
+    
+    private func showInfo() {
+        view.showInfo()
+    }
+    
+    private func hideInfo() {
+        view.hideInfo()
     }
 }

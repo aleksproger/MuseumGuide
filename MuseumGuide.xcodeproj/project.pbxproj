@@ -33,6 +33,9 @@
 		FA578EC7242931540056D1B0 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA578EC6242931540056D1B0 /* MapError.swift */; };
 		FA578EC92429315E0056D1B0 /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA578EC82429315E0056D1B0 /* MapState.swift */; };
 		FA578ECB242932AB0056D1B0 /* MapEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA578ECA242932AB0056D1B0 /* MapEvents.swift */; };
+		FA5E0037242E4D93005BC5B1 /* MuseumHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */; };
+		FA5E003A242E4F54005BC5B1 /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */; };
+		FA5E003C242E5429005BC5B1 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E003B242E5429005BC5B1 /* TestData.swift */; };
 		FA730207241975EA00BFF567 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA730206241975EA00BFF567 /* ContainerView.swift */; };
 		FA7302092419762800BFF567 /* ContainerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7302082419762800BFF567 /* ContainerAssembly.swift */; };
 		FA73021324197BA500BFF567 /* BottomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73021224197BA500BFF567 /* BottomTabBar.swift */; };
@@ -126,6 +129,9 @@
 		FA578EC82429315E0056D1B0 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
 		FA578ECA242932AB0056D1B0 /* MapEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEvents.swift; sourceTree = "<group>"; };
 		FA5E000C242D35D3005BC5B1 /* Saint-Petersburg,Russia.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "Saint-Petersburg,Russia.gpx"; path = "MuseumGuide/SupportingFiles/Saint-Petersburg,Russia.gpx"; sourceTree = SOURCE_ROOT; };
+		FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumHeaderView.swift; sourceTree = "<group>"; };
+		FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
+		FA5E003B242E5429005BC5B1 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		FA730206241975EA00BFF567 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		FA7302082419762800BFF567 /* ContainerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerAssembly.swift; sourceTree = "<group>"; };
 		FA73021224197BA500BFF567 /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
@@ -427,6 +433,16 @@
 			path = State;
 			sourceTree = "<group>";
 		};
+		FA5E0038242E4F22005BC5B1 /* PullingVIew */ = {
+			isa = PBXGroup;
+			children = (
+				FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */,
+				FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */,
+				FA5E003B242E5429005BC5B1 /* TestData.swift */,
+			);
+			path = PullingVIew;
+			sourceTree = "<group>";
+		};
 		FA730205241975BD00BFF567 /* Container */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +483,7 @@
 				FAB010AE2427D43D0015D43E /* MapPresenter.swift */,
 				FAB010B02427D4460015D43E /* MapRouter.swift */,
 				FAB010B22427D4C90015D43E /* MapContracts.swift */,
+				FA5E0038242E4F22005BC5B1 /* PullingVIew */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -710,6 +727,7 @@
 				FA578EC92429315E0056D1B0 /* MapState.swift in Sources */,
 				FAB010AF2427D43D0015D43E /* MapPresenter.swift in Sources */,
 				FA56A71C24180C8700FAC2CE /* BaseViewController.swift in Sources */,
+				FA5E003A242E4F54005BC5B1 /* ShapeCell.swift in Sources */,
 				FA9A2657241E302100386AE6 /* ContainerPresenter.swift in Sources */,
 				FA07C72C242B729600CF2A01 /* NetworkError.swift in Sources */,
 				FA578EC42429310E0056D1B0 /* MapEffects.swift in Sources */,
@@ -718,6 +736,7 @@
 				FA2AD40E241ACF75004B2DEE /* BottomTabBarButton.swift in Sources */,
 				FA95FED824182A12005C0832 /* MapView.swift in Sources */,
 				FAB010A12426454B0015D43E /* LocationState.swift in Sources */,
+				FA5E0037242E4D93005BC5B1 /* MuseumHeaderView.swift in Sources */,
 				FAB010B52427E9750015D43E /* ViewState.swift in Sources */,
 				FA9DFF7D241E67F7008A3C4D /* UIWindow+VisibleVc.swift in Sources */,
 				FA07C72F242BBA3200CF2A01 /* Service.swift in Sources */,
@@ -742,6 +761,7 @@
 				FAB0109A2426415C0015D43E /* ServiceRequest.swift in Sources */,
 				FAB0109524263F840015D43E /* Result.swift in Sources */,
 				FA07C724242A80E600CF2A01 /* URLParameterEncoder.swift in Sources */,
+				FA5E003C242E5429005BC5B1 /* TestData.swift in Sources */,
 				FA9A2665241E33CA00386AE6 /* Typealiases.swift in Sources */,
 				FA0F220C241D06BA0087B96D /* UITabBarItem+Layout.swift in Sources */,
 				FA95FEE024182E3B005C0832 /* AppRouter.swift in Sources */,

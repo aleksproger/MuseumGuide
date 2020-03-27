@@ -1,9 +1,9 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DITranquillity" "${PODS_CONFIGURATION_BUILD_DIR}/MapboxMobileEvents" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftLazy" "${PODS_ROOT}/Mapbox-iOS-SDK/dynamic"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DITranquillity" "${PODS_CONFIGURATION_BUILD_DIR}/MapboxMobileEvents" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftLazy" "${PODS_CONFIGURATION_BUILD_DIR}/UltraDrawerView" "${PODS_CONFIGURATION_BUILD_DIR}/pop" "${PODS_ROOT}/Mapbox-iOS-SDK/dynamic"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DITranquillity/DITranquillity.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MapboxMobileEvents/MapboxMobileEvents.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftLazy/SwiftLazy.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/DITranquillity/DITranquillity.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/MapboxMobileEvents/MapboxMobileEvents.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftLazy/SwiftLazy.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/UltraDrawerView/UltraDrawerView.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/pop/pop.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -l"z" -framework "DITranquillity" -framework "Mapbox" -framework "MapboxMobileEvents" -framework "SwiftLazy"
+OTHER_LDFLAGS = $(inherited) -l"c++" -l"z" -framework "DITranquillity" -framework "Mapbox" -framework "MapboxMobileEvents" -framework "SwiftLazy" -framework "UIKit" -framework "UltraDrawerView" -framework "pop"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
