@@ -9,15 +9,6 @@
 import Foundation
 import Combine
 
-public protocol ParameterEncoder: Loggable {
-    static func encode(request: URLRequest, with parameters: NetworkService.Parameters?) -> AnyPublisher<URLRequest, NetworkError>
-}
-
-extension ParameterEncoder {
-    public var defaultLoggingTag: LogTag { .parameterEncoder }
-}
-
-
 public class URLParameterEncoder: ParameterEncoder {
     public static func encode(request: URLRequest, with parameters: NetworkService.Parameters?) -> AnyPublisher<URLRequest, NetworkError>{
         return Future { promise in
@@ -36,25 +27,10 @@ public class URLParameterEncoder: ParameterEncoder {
                     urlComponents.queryItems?.append(URLQueryItem(name: key, value: "\(value)"))
                 }
                 encodedRequest.url = urlComponents.url
-                print("EncodedRequest: URL -> \(encodedRequest.url), PARAMS: \(encodedRequest.debugDescription)")
+                print("[LOG:] [urlEncoder] - EncodedURLRequest -> \(encodedRequest.debugDescription)")
                 if encodedRequest.value(forHTTPHeaderField: "ContentT-ype") == nil {
                     encodedRequest.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "ContentT-ype")
                 }
-            }
-            promise(.success(encodedRequest))
-        }.eraseToAnyPublisher()
-    }
-}
-
-public class JSONParameterEncoder: ParameterEncoder {
-    public static func encode(request: URLRequest, with parameters: NetworkService.Parameters?) -> AnyPublisher<URLRequest, NetworkError>{
-        return Future { promise in
-            guard let parameters = parameters else { return promise(.success(request)) }
-            guard let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) else { return  promise(.failure(.encodingFailed)) }
-            var encodedRequest = request
-            encodedRequest.httpBody = jsonData
-            if encodedRequest.value(forHTTPHeaderField: "Content-Type") == nil {
-                encodedRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
             }
             promise(.success(encodedRequest))
         }.eraseToAnyPublisher()

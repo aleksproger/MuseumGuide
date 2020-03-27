@@ -12,9 +12,14 @@
 		FA07C729242B727200CF2A01 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */; };
 		FA07C72C242B729600CF2A01 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C72B242B729600CF2A01 /* NetworkError.swift */; };
 		FA07C72F242BBA3200CF2A01 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C72E242BBA3200CF2A01 /* Service.swift */; };
+		FA07C732242BDF5C00CF2A01 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C731242BDF5C00CF2A01 /* JSONParameterEncoder.swift */; };
+		FA07C734242BDF7F00CF2A01 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C733242BDF7F00CF2A01 /* ParameterEncoder.swift */; };
+		FA07C737242BDFC300CF2A01 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C736242BDFC300CF2A01 /* Response.swift */; };
+		FA07C73A242BE10700CF2A01 /* TestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C739242BE10700CF2A01 /* TestAPI.swift */; };
 		FA0F220C241D06BA0087B96D /* UITabBarItem+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F220B241D06BA0087B96D /* UITabBarItem+Layout.swift */; };
 		FA0F220E241D0CEE0087B96D /* CGFloat+Degrees.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F220D241D0CEE0087B96D /* CGFloat+Degrees.swift */; };
 		FA2AD40E241ACF75004B2DEE /* BottomTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AD40D241ACF75004B2DEE /* BottomTabBarButton.swift */; };
+		FA500858242BEA37001505E7 /* String+EmtyLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA500857242BEA37001505E7 /* String+EmtyLine.swift */; };
 		FA56A71824180C8700FAC2CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71724180C8700FAC2CE /* AppDelegate.swift */; };
 		FA56A71A24180C8700FAC2CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71924180C8700FAC2CE /* SceneDelegate.swift */; };
 		FA56A71C24180C8700FAC2CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71B24180C8700FAC2CE /* BaseViewController.swift */; };
@@ -97,9 +102,14 @@
 		FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
 		FA07C72B242B729600CF2A01 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FA07C72E242BBA3200CF2A01 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		FA07C731242BDF5C00CF2A01 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		FA07C733242BDF7F00CF2A01 /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
+		FA07C736242BDFC300CF2A01 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		FA07C739242BE10700CF2A01 /* TestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPI.swift; sourceTree = "<group>"; };
 		FA0F220B241D06BA0087B96D /* UITabBarItem+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Layout.swift"; sourceTree = "<group>"; };
 		FA0F220D241D0CEE0087B96D /* CGFloat+Degrees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Degrees.swift"; sourceTree = "<group>"; };
 		FA2AD40D241ACF75004B2DEE /* BottomTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarButton.swift; sourceTree = "<group>"; };
+		FA500857242BEA37001505E7 /* String+EmtyLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EmtyLine.swift"; sourceTree = "<group>"; };
 		FA56A71424180C8700FAC2CE /* MuseumGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseumGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA56A71724180C8700FAC2CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA56A71924180C8700FAC2CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +125,7 @@
 		FA578EC6242931540056D1B0 /* MapError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapError.swift; sourceTree = "<group>"; };
 		FA578EC82429315E0056D1B0 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
 		FA578ECA242932AB0056D1B0 /* MapEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEvents.swift; sourceTree = "<group>"; };
+		FA5E000C242D35D3005BC5B1 /* Saint-Petersburg,Russia.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "Saint-Petersburg,Russia.gpx"; path = "MuseumGuide/SupportingFiles/Saint-Petersburg,Russia.gpx"; sourceTree = SOURCE_ROOT; };
 		FA730206241975EA00BFF567 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		FA7302082419762800BFF567 /* ContainerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerAssembly.swift; sourceTree = "<group>"; };
 		FA73021224197BA500BFF567 /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
@@ -191,6 +202,8 @@
 		FA07C727242B726400CF2A01 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA07C735242BDFB100CF2A01 /* Response */,
+				FAF387C32429487000D1F5AF /* Request */,
 				FA07C72A242B728700CF2A01 /* Error */,
 				FA07C72D242B72B300CF2A01 /* Environment */,
 			);
@@ -211,6 +224,31 @@
 				FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		FA07C730242BDF3200CF2A01 /* ParameterEncoders */ = {
+			isa = PBXGroup;
+			children = (
+				FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */,
+				FA07C731242BDF5C00CF2A01 /* JSONParameterEncoder.swift */,
+			);
+			path = ParameterEncoders;
+			sourceTree = "<group>";
+		};
+		FA07C735242BDFB100CF2A01 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				FA07C736242BDFC300CF2A01 /* Response.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		FA07C738242BDFFA00CF2A01 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				FA07C725242B717400CF2A01 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		FA2AD40C241ACF41004B2DEE /* BottomTabBarButton */ = {
@@ -301,6 +339,7 @@
 		FA56A72F24180E9800FAC2CE /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				FA5E000C242D35D3005BC5B1 /* Saint-Petersburg,Russia.gpx */,
 				FA56A72524180C8C00FAC2CE /* Info.plist */,
 			);
 			path = SupportingFiles;
@@ -440,6 +479,7 @@
 				FA9A2664241E33CA00386AE6 /* Typealiases.swift */,
 				FA9A2666241E35C100386AE6 /* ViewControllerEventHandler.swift */,
 				FA07C72E242BBA3200CF2A01 /* Service.swift */,
+				FA07C733242BDF7F00CF2A01 /* ParameterEncoder.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -452,6 +492,7 @@
 				FA0F220D241D0CEE0087B96D /* CGFloat+Degrees.swift */,
 				FA9DFF7C241E67F7008A3C4D /* UIWindow+VisibleVc.swift */,
 				FA9DFF7E241E6BD2008A3C4D /* UIApplication+VisibleVC.swift */,
+				FA500857242BEA37001505E7 /* String+EmtyLine.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -470,8 +511,8 @@
 		FA9DFF78241E6631008A3C4D /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
-				FAF387C0242934BA00D1F5AF /* NetworkService */,
 				FAB0109D242644510015D43E /* StateBaseClasses */,
+				FAF387C0242934BA00D1F5AF /* NetworkService */,
 				FAB01096242640810015D43E /* Geolocation */,
 				FAB0109324263F4B0015D43E /* Result */,
 				FA9DFF79241E663E008A3C4D /* ErrorHandling */,
@@ -524,11 +565,10 @@
 		FAF387C0242934BA00D1F5AF /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
-				FA07C727242B726400CF2A01 /* Models */,
-				FAF387C32429487000D1F5AF /* Request */,
 				FAF387C1242934CD00D1F5AF /* NetworkService.swift */,
-				FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */,
-				FA07C725242B717400CF2A01 /* NetworkManager.swift */,
+				FA07C738242BDFFA00CF2A01 /* NetworkManager */,
+				FA07C730242BDF3200CF2A01 /* ParameterEncoders */,
+				FA07C727242B726400CF2A01 /* Models */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -537,6 +577,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF387C42429496A00D1F5AF /* APIRequest.swift */,
+				FA07C739242BE10700CF2A01 /* TestAPI.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -672,6 +713,8 @@
 				FA9A2657241E302100386AE6 /* ContainerPresenter.swift in Sources */,
 				FA07C72C242B729600CF2A01 /* NetworkError.swift in Sources */,
 				FA578EC42429310E0056D1B0 /* MapEffects.swift in Sources */,
+				FA07C734242BDF7F00CF2A01 /* ParameterEncoder.swift in Sources */,
+				FA07C737242BDFC300CF2A01 /* Response.swift in Sources */,
 				FA2AD40E241ACF75004B2DEE /* BottomTabBarButton.swift in Sources */,
 				FA95FED824182A12005C0832 /* MapView.swift in Sources */,
 				FAB010A12426454B0015D43E /* LocationState.swift in Sources */,
@@ -681,6 +724,7 @@
 				FA95FEE224182F87005C0832 /* MapAssembly.swift in Sources */,
 				FAB010A9242662D30015D43E /* EventSource.swift in Sources */,
 				FA9A2659241E303100386AE6 /* ContainerRouter.swift in Sources */,
+				FA500858242BEA37001505E7 /* String+EmtyLine.swift in Sources */,
 				FA95FED5241828D5005C0832 /* AppFramework.swift in Sources */,
 				FAF387C52429496A00D1F5AF /* APIRequest.swift in Sources */,
 				FA9A265F241E31FE00386AE6 /* ModalRouter.swift in Sources */,
@@ -692,6 +736,7 @@
 				FA578EC7242931540056D1B0 /* MapError.swift in Sources */,
 				FAB010A7242655700015D43E /* LocationError.swift in Sources */,
 				FA56A71824180C8700FAC2CE /* AppDelegate.swift in Sources */,
+				FA07C73A242BE10700CF2A01 /* TestAPI.swift in Sources */,
 				FA56A71A24180C8700FAC2CE /* SceneDelegate.swift in Sources */,
 				FAB010AB242694340015D43E /* Store.swift in Sources */,
 				FAB0109A2426415C0015D43E /* ServiceRequest.swift in Sources */,
@@ -702,6 +747,7 @@
 				FA95FEE024182E3B005C0832 /* AppRouter.swift in Sources */,
 				FAB0109F242644690015D43E /* State.swift in Sources */,
 				FAB010AD2427C74A0015D43E /* LocationEvents.swift in Sources */,
+				FA07C732242BDF5C00CF2A01 /* JSONParameterEncoder.swift in Sources */,
 				FA578ECB242932AB0056D1B0 /* MapEvents.swift in Sources */,
 				FA9A2663241E339200386AE6 /* ErrorHandling.swift in Sources */,
 				FAB010A524264A5B0015D43E /* LocationEffects.swift in Sources */,

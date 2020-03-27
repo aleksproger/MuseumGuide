@@ -15,3 +15,20 @@ public enum NetworkError: Error {
     case responseError(_ error: String)
     case decodingFailed
 }
+
+extension NetworkError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .parametersNil:
+            return "Nil parameters passed."
+        case .decodingFailed:
+            return "Decoding failed."
+        case .encodingFailed:
+            return "Encoding failed."
+        case .missingURL:
+            return "Nil URL passed."
+        case .responseError(let errorText):
+            return "Response error occured: \(errorText)"
+        }
+    }
+}

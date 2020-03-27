@@ -8,10 +8,10 @@
 
 import Foundation
 
-protocol Handler: class {
-    associatedtype T
-    func handle(request: ServiceRequest<T>) -> Result<Any, Error>
-}
+//protocol Handler: class {
+//    associatedtype T
+//    func handle(request: ServiceRequest<T>) -> Result<Any, Error>
+//}
 
 //class ServiceHandler<T>: Handler {
 //    func handle<T>(request: ServiceRequest<T>) -> Result<Any, Error> {

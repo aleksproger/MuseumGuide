@@ -39,6 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="LnP-GO-jFO"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/aleksproger/ck7s1ed561dsb1iqrt48qnc7h"/>
@@ -46,13 +47,22 @@
                                 <real key="value" value="14"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eIe-d7-Xay" appends="YES" id="zUJ-Ef-sax"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Explore" image="search_icon" id="lsr-gl-o7l"/>
                     <connections>
+                        <outlet property="mapTap" destination="eIe-d7-Xay" id="f9Q-Oc-B7r"/>
                         <outlet property="mapView" destination="804-9H-khp" id="KUO-tH-1Qd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vBU-eN-gp4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eIe-d7-Xay">
+                    <connections>
+                        <action selector="handleMapTap:" destination="fYF-1R-C40" id="8sA-8f-a0j"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1335" y="869"/>
         </scene>

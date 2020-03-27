@@ -9,7 +9,7 @@
 import Foundation
 import Mapbox
 
-class CustomUserLocationAnnotationView: MGLUserLocationAnnotationView {
+class UserLocationAnnotationView: MGLUserLocationAnnotationView {
     let size: CGFloat = 24
     var dot: CALayer!
     var arrow: CAShapeLayer!

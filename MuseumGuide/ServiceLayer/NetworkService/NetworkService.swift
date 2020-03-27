@@ -9,11 +9,6 @@
 import Foundation
 import Combine
 
-public struct Response<T> {
-    let value: T
-    let response: URLResponse
-}
-
 public class NetworkService: Service {
     public var defaultLoggingTag: LogTag { .networkService }
     
@@ -33,7 +28,6 @@ public class NetworkService: Service {
             additionalHeaders: HTTPHeaders)
     }
 
-
     private static let Timeout: TimeInterval = 50
     private lazy var session = URLSession(configuration: configuration())
     private func configuration() -> URLSessionConfiguration {
@@ -45,19 +39,21 @@ public class NetworkService: Service {
     
     func request<T: Codable>(_ request: APIRequest) -> AnyPublisher<Response<T>, NetworkError> {
         createURLRequest(from: request)
-            .flatMap(maxPublishers: .max(1)) { request in
+            .flatMap(maxPublishers: .max(1)) { [unowned self] request in
                 URLSession.shared.dataTaskPublisher(for: request)
-                .print()
                 .mapError { error -> NetworkError in
+                    self.log(.debug, "Error -> \(error.localizedDescription)")
                     return NetworkError.responseError(error.localizedDescription)
                 }
             }
             .tryMap { result -> Response<T> in
+                //print(String(data: result.data, encoding: String.Encoding.utf8))
                 let value: T = try JSONDecoder.init().decode(T.self, from: result.data)
                 return Response(value: value, response: result.response)
             }
             .mapError { error -> NetworkError in
-                NetworkError.decodingFailed
+                self.log(.debug, "Error -> \(error.localizedDescription)")
+                return NetworkError.decodingFailed
             }
             .eraseToAnyPublisher()
     }
@@ -75,7 +71,7 @@ public class NetworkService: Service {
                     .setFailureType(to: NetworkError.self)
                     .eraseToAnyPublisher()
         case .requestParameters(let bodyParameters, let urlParameters):
-            return configureParameters(bodyParameters: bodyParameters, urlParameters:                                    urlParameters, request: request)
+            return configureParameters(bodyParameters: bodyParameters, urlParameters: urlParameters, request: request)
                                        .eraseToAnyPublisher()
         case .requestParametersAndHeaders(let bodyParameters, let urlParameters, let additionalHeaders):
             log(.debug, "AdditionalHeaders ->\(String(describing: bodyParameters))")
@@ -92,8 +88,8 @@ public class NetworkService: Service {
     private func configureParameters(bodyParameters: Parameters?,
                                      urlParameters: Parameters?,
                                      request: URLRequest) -> AnyPublisher<URLRequest, NetworkError> {
-        log(.debug, "BodyParameters ->\(String(describing: bodyParameters))")
-        log(.debug, "URLParameters ->\(String(describing: urlParameters))")
+        log(.debug, "BodyParameters -> \(String(describing: bodyParameters))")
+        log(.debug, "URLParameters -> \(String(describing: urlParameters))")
         return URLParameterEncoder.encode(request: request, with: urlParameters)
             .flatMap { request in
                 JSONParameterEncoder.encode(request: request, with: bodyParameters)

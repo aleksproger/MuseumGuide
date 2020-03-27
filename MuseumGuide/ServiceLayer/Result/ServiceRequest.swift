@@ -6,8 +6,8 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
-import Foundation
-
-enum ServiceRequest<T> {
-    case locationRequest
-}
+//import Foundation
+//
+//enum ServiceRequest<T> {
+//    case locationRequest
+//}

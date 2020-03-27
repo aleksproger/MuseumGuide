@@ -20,6 +20,7 @@ public enum LogTag: String {
     case request
     case networkService
     case parameterEncoder
+    case networkManager
 }
 
 public enum LogLevel: Int {

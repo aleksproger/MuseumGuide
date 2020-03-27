@@ -8,9 +8,10 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
 protocol MapEventHandler: ViewControllerEventHandler {
-    func setLocation(location: CLLocation)
+    func handleMapTap(sender: UITapGestureRecognizer)
 }
 
 protocol MapViewBehavior: class {

@@ -14,14 +14,8 @@ final class MapPart: DIPart {
         container.register(MapRouter.init(view:errorHandler:))
             .lifetime(.objectGraph)
         
-        container.register(MapPresenter.init(view:router:events:effects:))
+        container.register(MapPresenter.init(view:router:))
             .as(MapEventHandler.self)
-            .lifetime(.objectGraph)
-        
-        container.register(MapEvents.init)
-            .lifetime(.objectGraph)
-        
-        container.register(MapEffects.init)
             .lifetime(.objectGraph)
         
         
