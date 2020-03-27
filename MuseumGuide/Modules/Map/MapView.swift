@@ -24,6 +24,7 @@ class MapViewController: BaseViewController, MapViewBehavior {
         handler.didLoad()
     }
     
+    //MARK: - Methods
     
     @IBAction func handleMapTap(_ sender: UITapGestureRecognizer) {
         handler.handleMapTap(sender: sender)

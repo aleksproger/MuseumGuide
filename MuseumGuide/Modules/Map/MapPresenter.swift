@@ -14,12 +14,13 @@ import Mapbox
 class MapPresenter: NSObject, MapEventHandler {
     weak var view: MapViewController!
     var router: MapRouter
-    let networkService = NetworkManager()
+    private let networkManager: NetworkManager
     private var subscriptions = Set<AnyCancellable>()
     
-    init(view: MapViewController, router: MapRouter) {
+    init(view: MapViewController, router: MapRouter, networkManager: NetworkManager) {
         self.view = view
         self.router = router
+        self.networkManager = networkManager
     }
     
     func handleMapTap(sender: UITapGestureRecognizer) {
@@ -70,7 +71,7 @@ extension MapPresenter: MGLMapViewDelegate {
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
-        networkService.getMuseums()
+        networkManager.getMuseums()
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     self.log(.debug, "Error -> \(error.errorDescription ?? .emptyLine)")
@@ -100,6 +101,7 @@ extension MapPresenter: MGLMapViewDelegate {
 //MARK: - Private methods
 
 private extension MapPresenter {
+    
     private func addItemsToMap(features: [MGLPointFeature]) {
         guard let style = view.mapView.style else { return }
         let source = MGLShapeSource(identifier: "museums", features: features, options: nil)

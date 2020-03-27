@@ -40,5 +40,9 @@ private class ServicePart: DIPart {
     static func load(container: DIContainer) {
         container.register(LocationService.init)
             .lifetime(.single)
+        container.register(NetworkService.init)
+            .lifetime(.single)
+        container.register(NetworkManager.init)
+            .lifetime(.single)
     }
 }

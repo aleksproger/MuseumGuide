@@ -12,9 +12,13 @@ import Combine
 class NetworkManager: Loggable {
     public var defaultLoggingTag: LogTag { .networkManager }
     
-    let environment: NetworkEnvironment = .production
-    let networkService = NetworkService()
+    private let environment: NetworkEnvironment = .production
+    private let networkService: NetworkService
     private var subscriptions = Set<AnyCancellable>()
+    
+    init(networkService: NetworkService) {
+        self.networkService = networkService
+    }
     
     enum NetworkResponseError: String, Error {
         case authenticationError = "You need to be authenticated first."

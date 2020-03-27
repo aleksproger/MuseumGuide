@@ -14,15 +14,13 @@ final class MapPart: DIPart {
         container.register(MapRouter.init(view:errorHandler:))
             .lifetime(.objectGraph)
         
-        container.register(MapPresenter.init(view:router:))
+        container.register(MapPresenter.init(view:router:networkManager:))
             .as(MapEventHandler.self)
             .lifetime(.objectGraph)
-        
         
         container.register {
             MapViewController.loadFromStoryboard(storyboardType: .main, identifier: String(describing: MapViewController.self))
         }
-//            .as(MapViewBehavior.self)
             .injection(cycle: true, \.handler)
             .lifetime(.objectGraph)
     }
