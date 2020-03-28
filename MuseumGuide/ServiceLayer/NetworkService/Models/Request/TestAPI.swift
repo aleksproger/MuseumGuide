@@ -91,12 +91,16 @@ struct Museum: Codable {
     let name: String
     let lat: Double
     let lon: Double
+    let type: String
+    let description: String
     enum MuseumCodingKeys: String, CodingKey {
-        case name, lat, lon
+        case name, lat, lon, type, description
     }
     init(from decoder: Decoder) throws {
         let museumContainer = try decoder.container(keyedBy: MuseumCodingKeys.self)
         name = try museumContainer.decode(String.self, forKey: .name)
+        type = try museumContainer.decode(String.self, forKey: .type)
+        description = try museumContainer.decode(String.self, forKey: .description)
         let lattitude = try museumContainer.decode(String.self, forKey: .lat)
         let longtitude = try museumContainer.decode(String.self, forKey: .lon)
         lat = Double(lattitude)!

@@ -84,7 +84,7 @@ extension MapPresenter: MGLMapViewDelegate {
                     feature.coordinate = CLLocationCoordinate2D(latitude: museum.lat, longitude: museum.lon)
                     feature.title = museum.name
                     feature.attributes = [
-                        "description": "Описание музея",
+                        "description": museum.description,
                         "name": museum.name
                     ]
                     print("[LOG:]",feature.title)
@@ -172,7 +172,8 @@ private extension MapPresenter {
         let point = MGLPointFeature()
         point.title = feature.attributes["name"] as? String
         point.coordinate = feature.coordinate
-        cellInfos = [MuseumCell.Info(title: point.title!, subtitle: "Описание музея")]
+        let description = feature.attributes["description"] as! String
+        cellInfos = [MuseumCell.Info(title: point.title!, subtitle: description)]
         view.mapView.selectAnnotation(point, animated: true, completionHandler: nil)
         showInfo(title: "Музей")
 
