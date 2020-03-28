@@ -43,8 +43,12 @@ class MapViewController: BaseViewController, MapViewBehavior {
         tableView.backgroundColor = .white
         tableView.dataSource = handler
         tableView.register(MuseumCell.self, forCellReuseIdentifier: "\(MuseumCell.self)")
-        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.register(ContactsCell.self, forCellReuseIdentifier: "\(ContactsCell.self)")
+
+        //TODO: Initialy was .never
+        tableView.contentInsetAdjustmentBehavior = .automatic
         tableView.allowsSelection = false
+        tableView.showsVerticalScrollIndicator = false
 
         drawerView = DrawerView(scrollView: tableView, delegate: handler, headerView: headerView)
         drawerView.middlePosition = .fromBottom(Layout.middleInsetFromBottom)

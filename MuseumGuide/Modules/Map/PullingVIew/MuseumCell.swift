@@ -100,16 +100,17 @@ class MuseumCell: UITableViewCell {
 
 extension MuseumCell {
     
-    static func makeDefaultInfos() -> [MuseumCell.Info] {
+    static func makeDefaultInfos() -> [CellModel] {
         return [
-            MuseumCell.Info(title: "Circle",
-                subtitle: "A circle is a simple closed shape. It is the set of all points in a plane that are at a given distance from a given point, the centre; equivalently it is the curve traced out by a point that moves so that its distance from a given point is constant."),
+            CellModel.info(MuseumCell.Info(title: "Circle",
+                subtitle: "A circle is a simple closed shape. It is the set of all points in a plane that are at a given distance from a given point, the centre; equivalently it is the curve traced out by a point that moves so that its distance from a given point is constant.")),
             
-            MuseumCell.Info(title: "Triangle",
-                            subtitle: "A triangle is a polygon with three edges and three vertices. It is one of the basic shapes in geometry."),
+            CellModel.info(MuseumCell.Info(title: "Triangle",
+                            subtitle: "A triangle is a polygon with three edges and three vertices. It is one of the basic shapes in geometry.")),
             
-            MuseumCell.Info(title: "Square",
-            subtitle: "In geometry, a square is a regular quadrilateral, which means that it has four equal sides and four equal angles (90-degree angles, or (100-gradian angles or right angles).")
+            CellModel.info(MuseumCell.Info(title: "Square",
+            subtitle: "In geometry, a square is a regular quadrilateral, which means that it has four equal sides and four equal angles (90-degree angles, or (100-gradian angles or right angles)."))
+
             
         ]
     }

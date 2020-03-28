@@ -14,7 +14,9 @@ import Mapbox
 class MapPresenter: NSObject, MapEventHandler {
     weak var view: MapViewController!
     var router: MapRouter
-    private var cellInfos = MuseumCell.makeDefaultInfos()
+    private var cellInfos: [CellModel] = MuseumCell.makeDefaultInfos() + ContactsCell.makeDefaultInfos()
+//    private var cellInfos = MuseumCell.makeDefaultInfos()
+//    private var contactsInfos = ContactsCell.makeDefaultInfos()
     private let networkManager: NetworkManager
     private var subscriptions = Set<AnyCancellable>()
     
@@ -170,10 +172,11 @@ private extension MapPresenter {
     
     private func showCallout(feature: MGLPointFeature) {
         let point = MGLPointFeature()
-        point.title = feature.attributes["name"] as? String
         point.coordinate = feature.coordinate
+        let title = feature.attributes["name"] as! String
         let description = feature.attributes["description"] as! String
-        cellInfos = [MuseumCell.Info(title: point.title!, subtitle: description)]
+        cellInfos = [CellModel.info(MuseumCell.Info(title: title, subtitle: description))]
+        cellInfos.append(CellModel.contacts(ContactsCell.Info(address: "Александровский парк, 7 м. Горьковская, Санкт-Петербург", phone: "7-999-231-88-07")))
         view.mapView.selectAnnotation(point, animated: true, completionHandler: nil)
         showInfo(title: "Музей")
 
@@ -200,14 +203,24 @@ extension MapPresenter: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "\(MuseumCell.self)", for: indexPath)
-        
-        if let cell = cell as? MuseumCell {
-            cell.update(with: cellInfos[indexPath.row])
+        let cellModel = cellInfos[indexPath.row]
+        switch cellModel {
+        case .contacts(let contacts):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "\(ContactsCell.self)", for: indexPath) as! ContactsCell
+            cell.update(with: contacts)
+            return cell
+
+        case .info(let museum):
+            let cell = tableView.dequeueReusableCell(withIdentifier: "\(MuseumCell.self)", for: indexPath) as! MuseumCell
+            cell.update(with: museum)
+            return cell
+
         }
+//        if let cell = cell as? MuseumCell {
+//            cell.update(with: cellInfos[indexPath.row])
+//        }
         
         
-        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -221,4 +234,9 @@ extension MapPresenter: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+enum CellModel {
+    case info(MuseumCell.Info)
+    case contacts(ContactsCell.Info)
 }

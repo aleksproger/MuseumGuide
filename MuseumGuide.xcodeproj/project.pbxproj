@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA006FC1242FE8A5007F4D02 /* String+NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC0242FE8A5007F4D02 /* String+NumberFormatter.swift */; };
 		FA07C724242A80E600CF2A01 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */; };
 		FA07C726242B717400CF2A01 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C725242B717400CF2A01 /* NetworkManager.swift */; };
 		FA07C729242B727200CF2A01 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */; };
@@ -33,6 +34,7 @@
 		FA578EC7242931540056D1B0 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA578EC6242931540056D1B0 /* MapError.swift */; };
 		FA578EC92429315E0056D1B0 /* MapState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA578EC82429315E0056D1B0 /* MapState.swift */; };
 		FA578ECB242932AB0056D1B0 /* MapEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA578ECA242932AB0056D1B0 /* MapEvents.swift */; };
+		FA5D3934242FAE1E00A8DD3E /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D3933242FAE1E00A8DD3E /* ContactsCell.swift */; };
 		FA5E0037242E4D93005BC5B1 /* MuseumHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */; };
 		FA5E003A242E4F54005BC5B1 /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */; };
 		FA5E003C242E5429005BC5B1 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E003B242E5429005BC5B1 /* TestData.swift */; };
@@ -101,6 +103,7 @@
 		17422BDE0F1ED4EC57387692 /* Pods_MuseumGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MuseumGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B3A5D8746865A8DDB8CC4A0 /* Pods-MuseumGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseumGuide.debug.xcconfig"; path = "Target Support Files/Pods-MuseumGuide/Pods-MuseumGuide.debug.xcconfig"; sourceTree = "<group>"; };
 		5D764358FAB8A04773B54F47 /* Pods-MuseumGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseumGuide.release.xcconfig"; path = "Target Support Files/Pods-MuseumGuide/Pods-MuseumGuide.release.xcconfig"; sourceTree = "<group>"; };
+		FA006FC0242FE8A5007F4D02 /* String+NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NumberFormatter.swift"; sourceTree = "<group>"; };
 		FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		FA07C725242B717400CF2A01 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
@@ -129,6 +132,7 @@
 		FA578EC6242931540056D1B0 /* MapError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapError.swift; sourceTree = "<group>"; };
 		FA578EC82429315E0056D1B0 /* MapState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapState.swift; sourceTree = "<group>"; };
 		FA578ECA242932AB0056D1B0 /* MapEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapEvents.swift; sourceTree = "<group>"; };
+		FA5D3933242FAE1E00A8DD3E /* ContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
 		FA5E000C242D35D3005BC5B1 /* Saint-Petersburg,Russia.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "Saint-Petersburg,Russia.gpx"; path = "MuseumGuide/SupportingFiles/Saint-Petersburg,Russia.gpx"; sourceTree = SOURCE_ROOT; };
 		FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumHeaderView.swift; sourceTree = "<group>"; };
 		FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
@@ -442,6 +446,7 @@
 				FA5E003B242E5429005BC5B1 /* TestData.swift */,
 				FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */,
 				FA5E003D242F5B6D005BC5B1 /* MuseumCell.swift */,
+				FA5D3933242FAE1E00A8DD3E /* ContactsCell.swift */,
 			);
 			path = PullingVIew;
 			sourceTree = "<group>";
@@ -513,6 +518,7 @@
 				FA9DFF7C241E67F7008A3C4D /* UIWindow+VisibleVc.swift */,
 				FA9DFF7E241E6BD2008A3C4D /* UIApplication+VisibleVC.swift */,
 				FA500857242BEA37001505E7 /* String+EmtyLine.swift */,
+				FA006FC0242FE8A5007F4D02 /* String+NumberFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -746,6 +752,7 @@
 				FA95FEE224182F87005C0832 /* MapAssembly.swift in Sources */,
 				FAB010A9242662D30015D43E /* EventSource.swift in Sources */,
 				FA9A2659241E303100386AE6 /* ContainerRouter.swift in Sources */,
+				FA006FC1242FE8A5007F4D02 /* String+NumberFormatter.swift in Sources */,
 				FA500858242BEA37001505E7 /* String+EmtyLine.swift in Sources */,
 				FA95FED5241828D5005C0832 /* AppFramework.swift in Sources */,
 				FAF387C52429496A00D1F5AF /* APIRequest.swift in Sources */,
@@ -783,6 +790,7 @@
 				FA578EBE24292A790056D1B0 /* MapViewState.swift in Sources */,
 				FA95FEDE24182B1D005C0832 /* Loggable.swift in Sources */,
 				FA9A265D241E318400386AE6 /* PushRouter.swift in Sources */,
+				FA5D3934242FAE1E00A8DD3E /* ContactsCell.swift in Sources */,
 				FA9A2667241E35C100386AE6 /* ViewControllerEventHandler.swift in Sources */,
 				FAB01098242640D60015D43E /* LocationService.swift in Sources */,
 				FA578EC124292E3E0056D1B0 /* UserAnnotationView.swift in Sources */,
