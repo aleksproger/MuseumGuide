@@ -36,6 +36,7 @@
 		FA5E0037242E4D93005BC5B1 /* MuseumHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */; };
 		FA5E003A242E4F54005BC5B1 /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */; };
 		FA5E003C242E5429005BC5B1 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E003B242E5429005BC5B1 /* TestData.swift */; };
+		FA5E003E242F5B6D005BC5B1 /* MuseumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E003D242F5B6D005BC5B1 /* MuseumCell.swift */; };
 		FA730207241975EA00BFF567 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA730206241975EA00BFF567 /* ContainerView.swift */; };
 		FA7302092419762800BFF567 /* ContainerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7302082419762800BFF567 /* ContainerAssembly.swift */; };
 		FA73021324197BA500BFF567 /* BottomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73021224197BA500BFF567 /* BottomTabBar.swift */; };
@@ -132,6 +133,7 @@
 		FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumHeaderView.swift; sourceTree = "<group>"; };
 		FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
 		FA5E003B242E5429005BC5B1 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		FA5E003D242F5B6D005BC5B1 /* MuseumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumCell.swift; sourceTree = "<group>"; };
 		FA730206241975EA00BFF567 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		FA7302082419762800BFF567 /* ContainerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerAssembly.swift; sourceTree = "<group>"; };
 		FA73021224197BA500BFF567 /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
@@ -437,8 +439,9 @@
 			isa = PBXGroup;
 			children = (
 				FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */,
-				FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */,
 				FA5E003B242E5429005BC5B1 /* TestData.swift */,
+				FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */,
+				FA5E003D242F5B6D005BC5B1 /* MuseumCell.swift */,
 			);
 			path = PullingVIew;
 			sourceTree = "<group>";
@@ -748,6 +751,7 @@
 				FAF387C52429496A00D1F5AF /* APIRequest.swift in Sources */,
 				FA9A265F241E31FE00386AE6 /* ModalRouter.swift in Sources */,
 				FA95FEEA2418C049005C0832 /* WindowRouter.swift in Sources */,
+				FA5E003E242F5B6D005BC5B1 /* MuseumCell.swift in Sources */,
 				FA7302092419762800BFF567 /* ContainerAssembly.swift in Sources */,
 				FAB010B12427D4460015D43E /* MapRouter.swift in Sources */,
 				FA9A2661241E333400386AE6 /* VIPERRouter.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import pop
 
 final class MuseumHeaderView: UIView {
     private let button = UIButton(type: .system)
@@ -60,7 +61,16 @@ final class MuseumHeaderView: UIView {
         separator.heightAnchor.constraint(equalToConstant: 1 / UIScreen.main.scale).isActive = true
     }
     
+    private func bounceButton() {
+        let animation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
+        animation.velocity = CGPoint(x: 8, y: 8)
+        animation.springBounciness = 20
+        animation.fromValue = CGPoint(x: 1.1, y: 1.1)
+        animation.toValue = CGPoint(x: 1, y: 1)
+        button.layer.pop_add(animation, forKey: kPOPLayerScaleXY)
+    }
+    
     @objc private func handleButton() {
-        
+        //bounceButton()
     }
 }

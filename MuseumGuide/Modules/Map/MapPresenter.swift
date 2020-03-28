@@ -14,6 +14,7 @@ import Mapbox
 class MapPresenter: NSObject, MapEventHandler {
     weak var view: MapViewController!
     var router: MapRouter
+    private var cellInfos = MuseumCell.makeDefaultInfos()
     private let networkManager: NetworkManager
     private var subscriptions = Set<AnyCancellable>()
     
@@ -68,8 +69,6 @@ extension MapPresenter: MGLMapViewDelegate {
                 mapView.resetNorth()
             }
             mapView.deselectAnnotation(annotation, animated: false)
-        } else {
-            showInfo()
         }
     }
     
@@ -85,6 +84,7 @@ extension MapPresenter: MGLMapViewDelegate {
                     feature.coordinate = CLLocationCoordinate2D(latitude: museum.lat, longitude: museum.lon)
                     feature.title = museum.name
                     feature.attributes = [
+                        "description": "Описание музея",
                         "name": museum.name
                     ]
                     print("[LOG:]",feature.title)
@@ -95,7 +95,7 @@ extension MapPresenter: MGLMapViewDelegate {
     }
     
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
-        return true
+        return false
     }
     
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
@@ -128,7 +128,7 @@ private extension MapPresenter {
         symbols.iconOpacity = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
                                            [5.9: 0, 6: 1])
         
-        symbols.text = NSExpression(forKeyPath: "name")
+//        symbols.text = NSExpression(forKeyPath: "name")
         symbols.textColor = symbols.iconColor
         symbols.textFontSize = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
                                             [10: 10, 16: 16])
@@ -172,14 +172,52 @@ private extension MapPresenter {
         let point = MGLPointFeature()
         point.title = feature.attributes["name"] as? String
         point.coordinate = feature.coordinate
+        cellInfos = [MuseumCell.Info(title: point.title!, subtitle: "Описание музея")]
         view.mapView.selectAnnotation(point, animated: true, completionHandler: nil)
+        showInfo(title: "Музей")
+
     }
     
-    private func showInfo() {
-        view.showInfo()
+    private func showInfo(title: String) {
+        let info = MuseumHeaderView.Info(title: title)
+        view.showInfo(info: info)
     }
     
     private func hideInfo() {
         view.hideInfo()
+    }
+}
+
+
+extension MapPresenter: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellInfos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "\(MuseumCell.self)", for: indexPath)
+        
+        if let cell = cell as? MuseumCell {
+            cell.update(with: cellInfos[indexPath.row])
+        }
+        
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return MuseumCell.Layout.estimatedHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

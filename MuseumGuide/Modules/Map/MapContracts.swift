@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import UIKit
 
-protocol MapEventHandler: ViewControllerEventHandler {
+protocol MapEventHandler: ViewControllerEventHandler, UITableViewDelegate, UITableViewDataSource {
     func handleMapTap(sender: UITapGestureRecognizer)
 }
 

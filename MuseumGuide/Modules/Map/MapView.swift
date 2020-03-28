@@ -16,7 +16,6 @@ class MapViewController: BaseViewController, MapViewBehavior {
     private let tableView = UITableView()
     private var drawerView: DrawerView!
     private var isFirstLayout = true
-    private let cellInfos = ShapeCell.makeDefaultInfos()
     let headerView = MuseumHeaderView()
     var handler: MapEventHandler!
     
@@ -42,11 +41,12 @@ class MapViewController: BaseViewController, MapViewBehavior {
         headerView.heightAnchor.constraint(equalToConstant: Layout.headerHeight).isActive = true
 
         tableView.backgroundColor = .white
-        tableView.dataSource = self
-        tableView.register(ShapeCell.self, forCellReuseIdentifier: "\(ShapeCell.self)")
+        tableView.dataSource = handler
+        tableView.register(MuseumCell.self, forCellReuseIdentifier: "\(MuseumCell.self)")
         tableView.contentInsetAdjustmentBehavior = .never
+        tableView.allowsSelection = false
 
-        drawerView = DrawerView(scrollView: tableView, delegate: self, headerView: headerView)
+        drawerView = DrawerView(scrollView: tableView, delegate: handler, headerView: headerView)
         drawerView.middlePosition = .fromBottom(Layout.middleInsetFromBottom)
         drawerView.bottomPosition = .init(offset: Layout.bottomInset, edge: .bottom, point: .drawerOrigin, ignoresSafeArea: false, ignoresContentSize: false)
         drawerView.cornerRadius = Layout.cornerRadius
@@ -85,8 +85,10 @@ class MapViewController: BaseViewController, MapViewBehavior {
         handler.handleMapTap(sender: sender)
     }
     
-    func showInfo() {
-        //headerView.update(with: info)
+    func showInfo(info: MuseumHeaderView.Info) {
+        headerView.update(with: info)
+        //tableView.reloadData()
+        tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         drawerView.setState(.middle, animated: true)
     }
     
@@ -95,34 +97,3 @@ class MapViewController: BaseViewController, MapViewBehavior {
     }
 }
 
-extension MapViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellInfos.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "\(ShapeCell.self)", for: indexPath)
-        
-        if let cell = cell as? ShapeCell {
-            cell.update(with: cellInfos[indexPath.row])
-        }
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return ShapeCell.Layout.estimatedHeight
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
