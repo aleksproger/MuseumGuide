@@ -31,7 +31,7 @@ final class MuseumHeaderView: UIView {
     
     func update(with info: Info) {
         button.setTitle(info.title, for: .normal)
-        button.titleLabel?.hideSkeleton(transition: .crossDissolve(0.25))
+        button.titleLabel?.hideSkeleton(transition: .crossDissolve(0.5))
     }
     
     private func setupButton() {

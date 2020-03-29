@@ -16,7 +16,6 @@ class MapPresenter: NSObject, MapEventHandler {
     var router: MapRouter
     let tableViewWorker: TableViewWorker
     let pullingViewWorker: PullingViewWorker
-    private var cellInfos: [CellModel] = MuseumCell.makeDefaultInfos() + ContactsCell.makeDefaultInfos()
     private let networkManager: NetworkManager
     private var subscriptions = Set<AnyCancellable>()
     private var features: [MGLPointFeature]?

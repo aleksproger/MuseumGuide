@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 
-enum CellModel {
-    case info(MuseumCell.Info)
-    case contacts(ContactsCell.Info)
-}
-
 class InformationTableViewWorker: NSObject, TableViewWorker {
     
     private var cellInfos: [CellModel] = MuseumCell.makeDefaultInfos() + ContactsCell.makeDefaultInfos()
