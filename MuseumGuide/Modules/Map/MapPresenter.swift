@@ -19,6 +19,16 @@ class MapPresenter: NSObject, MapEventHandler {
 //    private var contactsInfos = ContactsCell.makeDefaultInfos()
     private let networkManager: NetworkManager
     private var subscriptions = Set<AnyCancellable>()
+    private var features: [MGLPointFeature]?
+    private var mapFinishedAnimating = false {
+        didSet {
+            if oldValue == false {
+                guard let features = features, let userCoordinates = view.mapView.userLocation?.coordinate else { return }
+                self.tryProcessClosestFeature(possibleFeatures: features, touchLocation: CLLocation(latitude: userCoordinates.latitude, longitude: userCoordinates.longitude))
+            }
+        }
+    }
+
     
     init(view: MapViewController, router: MapRouter, networkManager: NetworkManager) {
         self.view = view
@@ -74,6 +84,11 @@ extension MapPresenter: MGLMapViewDelegate {
         }
     }
     
+    func mapViewDidBecomeIdle(_ mapView: MGLMapView) {
+        mapFinishedAnimating = true
+        log(.debug, "Did become idle.")
+    }
+
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         networkManager.getMuseums()
             .sink(receiveCompletion: { completion in
@@ -89,9 +104,9 @@ extension MapPresenter: MGLMapViewDelegate {
                         "description": museum.description,
                         "name": museum.name
                     ]
-                    print("[LOG:]",feature.title)
                     return feature
                 }
+                self.features = features
                 self.addItemsToMap(features: features)
             }).store(in: &subscriptions)
     }

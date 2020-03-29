@@ -19,6 +19,8 @@ class MapViewController: BaseViewController, MapViewBehavior {
     let headerView = MuseumHeaderView()
     var handler: MapEventHandler!
     
+
+    
     private struct Layout {
         static let topInsetPortrait: CGFloat = 36
         static let topInsetLandscape: CGFloat = 20
@@ -39,6 +41,7 @@ class MapViewController: BaseViewController, MapViewBehavior {
         setupMapView()
         headerView.translatesAutoresizingMaskIntoConstraints = false
         headerView.heightAnchor.constraint(equalToConstant: Layout.headerHeight).isActive = true
+        headerView.isSkeletonable = true
 
         tableView.backgroundColor = .white
         tableView.dataSource = handler
@@ -58,10 +61,13 @@ class MapViewController: BaseViewController, MapViewBehavior {
         drawerView.layer.shadowRadius = Layout.shadowRadius
         drawerView.layer.shadowOpacity = Layout.shadowOpacity
         drawerView.layer.shadowOffset = Layout.shadowOffset
+        drawerView.isUserInteractionEnabled = false
 
         view.addSubview(drawerView)
         setupLayout()
+        headerView.showAnimatedGradientSkeleton()
         drawerView.setState(.bottom, animated: true)
+        drawerView.setState(.inactive)
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -94,6 +100,7 @@ class MapViewController: BaseViewController, MapViewBehavior {
         //tableView.reloadData()
         tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         drawerView.setState(.middle, animated: true)
+        drawerView.setState(.active)
     }
     
     func hideInfo() {
@@ -101,3 +108,19 @@ class MapViewController: BaseViewController, MapViewBehavior {
     }
 }
 
+extension DrawerView {
+    enum InfoViewState {
+        case inactive, active
+    }
+    
+    func setState(_ state: InfoViewState) {
+        switch state {
+        case .inactive:
+            self.headerView.isUserInteractionEnabled = false
+            self.isUserInteractionEnabled = false
+        case .active:
+            self.headerView.isUserInteractionEnabled = true
+            self.isUserInteractionEnabled = true
+        }
+    }
+}

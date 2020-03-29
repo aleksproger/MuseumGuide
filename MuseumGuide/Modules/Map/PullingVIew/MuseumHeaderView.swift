@@ -8,6 +8,7 @@
 
 import UIKit
 import pop
+import SkeletonView
 
 final class MuseumHeaderView: UIView {
     private let button = UIButton(type: .system)
@@ -30,18 +31,22 @@ final class MuseumHeaderView: UIView {
     
     func update(with info: Info) {
         button.setTitle(info.title, for: .normal)
+        button.titleLabel?.hideSkeleton(transition: .crossDissolve(0.25))
     }
     
     private func setupButton() {
         addSubview(button)
         button.tintColor = .black
         button.backgroundColor = .white
-        button.setTitle("Museum info", for: .normal)
+        button.setTitle("Информация", for: .normal)
         button.titleLabel?.font = .boldSystemFont(ofSize: 24)
         button.contentHorizontalAlignment = .left
         button.contentEdgeInsets.left = 16
         button.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
         button.isUserInteractionEnabled = false
+        button.isSkeletonable = true
+        button.titleLabel?.isSkeletonable = true
+
 
         button.translatesAutoresizingMaskIntoConstraints = false
         button.topAnchor.constraint(equalTo: topAnchor).isActive = true

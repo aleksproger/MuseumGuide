@@ -10,4 +10,5 @@ target 'MuseumGuide' do
 	pod 'Mapbox-iOS-SDK'
 	pod 'UltraDrawerView'
 	pod 'pop', '~> 1.0'
+	pod "SkeletonView"
 end
