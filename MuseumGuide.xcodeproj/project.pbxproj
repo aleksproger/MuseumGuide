@@ -11,7 +11,7 @@
 		FA006FC32430F245007F4D02 /* InformationTableViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC22430F245007F4D02 /* InformationTableViewWorker.swift */; };
 		FA006FC62430F798007F4D02 /* InformationViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC52430F798007F4D02 /* InformationViewWorker.swift */; };
 		FA006FC92430FD57007F4D02 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC82430FD57007F4D02 /* CellModel.swift */; };
-		FA006FCC24311F92007F4D02 /* MapPresenterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FCB24311F92007F4D02 /* MapPresenterState.swift */; };
+		FA006FCE243124B8007F4D02 /* DrawerView+InteractionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FCD243124B8007F4D02 /* DrawerView+InteractionState.swift */; };
 		FA07C724242A80E600CF2A01 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */; };
 		FA07C726242B717400CF2A01 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C725242B717400CF2A01 /* NetworkManager.swift */; };
 		FA07C729242B727200CF2A01 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */; };
@@ -111,7 +111,7 @@
 		FA006FC22430F245007F4D02 /* InformationTableViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewWorker.swift; sourceTree = "<group>"; };
 		FA006FC52430F798007F4D02 /* InformationViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewWorker.swift; sourceTree = "<group>"; };
 		FA006FC82430FD57007F4D02 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
-		FA006FCB24311F92007F4D02 /* MapPresenterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenterState.swift; sourceTree = "<group>"; };
+		FA006FCD243124B8007F4D02 /* DrawerView+InteractionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrawerView+InteractionState.swift"; sourceTree = "<group>"; };
 		FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		FA07C725242B717400CF2A01 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
@@ -234,15 +234,6 @@
 				FA006FC82430FD57007F4D02 /* CellModel.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		FA006FCA24311F69007F4D02 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				FAB010AE2427D43D0015D43E /* MapPresenter.swift */,
-				FA006FCB24311F92007F4D02 /* MapPresenterState.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		FA07C727242B726400CF2A01 /* Models */ = {
@@ -524,7 +515,7 @@
 				FA578EC5242931320056D1B0 /* State */,
 				FA95FED724182A12005C0832 /* MapView.swift */,
 				FA95FEE124182F87005C0832 /* MapAssembly.swift */,
-				FA006FCA24311F69007F4D02 /* Presenter */,
+				FAB010AE2427D43D0015D43E /* MapPresenter.swift */,
 				FAB010B02427D4460015D43E /* MapRouter.swift */,
 				FAB010B22427D4C90015D43E /* MapContracts.swift */,
 				FA5E0038242E4F22005BC5B1 /* PullingVIew */,
@@ -555,6 +546,7 @@
 				FA9DFF7E241E6BD2008A3C4D /* UIApplication+VisibleVC.swift */,
 				FA500857242BEA37001505E7 /* String+EmtyLine.swift */,
 				FA006FC0242FE8A5007F4D02 /* String+NumberFormatter.swift */,
+				FA006FCD243124B8007F4D02 /* DrawerView+InteractionState.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -775,6 +767,7 @@
 				FA5E003A242E4F54005BC5B1 /* ShapeCell.swift in Sources */,
 				FA9A2657241E302100386AE6 /* ContainerPresenter.swift in Sources */,
 				FA07C72C242B729600CF2A01 /* NetworkError.swift in Sources */,
+				FA006FCE243124B8007F4D02 /* DrawerView+InteractionState.swift in Sources */,
 				FA578EC42429310E0056D1B0 /* MapEffects.swift in Sources */,
 				FA07C734242BDF7F00CF2A01 /* ParameterEncoder.swift in Sources */,
 				FA07C737242BDFC300CF2A01 /* Response.swift in Sources */,
@@ -819,7 +812,6 @@
 				FA578ECB242932AB0056D1B0 /* MapEvents.swift in Sources */,
 				FA9A2663241E339200386AE6 /* ErrorHandling.swift in Sources */,
 				FAB010A524264A5B0015D43E /* LocationEffects.swift in Sources */,
-				FA006FCC24311F92007F4D02 /* MapPresenterState.swift in Sources */,
 				FA9A265B241E305600386AE6 /* ContainerContracts.swift in Sources */,
 				FAF387C2242934CD00D1F5AF /* NetworkService.swift in Sources */,
 				FA56A7382418113200FAC2CE /* BaseNavigationController.swift in Sources */,

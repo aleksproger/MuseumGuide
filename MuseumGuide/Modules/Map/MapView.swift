@@ -14,12 +14,12 @@ class MapViewController: BaseViewController, MapViewBehavior {
     @IBOutlet var mapView: MGLMapView!
     @IBOutlet var mapTap: UITapGestureRecognizer!
     private let tableView = UITableView()
-    private var drawerView: DrawerView!
+    
+    private var infoView: DrawerView!
     private var isFirstLayout = true
+    
     let headerView = MuseumHeaderView()
     var handler: MapEventHandler!
-    
-
     
     private struct Layout {
         static let topInsetPortrait: CGFloat = 36
@@ -37,38 +37,8 @@ class MapViewController: BaseViewController, MapViewBehavior {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        handler.didLoad()
-        setupMapView()
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        headerView.heightAnchor.constraint(equalToConstant: Layout.headerHeight).isActive = true
-        headerView.isSkeletonable = true
-
-        tableView.backgroundColor = .white
-        tableView.dataSource = handler.tableViewWorker
-        tableView.register(MuseumCell.self, forCellReuseIdentifier: "\(MuseumCell.self)")
-        tableView.register(ContactsCell.self, forCellReuseIdentifier: "\(ContactsCell.self)")
-
-        //TODO: Initialy was .never
-        tableView.contentInsetAdjustmentBehavior = .automatic
-        tableView.allowsSelection = false
-        tableView.showsVerticalScrollIndicator = false
-
-        drawerView = DrawerView(scrollView: tableView, delegate: handler.tableViewWorker, headerView: headerView)
-        drawerView.addListener(handler.pullingViewWorker)
-        drawerView.middlePosition = .fromBottom(Layout.middleInsetFromBottom)
-        drawerView.bottomPosition = .init(offset: Layout.bottomInset, edge: .bottom, point: .drawerOrigin, ignoresSafeArea: false, ignoresContentSize: false)
-        drawerView.cornerRadius = Layout.cornerRadius
-        drawerView.containerView.backgroundColor = .white
-        drawerView.layer.shadowRadius = Layout.shadowRadius
-        drawerView.layer.shadowOpacity = Layout.shadowOpacity
-        drawerView.layer.shadowOffset = Layout.shadowOffset
-        drawerView.isUserInteractionEnabled = false
-
-        view.addSubview(drawerView)
+        setupViews()
         setupLayout()
-        headerView.showAnimatedGradientSkeleton()
-        drawerView.setState(.bottom, animated: true)
-        drawerView.setState(.inactive)
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -78,19 +48,6 @@ class MapViewController: BaseViewController, MapViewBehavior {
     }
     
     //MARK: - Methods
-    private func setupMapView() {
-        mapView.delegate = handler as? MGLMapViewDelegate
-        mapView.userTrackingMode = .followWithHeading
-        mapView.showsUserHeadingIndicator = true
-    }
-    
-    private func setupLayout() {
-        drawerView.translatesAutoresizingMaskIntoConstraints = false
-        drawerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        drawerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        drawerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        drawerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-    }
     
     @IBAction func handleMapTap(_ sender: UITapGestureRecognizer) {
         handler.handleMapTap(sender: sender)
@@ -98,53 +55,69 @@ class MapViewController: BaseViewController, MapViewBehavior {
     
     func showInfo(info: MuseumHeaderView.Info) {
         headerView.update(with: info)
-        //tableView.reloadData()
         tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
-        drawerView.setState(drawerView.interactionState.presentationType, animated: true)
-        drawerView.setState(.active)
+        infoView.setState(infoView.interactionState.presentationType, animated: true)
+        infoView.setState(.active)
     }
     
     func hideInfo() {
-        drawerView.setState(.bottom, animated: true)
+        infoView.setState(.bottom, animated: true)
     }
 }
 
-extension DrawerView {
-    enum InteractionState {
-        case inactive, active
-        
-        var presentationType: State {
-            switch self {
-            case .inactive:
-                return .bottom
-            default:
-                return .middle
-            }
-        }
+//MARK: - Layouts
+
+private extension MapViewController {
+    
+    private func setupLayout() {
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        infoView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        infoView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        infoView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        infoView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
     }
     
-    var interactionState: InteractionState {
-        get {
-            if !self.headerView.isUserInteractionEnabled, !self.isUserInteractionEnabled {
-                return .inactive
-            } else {
-                return .active
-            }
-        }
-        
-        set(state) {
-            setState(state)
-        }
+    func setupViews() {
+        setupMapView()
+        setupTableView()
+        setupHeaderView()
+        setupInfoView()
+    }
+    func setupMapView() {
+        mapView.delegate = handler as? MGLMapViewDelegate
+        mapView.userTrackingMode = .followWithHeading
+        mapView.showsUserHeadingIndicator = true
     }
     
-    func setState(_ state: InteractionState) {
-        switch state {
-        case .inactive:
-            self.headerView.isUserInteractionEnabled = false
-            self.isUserInteractionEnabled = false
-        case .active:
-            self.headerView.isUserInteractionEnabled = true
-            self.isUserInteractionEnabled = true
-        }
+    func setupTableView() {
+        tableView.backgroundColor = .white
+        tableView.dataSource = handler.tableViewWorker
+        tableView.register(MuseumCell.self, forCellReuseIdentifier: "\(MuseumCell.self)")
+        tableView.register(ContactsCell.self, forCellReuseIdentifier: "\(ContactsCell.self)")
+        //TODO: Initialy was .never
+        tableView.contentInsetAdjustmentBehavior = .automatic
+        tableView.allowsSelection = false
+        tableView.showsVerticalScrollIndicator = false
+    }
+    
+    func setupHeaderView() {
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.heightAnchor.constraint(equalToConstant: Layout.headerHeight).isActive = true
+        headerView.isSkeletonable = true
+    }
+    
+    func setupInfoView() {
+        infoView = DrawerView(scrollView: tableView, delegate: handler.tableViewWorker, headerView: headerView)
+        infoView.addListener(handler.pullingViewWorker)
+        infoView.middlePosition = .fromBottom(Layout.middleInsetFromBottom)
+        infoView.bottomPosition = .init(offset: Layout.bottomInset, edge: .bottom, point: .drawerOrigin, ignoresSafeArea: false, ignoresContentSize: false)
+        infoView.cornerRadius = Layout.cornerRadius
+        infoView.containerView.backgroundColor = .white
+        infoView.layer.shadowRadius = Layout.shadowRadius
+        infoView.layer.shadowOpacity = Layout.shadowOpacity
+        infoView.layer.shadowOffset = Layout.shadowOffset
+        infoView.isUserInteractionEnabled = false
+        view.addSubview(infoView)
+        infoView.setState(.inactive)
     }
 }
