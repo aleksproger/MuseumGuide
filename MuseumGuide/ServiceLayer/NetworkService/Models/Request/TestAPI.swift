@@ -87,7 +87,7 @@ extension MuseumAPI: APIRequest {
     }
 }
 
-struct Museum: Codable {
+struct Museum: Codable, Equatable {
     let name: String
     let lat: Double
     let lon: Double

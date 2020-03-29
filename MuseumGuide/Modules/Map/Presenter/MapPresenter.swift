@@ -6,6 +6,7 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import CoreLocation
 import Combine
@@ -14,20 +15,28 @@ import Mapbox
 class MapPresenter: NSObject, MapEventHandler {
     weak var view: MapViewController!
     var router: MapRouter
+    
     let tableViewWorker: TableViewWorker
     let pullingViewWorker: PullingViewWorker
+    
     private let networkManager: NetworkManager
     private var subscriptions = Set<AnyCancellable>()
     private var features: [MGLPointFeature]?
+    
+    private var mapView: MGLMapView { view.mapView }
+    
+    enum Map {
+        static let layerIdentifiers: Set = ["museums-symbols"]
+    }
+    
     private var mapFinishedAnimating = false {
         didSet {
             if oldValue == false {
                 guard let features = features, let userCoordinates = view.mapView.userLocation?.coordinate else { return }
-                self.tryProcessClosestFeature(possibleFeatures: features, touchLocation: CLLocation(latitude: userCoordinates.latitude, longitude: userCoordinates.longitude))
+                self.tryProcessAsClosest(possibleFeatures: features, touchLocation: CLLocation(latitude: userCoordinates.latitude, longitude: userCoordinates.longitude))
             }
         }
     }
-    
     
     init(view: MapViewController, router: MapRouter, networkManager: NetworkManager, tableViewWorker: TableViewWorker, pullingViewWorker: PullingViewWorker) {
         self.view = view
@@ -36,30 +45,28 @@ class MapPresenter: NSObject, MapEventHandler {
         self.tableViewWorker = tableViewWorker
         self.pullingViewWorker = pullingViewWorker
     }
-    
+
     func handleMapTap(sender: UITapGestureRecognizer) {
         log(.debug, "Handling map tap.")
         guard sender.state == .ended else { return }
-        
-        // Limit feature selection to just the following layer identifiers.
-        let layerIdentifiers: Set = ["museums-symbols"]
-        let point = sender.location(in: sender.view!)
-        
-        // Try matching the exact point first.
-        if tryProcessAsExactPoint(point: point, sender: sender, layerIdentifiers: layerIdentifiers) { return }
-        
-        // Otherwise, get all features within a rect the size of a touch (44x44).
-        let touchCoordinate = view.mapView.convert(point, toCoordinateFrom: sender.view!)
-        let touchLocation = CLLocation(latitude: touchCoordinate.latitude, longitude: touchCoordinate.longitude)
-        let touchRect = CGRect(origin: point, size: .zero).insetBy(dx: -22.0, dy: -22.0)
-        let possibleFeatures = view.mapView.visibleFeatures(in: touchRect, styleLayerIdentifiers: Set(layerIdentifiers)).filter { $0 is MGLPointFeature }
-        
-        // Select the closest feature to the touch center.
-        if tryProcessClosestFeature(possibleFeatures: possibleFeatures, touchLocation: touchLocation) { return }
-        
-        // If no features were found, deselect the selected annotation, if any.
-        hideInfo()
-        view.mapView.deselectAnnotation(view.mapView.selectedAnnotations.first, animated: true)
+        let point = sender.location(in: sender.view)
+        tryProcessAsExactPoint(point: point, sender: sender)
+            .flatMap { isFound -> AnyPublisher<Bool, Never> in
+                let touchCoordinate = self.mapView.convert(point, toCoordinateFrom: sender.view!)
+                let touchLocation = CLLocation(latitude: touchCoordinate.latitude, longitude: touchCoordinate.longitude)
+                let touchRect = CGRect(origin: point, size: .zero).insetBy(dx: -22.0, dy: -22.0)
+                let possibleFeatures = self.mapView.visibleFeatures(in: touchRect, styleLayerIdentifiers: Set(Map.layerIdentifiers)).filter { $0 is MGLPointFeature }
+                
+                return isFound ?
+                    Just(true).eraseToAnyPublisher() :
+                    self.tryProcessAsClosest(possibleFeatures: possibleFeatures, touchLocation: touchLocation)
+        }.sink { isFound in
+            if !isFound {
+                self.hideInfo()
+                self.view.mapView.deselectAnnotation(self.mapView.selectedAnnotations.first, animated: true)
+            }
+        }
+        .store(in: &subscriptions)
     }
     
     func deselectAnnotation() {
@@ -168,44 +175,53 @@ private extension MapPresenter {
         return symbols
     }
     
-    private func tryProcessAsExactPoint(point: CGPoint, sender: UITapGestureRecognizer, layerIdentifiers: Set<String>) -> Bool {
-        for feature in view.mapView.visibleFeatures(at: point, styleLayerIdentifiers: layerIdentifiers)
-            where feature is MGLPointFeature {
-                guard let selectedFeature = feature as? MGLPointFeature else {
-                    fatalError("Failed to cast selected feature as MGLPointFeature")
-                }
-                showCallout(feature: selectedFeature)
-                return true
-        }
-        return false
+    private func tryProcessAsExactPoint(point: CGPoint, sender: UITapGestureRecognizer) -> AnyPublisher<Bool, Never> {
+        return Future { promise in
+            let possibleFeature = self.view.mapView.visibleFeatures(at: point, styleLayerIdentifiers: Map.layerIdentifiers)
+                .compactMap { $0 as? MGLPointFeature }
+                .first
+            guard let feature = possibleFeature else {
+                promise(.success(false))
+                return
+            }
+            self.showCallout(feature: feature)
+            promise(.success(true))
+        }.eraseToAnyPublisher()
     }
     
     @discardableResult
-    private func tryProcessClosestFeature(possibleFeatures: [MGLFeature], touchLocation: CLLocation) -> Bool {
-        let closestFeatures = possibleFeatures.sorted(by: {
-            return CLLocation(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude).distance(from: touchLocation) < CLLocation(latitude: $1.coordinate.latitude, longitude: $1.coordinate.longitude).distance(from: touchLocation)
-        })
-        if let feature = closestFeatures.first {
-            guard let closestFeature = feature as? MGLPointFeature else {
-                fatalError("Failed to cast selected feature as MGLPointFeature")
+    private func tryProcessAsClosest(possibleFeatures: [MGLFeature], touchLocation: CLLocation) -> AnyPublisher<Bool, Never> {
+        return Future { promise in
+            let possibleFeature = possibleFeatures
+                .sorted(by: { CLLocation(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude).distance(from: touchLocation) < CLLocation(latitude: $1.coordinate.latitude, longitude: $1.coordinate.longitude).distance(from: touchLocation)
+                })
+                .compactMap { $0 as? MGLPointFeature }
+                .first
+                
+            guard let feature = possibleFeature else {
+                promise(.success(false))
+                return
             }
-            showCallout(feature: closestFeature)
-            return true
-        }
-        return false
+            self.showCallout(feature: feature)
+            promise(.success(true))
+        }.eraseToAnyPublisher()
     }
     
     private func showCallout(feature: MGLPointFeature) {
         let point = MGLPointFeature()
         point.coordinate = feature.coordinate
-        let title = feature.attributes["name"] as! String
-        let description = feature.attributes["description"] as! String
-        tableViewWorker.updateDataSource(with: [
-            CellModel.info(MuseumCell.Info(title: title, subtitle: description)),
-            CellModel.contacts(ContactsCell.Info(address: "Александровский парк, 7 м. Горьковская, Санкт-Петербург", phone: "7-999-231-88-07")) ])
+        tableViewWorker.updateDataSource(with: makeData(from: feature))
         view.mapView.selectAnnotation(point, animated: true, completionHandler: nil)
         showInfo(title: "Музей")
         
+    }
+    
+    private func makeData(from feature: MGLPointFeature) -> [CellModel] {
+        let title = feature.attributes["name"] as! String
+        let description = feature.attributes["description"] as! String
+        return [
+            CellModel.info(MuseumCell.Info(title: title, subtitle: description)),
+            CellModel.contacts(ContactsCell.Info(address: "Александровский парк, 7 м. Горьковская, Санкт-Петербург", phone: "7-999-231-88-07")) ]
     }
     
     private func showInfo(title: String) {
