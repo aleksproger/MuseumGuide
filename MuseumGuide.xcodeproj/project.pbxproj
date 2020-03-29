@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FA006FC1242FE8A5007F4D02 /* String+NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC0242FE8A5007F4D02 /* String+NumberFormatter.swift */; };
+		FA006FC32430F245007F4D02 /* InformationTableViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC22430F245007F4D02 /* InformationTableViewWorker.swift */; };
+		FA006FC62430F798007F4D02 /* InformationViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC52430F798007F4D02 /* InformationViewWorker.swift */; };
 		FA07C724242A80E600CF2A01 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */; };
 		FA07C726242B717400CF2A01 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C725242B717400CF2A01 /* NetworkManager.swift */; };
 		FA07C729242B727200CF2A01 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */; };
@@ -104,6 +106,8 @@
 		5B3A5D8746865A8DDB8CC4A0 /* Pods-MuseumGuide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseumGuide.debug.xcconfig"; path = "Target Support Files/Pods-MuseumGuide/Pods-MuseumGuide.debug.xcconfig"; sourceTree = "<group>"; };
 		5D764358FAB8A04773B54F47 /* Pods-MuseumGuide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuseumGuide.release.xcconfig"; path = "Target Support Files/Pods-MuseumGuide/Pods-MuseumGuide.release.xcconfig"; sourceTree = "<group>"; };
 		FA006FC0242FE8A5007F4D02 /* String+NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NumberFormatter.swift"; sourceTree = "<group>"; };
+		FA006FC22430F245007F4D02 /* InformationTableViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewWorker.swift; sourceTree = "<group>"; };
+		FA006FC52430F798007F4D02 /* InformationViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewWorker.swift; sourceTree = "<group>"; };
 		FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		FA07C725242B717400CF2A01 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
@@ -209,6 +213,15 @@
 				5D764358FAB8A04773B54F47 /* Pods-MuseumGuide.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA006FC42430F24B007F4D02 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				FA006FC22430F245007F4D02 /* InformationTableViewWorker.swift */,
+				FA006FC52430F798007F4D02 /* InformationViewWorker.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		FA07C727242B726400CF2A01 /* Models */ = {
@@ -485,6 +498,7 @@
 		FA95FED6241829F8005C0832 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				FA006FC42430F24B007F4D02 /* Workers */,
 				FA578EC5242931320056D1B0 /* State */,
 				FA95FED724182A12005C0832 /* MapView.swift */,
 				FA95FEE124182F87005C0832 /* MapAssembly.swift */,
@@ -788,8 +802,10 @@
 				FA73021324197BA500BFF567 /* BottomTabBar.swift in Sources */,
 				FAB010A3242648950015D43E /* EffectHandler.swift in Sources */,
 				FA578EBE24292A790056D1B0 /* MapViewState.swift in Sources */,
+				FA006FC32430F245007F4D02 /* InformationTableViewWorker.swift in Sources */,
 				FA95FEDE24182B1D005C0832 /* Loggable.swift in Sources */,
 				FA9A265D241E318400386AE6 /* PushRouter.swift in Sources */,
+				FA006FC62430F798007F4D02 /* InformationViewWorker.swift in Sources */,
 				FA5D3934242FAE1E00A8DD3E /* ContactsCell.swift in Sources */,
 				FA9A2667241E35C100386AE6 /* ViewControllerEventHandler.swift in Sources */,
 				FAB01098242640D60015D43E /* LocationService.swift in Sources */,

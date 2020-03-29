@@ -44,7 +44,7 @@ class MapViewController: BaseViewController, MapViewBehavior {
         headerView.isSkeletonable = true
 
         tableView.backgroundColor = .white
-        tableView.dataSource = handler
+        tableView.dataSource = handler.tableViewWorker
         tableView.register(MuseumCell.self, forCellReuseIdentifier: "\(MuseumCell.self)")
         tableView.register(ContactsCell.self, forCellReuseIdentifier: "\(ContactsCell.self)")
 
@@ -53,8 +53,8 @@ class MapViewController: BaseViewController, MapViewBehavior {
         tableView.allowsSelection = false
         tableView.showsVerticalScrollIndicator = false
 
-        drawerView = DrawerView(scrollView: tableView, delegate: handler, headerView: headerView)
-        drawerView.addListener(handler as! DrawerViewListener)
+        drawerView = DrawerView(scrollView: tableView, delegate: handler.tableViewWorker, headerView: headerView)
+        drawerView.addListener(handler.pullingViewWorker)
         drawerView.middlePosition = .fromBottom(Layout.middleInsetFromBottom)
         drawerView.bottomPosition = .init(offset: Layout.bottomInset, edge: .bottom, point: .drawerOrigin, ignoresSafeArea: false, ignoresContentSize: false)
         drawerView.cornerRadius = Layout.cornerRadius

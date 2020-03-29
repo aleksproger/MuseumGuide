@@ -9,11 +9,24 @@
 import Foundation
 import CoreLocation
 import UIKit
+import UltraDrawerView
 
-protocol MapEventHandler: ViewControllerEventHandler, UITableViewDelegate, UITableViewDataSource {
+
+protocol MapEventHandler: ViewControllerEventHandler {
+    var tableViewWorker: TableViewWorker { get }
+    var pullingViewWorker: PullingViewWorker { get }
     func handleMapTap(sender: UITapGestureRecognizer)
+    func deselectAnnotation()
 }
 
 protocol MapViewBehavior: class {
     
+}
+
+protocol TableViewWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
+    func updateDataSource(with data: [CellModel])
+}
+
+protocol PullingViewWorker: DrawerViewListener {
+    var handler: MapEventHandler? { get }
 }

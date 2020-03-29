@@ -10,11 +10,12 @@ import Foundation
 import CoreLocation
 import Combine
 import Mapbox
-import UltraDrawerView
 
 class MapPresenter: NSObject, MapEventHandler {
     weak var view: MapViewController!
     var router: MapRouter
+    let tableViewWorker: TableViewWorker
+    let pullingViewWorker: PullingViewWorker
     private var cellInfos: [CellModel] = MuseumCell.makeDefaultInfos() + ContactsCell.makeDefaultInfos()
     private let networkManager: NetworkManager
     private var subscriptions = Set<AnyCancellable>()
@@ -29,10 +30,12 @@ class MapPresenter: NSObject, MapEventHandler {
     }
     
     
-    init(view: MapViewController, router: MapRouter, networkManager: NetworkManager) {
+    init(view: MapViewController, router: MapRouter, networkManager: NetworkManager, tableViewWorker: TableViewWorker, pullingViewWorker: PullingViewWorker) {
         self.view = view
         self.router = router
         self.networkManager = networkManager
+        self.tableViewWorker = tableViewWorker
+        self.pullingViewWorker = pullingViewWorker
     }
     
     func handleMapTap(sender: UITapGestureRecognizer) {
@@ -58,6 +61,13 @@ class MapPresenter: NSObject, MapEventHandler {
         // If no features were found, deselect the selected annotation, if any.
         hideInfo()
         view.mapView.deselectAnnotation(view.mapView.selectedAnnotations.first, animated: true)
+    }
+    
+    func deselectAnnotation() {
+        guard let selectedAnnotation = view.mapView.selectedAnnotations.first else {
+            return
+        }
+        view.mapView.deselectAnnotation(selectedAnnotation, animated: true)
     }
 }
 
@@ -191,8 +201,9 @@ private extension MapPresenter {
         point.coordinate = feature.coordinate
         let title = feature.attributes["name"] as! String
         let description = feature.attributes["description"] as! String
-        cellInfos = [CellModel.info(MuseumCell.Info(title: title, subtitle: description))]
-        cellInfos.append(CellModel.contacts(ContactsCell.Info(address: "Александровский парк, 7 м. Горьковская, Санкт-Петербург", phone: "7-999-231-88-07")))
+        tableViewWorker.updateDataSource(with: [
+            CellModel.info(MuseumCell.Info(title: title, subtitle: description)),
+            CellModel.contacts(ContactsCell.Info(address: "Александровский парк, 7 м. Горьковская, Санкт-Петербург", phone: "7-999-231-88-07")) ])
         view.mapView.selectAnnotation(point, animated: true, completionHandler: nil)
         showInfo(title: "Музей")
         
@@ -208,76 +219,3 @@ private extension MapPresenter {
     }
 }
 
-
-extension MapPresenter: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellInfos.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellModel = cellInfos[indexPath.row]
-        switch cellModel {
-        case .contacts(let contacts):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "\(ContactsCell.self)", for: indexPath) as! ContactsCell
-            cell.update(with: contacts)
-            return cell
-            
-        case .info(let museum):
-            let cell = tableView.dequeueReusableCell(withIdentifier: "\(MuseumCell.self)", for: indexPath) as! MuseumCell
-            cell.update(with: museum)
-            return cell
-            
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return MuseumCell.Layout.estimatedHeight
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-enum CellModel {
-    case info(MuseumCell.Info)
-    case contacts(ContactsCell.Info)
-}
-
-extension MapPresenter: DrawerViewListener {
-    func drawerView(_ drawerView: DrawerView, willBeginUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource) {
-        
-    }
-    
-    func drawerView(_ drawerView: DrawerView, didUpdateOrigin origin: CGFloat, source: DrawerOriginChangeSource) {
-        
-    }
-    
-    func drawerView(_ drawerView: DrawerView, didEndUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource) {
-        
-    }
-    
-    func drawerView(_ drawerView: DrawerView, didChangeState state: DrawerView.State?) {
-        
-    }
-    
-    func drawerView(_ drawerView: DrawerView, willBeginAnimationToState state: DrawerView.State?, source: DrawerOriginChangeSource) {
-        switch (state, source) {
-        case (.bottom, .headerInteraction):
-            guard let selectedAnnotation = view.mapView.selectedAnnotations.first else {
-                return
-            }
-            view.mapView.deselectAnnotation(selectedAnnotation, animated: true)
-        default:
-            break
-        }
-    }
-}
