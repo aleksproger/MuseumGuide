@@ -62,11 +62,11 @@ class ContactsCell: UITableViewCell {
         addressLabel.font = .systemFont(ofSize: UIFont.systemFontSize)
         addressLabel.numberOfLines = 0
         addressLabel.textColor = .darkGray
-//
+        //
         addSubview(phoneButton)
         phoneButton.setImage(UIImage(named: "phone_icon"), for: .normal)
         phoneButton.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
-
+        
         addSubview(phoneLabel)
         phoneLabel.font = .systemFont(ofSize: UIFont.systemFontSize)
         phoneLabel.dataDetectorTypes = .phoneNumber
@@ -82,7 +82,7 @@ class ContactsCell: UITableViewCell {
     private func setupLayout() {
         let inset = Layout.inset
         let buttonSize = Layout.shapeSize
-
+        
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: inset).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -inset).isActive = true
@@ -91,7 +91,7 @@ class ContactsCell: UITableViewCell {
         addressButton.translatesAutoresizingMaskIntoConstraints = false
         addressButton.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
         addressButton.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
-//        button.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
+        //        button.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
         addressButton.centerYAnchor.constraint(equalTo: addressLabel.centerYAnchor).isActive = true
         addressButton.leftAnchor.constraint(equalTo: leftAnchor, constant: inset + inset/2).isActive = true
         
@@ -101,18 +101,18 @@ class ContactsCell: UITableViewCell {
         //addressLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset).isActive = true
         addressLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
         
-                phoneButton.translatesAutoresizingMaskIntoConstraints = false
-                phoneButton.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
-                phoneButton.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
-                phoneButton.topAnchor.constraint(equalTo: addressButton.bottomAnchor, constant: 8).isActive = true
-//                phoneButton.centerYAnchor.constraint(equalTo: phoneLabel.centerYAnchor).isActive = true
-                phoneButton.leftAnchor.constraint(equalTo: leftAnchor, constant: inset + inset/2).isActive = true
-                
-                phoneLabel.translatesAutoresizingMaskIntoConstraints = false
-                phoneLabel.leftAnchor.constraint(equalTo: phoneButton.rightAnchor, constant: inset).isActive = true
-                phoneLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -inset).isActive = true
-                phoneLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset).isActive = true
-                phoneLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 8).isActive = true
+        phoneButton.translatesAutoresizingMaskIntoConstraints = false
+        phoneButton.widthAnchor.constraint(equalToConstant: buttonSize).isActive = true
+        phoneButton.heightAnchor.constraint(equalToConstant: buttonSize).isActive = true
+        phoneButton.topAnchor.constraint(equalTo: addressButton.bottomAnchor, constant: 8).isActive = true
+        //phoneButton.centerYAnchor.constraint(equalTo: phoneLabel.centerYAnchor).isActive = true
+        phoneButton.leftAnchor.constraint(equalTo: leftAnchor, constant: inset + inset/2).isActive = true
+        
+        phoneLabel.translatesAutoresizingMaskIntoConstraints = false
+        phoneLabel.leftAnchor.constraint(equalTo: phoneButton.rightAnchor, constant: inset).isActive = true
+        phoneLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -inset).isActive = true
+        phoneLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -inset).isActive = true
+        phoneLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 8).isActive = true
     }
     
     private func bounceButton(sender: UIButton) {

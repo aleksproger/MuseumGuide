@@ -100,7 +100,7 @@ class MapViewController: BaseViewController, MapViewBehavior {
         headerView.update(with: info)
         //tableView.reloadData()
         tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
-        drawerView.setState(.middle, animated: true)
+        drawerView.setState(drawerView.interactionState.presentationType, animated: true)
         drawerView.setState(.active)
     }
     
@@ -110,11 +110,34 @@ class MapViewController: BaseViewController, MapViewBehavior {
 }
 
 extension DrawerView {
-    enum InfoViewState {
+    enum InteractionState {
         case inactive, active
+        
+        var presentationType: State {
+            switch self {
+            case .inactive:
+                return .bottom
+            default:
+                return .middle
+            }
+        }
     }
     
-    func setState(_ state: InfoViewState) {
+    var interactionState: InteractionState {
+        get {
+            if !self.headerView.isUserInteractionEnabled, !self.isUserInteractionEnabled {
+                return .inactive
+            } else {
+                return .active
+            }
+        }
+        
+        set(state) {
+            setState(state)
+        }
+    }
+    
+    func setState(_ state: InteractionState) {
         switch state {
         case .inactive:
             self.headerView.isUserInteractionEnabled = false
