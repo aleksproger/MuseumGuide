@@ -54,6 +54,7 @@ class MapViewController: BaseViewController, MapViewBehavior {
         tableView.showsVerticalScrollIndicator = false
 
         drawerView = DrawerView(scrollView: tableView, delegate: handler, headerView: headerView)
+        drawerView.addListener(handler as! DrawerViewListener)
         drawerView.middlePosition = .fromBottom(Layout.middleInsetFromBottom)
         drawerView.bottomPosition = .init(offset: Layout.bottomInset, edge: .bottom, point: .drawerOrigin, ignoresSafeArea: false, ignoresContentSize: false)
         drawerView.cornerRadius = Layout.cornerRadius

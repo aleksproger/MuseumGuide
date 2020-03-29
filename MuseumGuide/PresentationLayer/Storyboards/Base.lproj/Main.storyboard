@@ -47,6 +47,7 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="zoomLevel">
                                 <real key="value" value="14"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="showsUserLocation" value="YES"/>
                         </userDefinedRuntimeAttributes>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="eIe-d7-Xay" appends="YES" id="zUJ-Ef-sax"/>

@@ -10,13 +10,12 @@ import Foundation
 import CoreLocation
 import Combine
 import Mapbox
+import UltraDrawerView
 
 class MapPresenter: NSObject, MapEventHandler {
     weak var view: MapViewController!
     var router: MapRouter
     private var cellInfos: [CellModel] = MuseumCell.makeDefaultInfos() + ContactsCell.makeDefaultInfos()
-//    private var cellInfos = MuseumCell.makeDefaultInfos()
-//    private var contactsInfos = ContactsCell.makeDefaultInfos()
     private let networkManager: NetworkManager
     private var subscriptions = Set<AnyCancellable>()
     private var features: [MGLPointFeature]?
@@ -28,7 +27,7 @@ class MapPresenter: NSObject, MapEventHandler {
             }
         }
     }
-
+    
     
     init(view: MapViewController, router: MapRouter, networkManager: NetworkManager) {
         self.view = view
@@ -57,6 +56,7 @@ class MapPresenter: NSObject, MapEventHandler {
         if tryProcessClosestFeature(possibleFeatures: possibleFeatures, touchLocation: touchLocation) { return }
         
         // If no features were found, deselect the selected annotation, if any.
+        hideInfo()
         view.mapView.deselectAnnotation(view.mapView.selectedAnnotations.first, animated: true)
     }
 }
@@ -88,7 +88,7 @@ extension MapPresenter: MGLMapViewDelegate {
         mapFinishedAnimating = true
         log(.debug, "Did become idle.")
     }
-
+    
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
         networkManager.getMuseums()
             .sink(receiveCompletion: { completion in
@@ -145,7 +145,7 @@ private extension MapPresenter {
         symbols.iconOpacity = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
                                            [5.9: 0, 6: 1])
         
-//        symbols.text = NSExpression(forKeyPath: "name")
+        //        symbols.text = NSExpression(forKeyPath: "name")
         symbols.textColor = symbols.iconColor
         symbols.textFontSize = NSExpression(format: "mgl_interpolate:withCurveType:parameters:stops:($zoomLevel, 'linear', nil, %@)",
                                             [10: 10, 16: 16])
@@ -171,6 +171,7 @@ private extension MapPresenter {
         return false
     }
     
+    @discardableResult
     private func tryProcessClosestFeature(possibleFeatures: [MGLFeature], touchLocation: CLLocation) -> Bool {
         let closestFeatures = possibleFeatures.sorted(by: {
             return CLLocation(latitude: $0.coordinate.latitude, longitude: $0.coordinate.longitude).distance(from: touchLocation) < CLLocation(latitude: $1.coordinate.latitude, longitude: $1.coordinate.longitude).distance(from: touchLocation)
@@ -194,7 +195,7 @@ private extension MapPresenter {
         cellInfos.append(CellModel.contacts(ContactsCell.Info(address: "Александровский парк, 7 м. Горьковская, Санкт-Петербург", phone: "7-999-231-88-07")))
         view.mapView.selectAnnotation(point, animated: true, completionHandler: nil)
         showInfo(title: "Музей")
-
+        
     }
     
     private func showInfo(title: String) {
@@ -224,18 +225,13 @@ extension MapPresenter: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(ContactsCell.self)", for: indexPath) as! ContactsCell
             cell.update(with: contacts)
             return cell
-
+            
         case .info(let museum):
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(MuseumCell.self)", for: indexPath) as! MuseumCell
             cell.update(with: museum)
             return cell
-
+            
         }
-//        if let cell = cell as? MuseumCell {
-//            cell.update(with: cellInfos[indexPath.row])
-//        }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -254,4 +250,34 @@ extension MapPresenter: UITableViewDelegate, UITableViewDataSource {
 enum CellModel {
     case info(MuseumCell.Info)
     case contacts(ContactsCell.Info)
+}
+
+extension MapPresenter: DrawerViewListener {
+    func drawerView(_ drawerView: DrawerView, willBeginUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource) {
+        
+    }
+    
+    func drawerView(_ drawerView: DrawerView, didUpdateOrigin origin: CGFloat, source: DrawerOriginChangeSource) {
+        
+    }
+    
+    func drawerView(_ drawerView: DrawerView, didEndUpdatingOrigin origin: CGFloat, source: DrawerOriginChangeSource) {
+        
+    }
+    
+    func drawerView(_ drawerView: DrawerView, didChangeState state: DrawerView.State?) {
+        
+    }
+    
+    func drawerView(_ drawerView: DrawerView, willBeginAnimationToState state: DrawerView.State?, source: DrawerOriginChangeSource) {
+        switch (state, source) {
+        case (.bottom, .headerInteraction):
+            guard let selectedAnnotation = view.mapView.selectedAnnotations.first else {
+                return
+            }
+            view.mapView.deselectAnnotation(selectedAnnotation, animated: true)
+        default:
+            break
+        }
+    }
 }
