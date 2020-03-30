@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="295" y="136"/>
         </scene>
-        <!--Explore-->
+        <!--Map View Controller-->
         <scene sceneID="XlQ-kN-eSA">
             <objects>
                 <viewController storyboardIdentifier="MapViewController" id="fYF-1R-C40" customClass="MapViewController" customModule="MuseumGuide" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,7 +53,7 @@
                             <outletCollection property="gestureRecognizers" destination="eIe-d7-Xay" appends="YES" id="zUJ-Ef-sax"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="search_icon" id="lsr-gl-o7l"/>
+                    <tabBarItem key="tabBarItem" title="" image="search_icon" id="lsr-gl-o7l"/>
                     <connections>
                         <outlet property="mapTap" destination="eIe-d7-Xay" id="f9Q-Oc-B7r"/>
                         <outlet property="mapView" destination="804-9H-khp" id="KUO-tH-1Qd"/>
@@ -68,7 +68,7 @@
             </objects>
             <point key="canvasLocation" x="1335" y="869"/>
         </scene>
-        <!--Events-->
+        <!--View Controller-->
         <scene sceneID="dmK-tV-ebM">
             <objects>
                 <viewController id="ZQ5-1S-erh" sceneMemberID="viewController">
@@ -78,13 +78,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="C1M-wu-3Ra"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" image="events_icon" id="sv1-tE-fdk"/>
+                    <tabBarItem key="tabBarItem" title="" image="events_icon" id="sv1-tE-fdk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sny-nB-iNb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1959" y="279"/>
         </scene>
-        <!--Profile-->
+        <!--View Controller-->
         <scene sceneID="UMh-Dt-ocw">
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="28u-20-QmU" sceneMemberID="viewController">
@@ -97,13 +97,13 @@
                             <userDefinedRuntimeAttribute type="string" keyPath="styleURL__" value="mapbox://styles/aleksproger/ck7s1ed561dsb1iqrt48qnc7h"/>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="profile_icon" id="5W0-tP-KYK"/>
+                    <tabBarItem key="tabBarItem" title="" image="profile_icon" id="5W0-tP-KYK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZhU-qR-t3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1058" y="-485"/>
         </scene>
-        <!--Favorite-->
+        <!--View Controller-->
         <scene sceneID="VQP-jP-KCc">
             <objects>
                 <viewController id="DxY-DA-dPc" sceneMemberID="viewController">
@@ -113,7 +113,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6OV-Aw-LzL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorite" image="saved_icon" id="bos-y4-GB0"/>
+                    <tabBarItem key="tabBarItem" title="" image="saved_icon" id="bos-y4-GB0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X30-cl-iag" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
