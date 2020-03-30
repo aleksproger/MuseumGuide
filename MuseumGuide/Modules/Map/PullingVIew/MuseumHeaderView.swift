@@ -13,15 +13,16 @@ import SkeletonView
 final class MuseumHeaderView: UIView {
     private let button = UIButton(type: .system)
     private let separator = UIView()
+    private let typesView = TypesView()
     
     struct Info {
-        let title: String
+        let types: [String]
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-        setupButton()
+        setupTypesView()
         setupSeparator()
     }
     
@@ -30,29 +31,22 @@ final class MuseumHeaderView: UIView {
     }
     
     func update(with info: Info) {
-        button.setTitle(info.title, for: .normal)
-        button.titleLabel?.hideSkeleton(transition: .crossDissolve(0.5))
+        let types = info.types.map { type -> TypeCell.Info in
+            let width = TypeCell.size(for: type)
+            return TypeCell.Info(text: type, size: CGSize(width: width, height: TypeCell.height))
+
+        }
+        typesView.updateDataSource(types)
     }
     
-    private func setupButton() {
-        addSubview(button)
-        button.tintColor = .black
-        button.backgroundColor = .white
-        button.setTitle("Информация", for: .normal)
-        button.titleLabel?.font = .boldSystemFont(ofSize: 24)
-        button.contentHorizontalAlignment = .left
-        button.contentEdgeInsets.left = 16
-        button.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
-        button.isUserInteractionEnabled = false
-        button.isSkeletonable = true
-        button.titleLabel?.isSkeletonable = true
+    private func setupTypesView() {
+        addSubview(typesView)
 
-
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        button.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        button.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-        button.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        typesView.translatesAutoresizingMaskIntoConstraints = false
+        typesView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        typesView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        typesView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        typesView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
     }
     
     private func setupSeparator() {

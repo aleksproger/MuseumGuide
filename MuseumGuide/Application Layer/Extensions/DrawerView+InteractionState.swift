@@ -47,6 +47,7 @@ extension DrawerView {
         case .active:
             self.headerView.isUserInteractionEnabled = true
             self.isUserInteractionEnabled = true
+            headerView.hideSkeleton(reloadDataAfter: false, transition: .crossDissolve(0.5))
         }
     }
 }

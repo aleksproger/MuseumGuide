@@ -118,7 +118,8 @@ extension MapPresenter: MGLMapViewDelegate {
                     feature.title = museum.name
                     feature.attributes = [
                         "description": museum.description,
-                        "name": museum.name
+                        "name": museum.name,
+                        "types": museum.types
                     ]
                     return feature
                 }
@@ -211,22 +212,27 @@ private extension MapPresenter {
         let point = MGLPointFeature()
         point.coordinate = feature.coordinate
         tableViewWorker.updateDataSource(with: makeData(from: feature))
+        updateHeaderView(with: feature.attributes["types"] as! [String])
         view.mapView.selectAnnotation(point, animated: true, completionHandler: nil)
-        showInfo(title: "Музей")
-        
+        showInfo()
+
     }
     
     private func makeData(from feature: MGLPointFeature) -> [CellModel] {
         let title = feature.attributes["name"] as! String
         let description = feature.attributes["description"] as! String
         return [
-            CellModel.info(MuseumCell.Info(title: title, subtitle: description)),
-            CellModel.contacts(ContactsCell.Info(address: "Александровский парк, 7 м. Горьковская, Санкт-Петербург", phone: "7-999-231-88-07")) ]
+            .info(MuseumCell.Info(title: title, subtitle: description)),
+            .contacts(ContactsCell.Info(address: "Александровский парк, 7 м. Горьковская, Санкт-Петербург", phone: "7-999-231-88-07")) ]
     }
     
-    private func showInfo(title: String) {
-        let info = MuseumHeaderView.Info(title: title)
-        view.showInfo(info: info)
+    private func updateHeaderView(with data: [String]) {
+        let info = MuseumHeaderView.Info(types: data)
+        view.updateHeader(with: info)
+    }
+    
+    private func showInfo() {
+        view.showInfo()
     }
     
     private func hideInfo() {

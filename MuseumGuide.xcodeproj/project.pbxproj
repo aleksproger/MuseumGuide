@@ -12,6 +12,12 @@
 		FA006FC62430F798007F4D02 /* InformationViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC52430F798007F4D02 /* InformationViewWorker.swift */; };
 		FA006FC92430FD57007F4D02 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC82430FD57007F4D02 /* CellModel.swift */; };
 		FA006FCE243124B8007F4D02 /* DrawerView+InteractionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FCD243124B8007F4D02 /* DrawerView+InteractionState.swift */; };
+		FA006FD024313228007F4D02 /* PagingScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FCF24313228007F4D02 /* PagingScroll.swift */; };
+		FA006FD2243133FE007F4D02 /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FD1243133FE007F4D02 /* CGPoint+Distance.swift */; };
+		FA006FD42431341C007F4D02 /* Comparable+Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FD32431341C007F4D02 /* Comparable+Clamp.swift */; };
+		FA006FD6243134B9007F4D02 /* FloatingPoint+Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FD5243134B9007F4D02 /* FloatingPoint+Project.swift */; };
+		FA006FD924315B8A007F4D02 /* TypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FD824315B8A007F4D02 /* TypesView.swift */; };
+		FA006FDB2432209B007F4D02 /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FDA2432209B007F4D02 /* TypeCell.swift */; };
 		FA07C724242A80E600CF2A01 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */; };
 		FA07C726242B717400CF2A01 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C725242B717400CF2A01 /* NetworkManager.swift */; };
 		FA07C729242B727200CF2A01 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */; };
@@ -112,6 +118,12 @@
 		FA006FC52430F798007F4D02 /* InformationViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewWorker.swift; sourceTree = "<group>"; };
 		FA006FC82430FD57007F4D02 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		FA006FCD243124B8007F4D02 /* DrawerView+InteractionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrawerView+InteractionState.swift"; sourceTree = "<group>"; };
+		FA006FCF24313228007F4D02 /* PagingScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScroll.swift; sourceTree = "<group>"; };
+		FA006FD1243133FE007F4D02 /* CGPoint+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Distance.swift"; sourceTree = "<group>"; };
+		FA006FD32431341C007F4D02 /* Comparable+Clamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comparable+Clamp.swift"; sourceTree = "<group>"; };
+		FA006FD5243134B9007F4D02 /* FloatingPoint+Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Project.swift"; sourceTree = "<group>"; };
+		FA006FD824315B8A007F4D02 /* TypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesView.swift; sourceTree = "<group>"; };
+		FA006FDA2432209B007F4D02 /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		FA07C725242B717400CF2A01 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
@@ -234,6 +246,15 @@
 				FA006FC82430FD57007F4D02 /* CellModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FA006FD724315B7C007F4D02 /* TypesView */ = {
+			isa = PBXGroup;
+			children = (
+				FA006FD824315B8A007F4D02 /* TypesView.swift */,
+				FA006FDA2432209B007F4D02 /* TypeCell.swift */,
+			);
+			path = TypesView;
 			sourceTree = "<group>";
 		};
 		FA07C727242B726400CF2A01 /* Models */ = {
@@ -390,6 +411,7 @@
 				FA73021124197B8400BFF567 /* BottomTabBar */,
 				FA3B839924181D3200EA979D /* Storyboards */,
 				FA56A73324180F3F00FAC2CE /* BaseClasses */,
+				FA006FCF24313228007F4D02 /* PagingScroll.swift */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -511,6 +533,7 @@
 		FA95FED6241829F8005C0832 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				FA006FD724315B7C007F4D02 /* TypesView */,
 				FA006FC42430F24B007F4D02 /* Workers */,
 				FA578EC5242931320056D1B0 /* State */,
 				FA95FED724182A12005C0832 /* MapView.swift */,
@@ -547,6 +570,9 @@
 				FA500857242BEA37001505E7 /* String+EmtyLine.swift */,
 				FA006FC0242FE8A5007F4D02 /* String+NumberFormatter.swift */,
 				FA006FCD243124B8007F4D02 /* DrawerView+InteractionState.swift */,
+				FA006FD1243133FE007F4D02 /* CGPoint+Distance.swift */,
+				FA006FD32431341C007F4D02 /* Comparable+Clamp.swift */,
+				FA006FD5243134B9007F4D02 /* FloatingPoint+Project.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -755,8 +781,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA006FD2243133FE007F4D02 /* CGPoint+Distance.swift in Sources */,
 				FA07C726242B717400CF2A01 /* NetworkManager.swift in Sources */,
 				FA95FEE5241830C7005C0832 /* UIViewController+Load.swift in Sources */,
+				FA006FD42431341C007F4D02 /* Comparable+Clamp.swift in Sources */,
 				FA07C729242B727200CF2A01 /* NetworkEnvironment.swift in Sources */,
 				FA9DFF7B241E6667008A3C4D /* AlertErrorHandler.swift in Sources */,
 				FAB010B32427D4C90015D43E /* MapContracts.swift in Sources */,
@@ -768,6 +796,7 @@
 				FA9A2657241E302100386AE6 /* ContainerPresenter.swift in Sources */,
 				FA07C72C242B729600CF2A01 /* NetworkError.swift in Sources */,
 				FA006FCE243124B8007F4D02 /* DrawerView+InteractionState.swift in Sources */,
+				FA006FD6243134B9007F4D02 /* FloatingPoint+Project.swift in Sources */,
 				FA578EC42429310E0056D1B0 /* MapEffects.swift in Sources */,
 				FA07C734242BDF7F00CF2A01 /* ParameterEncoder.swift in Sources */,
 				FA07C737242BDFC300CF2A01 /* Response.swift in Sources */,
@@ -813,6 +842,7 @@
 				FA9A2663241E339200386AE6 /* ErrorHandling.swift in Sources */,
 				FAB010A524264A5B0015D43E /* LocationEffects.swift in Sources */,
 				FA9A265B241E305600386AE6 /* ContainerContracts.swift in Sources */,
+				FA006FD024313228007F4D02 /* PagingScroll.swift in Sources */,
 				FAF387C2242934CD00D1F5AF /* NetworkService.swift in Sources */,
 				FA56A7382418113200FAC2CE /* BaseNavigationController.swift in Sources */,
 				FA73021324197BA500BFF567 /* BottomTabBar.swift in Sources */,
@@ -824,7 +854,9 @@
 				FA006FC62430F798007F4D02 /* InformationViewWorker.swift in Sources */,
 				FA5D3934242FAE1E00A8DD3E /* ContactsCell.swift in Sources */,
 				FA9A2667241E35C100386AE6 /* ViewControllerEventHandler.swift in Sources */,
+				FA006FDB2432209B007F4D02 /* TypeCell.swift in Sources */,
 				FAB01098242640D60015D43E /* LocationService.swift in Sources */,
+				FA006FD924315B8A007F4D02 /* TypesView.swift in Sources */,
 				FA578EC124292E3E0056D1B0 /* UserAnnotationView.swift in Sources */,
 				FA9DFF7F241E6BD2008A3C4D /* UIApplication+VisibleVC.swift in Sources */,
 				FA730207241975EA00BFF567 /* ContainerView.swift in Sources */,

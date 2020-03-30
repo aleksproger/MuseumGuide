@@ -39,6 +39,8 @@ class InformationTableViewWorker: NSObject, TableViewWorker {
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(MuseumCell.self)", for: indexPath) as! MuseumCell
             cell.update(with: museum)
             return cell
+        default:
+            fatalError()
             
         }
     }

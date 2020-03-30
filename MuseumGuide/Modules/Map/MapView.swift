@@ -53,8 +53,11 @@ class MapViewController: BaseViewController, MapViewBehavior {
         handler.handleMapTap(sender: sender)
     }
     
-    func showInfo(info: MuseumHeaderView.Info) {
+    func updateHeader(with info: MuseumHeaderView.Info) {
         headerView.update(with: info)
+    }
+    
+    func showInfo() {
         tableView.reloadSections(IndexSet(integer: 0), with: .automatic)
         infoView.setState(infoView.interactionState.presentationType, animated: true)
         infoView.setState(.active)
