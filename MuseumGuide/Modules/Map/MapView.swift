@@ -90,6 +90,7 @@ private extension MapViewController {
         mapView.delegate = handler as? MGLMapViewDelegate
         mapView.userTrackingMode = .followWithHeading
         mapView.showsUserHeadingIndicator = true
+        mapView.gestureRecognizers?.forEach { $0.delegate = self }
     }
     
     func setupTableView() {
@@ -120,7 +121,14 @@ private extension MapViewController {
         infoView.layer.shadowOpacity = Layout.shadowOpacity
         infoView.layer.shadowOffset = Layout.shadowOffset
         infoView.isUserInteractionEnabled = false
-        view.addSubview(infoView)
+        mapView.addSubview(infoView)
         infoView.setState(.inactive)
+    }
+}
+
+extension MapViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let isInsideInfoView = infoView.point(inside: touch.location(in: infoView), with: nil)
+        return !isInsideInfoView
     }
 }
