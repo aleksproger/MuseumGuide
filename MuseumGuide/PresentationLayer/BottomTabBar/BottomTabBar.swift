@@ -22,8 +22,9 @@ class BottomTabBar: UITabBar {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.bounds.size.height = 80
-//        setupBarItems()
+        // For iPhone X+ need to include bottom safeAreInset
+        self.bounds.size.height = 80 + safeAreaInsets.bottom
+        setupBarItems()
 //        setUpMapButton()
     }
     
@@ -38,11 +39,15 @@ class BottomTabBar: UITabBar {
 //    
     
     private func setupBarItems() {
-        guard let items = items else {
-            return
-        }
-        for (index, item) in items.enumerated() {
-            item.titlePositionAdjustment = item.customOffset(for: index)
+        removeTabbarItemsText()
+    }
+    
+    func removeTabbarItemsText() {
+
+        if let items = self.items {
+            for item in items {
+                item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.clear], for: .normal)
+            }
         }
     }
     
