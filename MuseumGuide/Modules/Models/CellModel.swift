@@ -11,6 +11,4 @@ import Foundation
 enum CellModel {
     case info(MuseumCell.Info)
     case contacts(ContactsCell.Info)
-//    case title(TitleCell.Info)
-    case type(TypeCell.Info)
 }
