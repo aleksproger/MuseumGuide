@@ -67,7 +67,9 @@ public enum MuseumAPI {
 
 extension MuseumAPI: APIRequest {
     var baseURL: URL {
-        return URL(string: "http://localhost:8080/")!
+        //return URL(string: "http://localhost:8080/")!
+        return URL(string: "http://172.20.10.4:8080")!
+
     }
     
     var path: String {

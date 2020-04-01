@@ -18,6 +18,7 @@
 		FA006FD6243134B9007F4D02 /* FloatingPoint+Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FD5243134B9007F4D02 /* FloatingPoint+Project.swift */; };
 		FA006FD924315B8A007F4D02 /* TypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FD824315B8A007F4D02 /* TypesView.swift */; };
 		FA006FDB2432209B007F4D02 /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FDA2432209B007F4D02 /* TypeCell.swift */; };
+		FA0360F42433C5F500A1F56F /* UIView+Bounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0360F32433C5F500A1F56F /* UIView+Bounce.swift */; };
 		FA07C724242A80E600CF2A01 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */; };
 		FA07C726242B717400CF2A01 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C725242B717400CF2A01 /* NetworkManager.swift */; };
 		FA07C729242B727200CF2A01 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */; };
@@ -124,6 +125,7 @@
 		FA006FD5243134B9007F4D02 /* FloatingPoint+Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Project.swift"; sourceTree = "<group>"; };
 		FA006FD824315B8A007F4D02 /* TypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesView.swift; sourceTree = "<group>"; };
 		FA006FDA2432209B007F4D02 /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
+		FA0360F32433C5F500A1F56F /* UIView+Bounce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Bounce.swift"; sourceTree = "<group>"; };
 		FA07C723242A80E600CF2A01 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
 		FA07C725242B717400CF2A01 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FA07C728242B727200CF2A01 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
@@ -573,6 +575,7 @@
 				FA006FD1243133FE007F4D02 /* CGPoint+Distance.swift */,
 				FA006FD32431341C007F4D02 /* Comparable+Clamp.swift */,
 				FA006FD5243134B9007F4D02 /* FloatingPoint+Project.swift */,
+				FA0360F32433C5F500A1F56F /* UIView+Bounce.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 				FA95FEE024182E3B005C0832 /* AppRouter.swift in Sources */,
 				FAB0109F242644690015D43E /* State.swift in Sources */,
 				FAB010AD2427C74A0015D43E /* LocationEvents.swift in Sources */,
+				FA0360F42433C5F500A1F56F /* UIView+Bounce.swift in Sources */,
 				FA07C732242BDF5C00CF2A01 /* JSONParameterEncoder.swift in Sources */,
 				FA578ECB242932AB0056D1B0 /* MapEvents.swift in Sources */,
 				FA9A2663241E339200386AE6 /* ErrorHandling.swift in Sources */,

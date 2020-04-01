@@ -6,7 +6,6 @@
 //  Copyright © 2020 Alex. All rights reserved.
 //
 import UIKit
-import pop
 
 class ContactsCell: UITableViewCell {
     
@@ -115,17 +114,8 @@ class ContactsCell: UITableViewCell {
         phoneLabel.topAnchor.constraint(equalTo: addressLabel.bottomAnchor, constant: 8).isActive = true
     }
     
-    private func bounceButton(sender: UIButton) {
-        let animation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
-        animation.velocity = CGPoint(x: 8, y: 8)
-        animation.springBounciness = 20
-        animation.fromValue = CGPoint(x: 1.1, y: 1.1)
-        animation.toValue = CGPoint(x: 1, y: 1)
-        sender.layer.pop_add(animation, forKey: kPOPLayerScaleXY)
-    }
-    
     @objc private func handleButton(sender: UIButton) {
-        bounceButton(sender: sender)
+        sender.bounce()
     }
 }
 

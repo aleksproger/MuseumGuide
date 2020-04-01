@@ -16,7 +16,7 @@ class PagingScroll: UIView {
     static let animationKey = "ScrollView.AnimationKey"
     
     var decelerationRate: CGFloat = UIScrollView.DecelerationRate.fast.rawValue
-    var springBounciness: CGFloat = 7.5
+    var springBounciness: CGFloat = 10.5
     var springSpeed: CGFloat = 7.5
     
     init(contentView: UIScrollView) {

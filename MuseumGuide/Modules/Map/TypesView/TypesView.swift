@@ -17,7 +17,7 @@ class TypesView: PagingScroll {
     }
     
     private var collectionView: UICollectionView { contentView as! UICollectionView }
-    private var dataSource: [TypeCell.Info] = [] {
+    private var dataSource: [TypeCell.Info] = TypeCell.makeCellInfos() {
         didSet {
             anchors = (0..<dataSource.count).map {
                 let offsetX: CGFloat = dataSource.prefix($0).reduce(0, {
@@ -57,8 +57,6 @@ class TypesView: PagingScroll {
 
 }
 
-
-
 extension TypesView: UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -76,7 +74,12 @@ extension TypesView: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(TypeCell.self)", for: indexPath) as! TypeCell
         cell.update(with: TypeCell.Info(text: cellModel.text, size: cellModel.size))
         return cell
-    }    
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.bounce(velocity: CGPoint(x: 4, y: 4))
+    }
 }
 
 

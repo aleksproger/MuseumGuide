@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import pop
 
 class MuseumCell: UITableViewCell {
     
@@ -84,17 +83,8 @@ class MuseumCell: UITableViewCell {
         subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
     }
     
-    private func bounceButton() {
-        let animation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
-        animation.velocity = CGPoint(x: 8, y: 8)
-        animation.springBounciness = 20
-        animation.fromValue = CGPoint(x: 1.1, y: 1.1)
-        animation.toValue = CGPoint(x: 1, y: 1)
-        button.layer.pop_add(animation, forKey: kPOPLayerScaleXY)
-    }
-    
-    @objc private func handleButton() {
-        bounceButton()
+    @objc private func handleButton(sender: UIButton) {
+        sender.bounce()
     }
 }
 
