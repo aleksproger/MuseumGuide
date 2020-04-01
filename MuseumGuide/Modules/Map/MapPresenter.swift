@@ -218,7 +218,7 @@ private extension MapPresenter {
 
     }
     
-    private func makeData(from feature: MGLPointFeature) -> [CellModel] {
+    private func makeData(from feature: MGLPointFeature) -> [InfoTableViewCellModel] {
         let title = feature.attributes["name"] as! String
         let description = feature.attributes["description"] as! String
         return [

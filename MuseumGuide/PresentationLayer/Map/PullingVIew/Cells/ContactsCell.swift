@@ -17,7 +17,7 @@ class ContactsCell: UITableViewCell {
     
     struct Info {
         var address: String
-        var phone: String
+        @FormattedPhone var phone: String
     }
     
     private let titleLabel = UILabel()
@@ -42,7 +42,7 @@ class ContactsCell: UITableViewCell {
         self.info = info
         titleLabel.text = "Контакты"
         addressLabel.text = info.address
-        phoneLabel.text = info.phone.applyPatternOnNumbers(pattern: "+# (###) ###-####", replacmentCharacter: "#")
+        phoneLabel.text = info.phone
     }
     
     private func setupViews() {
@@ -61,7 +61,7 @@ class ContactsCell: UITableViewCell {
         addressLabel.font = .systemFont(ofSize: UIFont.systemFontSize)
         addressLabel.numberOfLines = 0
         addressLabel.textColor = .darkGray
-        //
+
         addSubview(phoneButton)
         phoneButton.setImage(UIImage(named: "phone_icon"), for: .normal)
         phoneButton.addTarget(self, action: #selector(handleButton), for: .touchUpInside)
@@ -121,9 +121,9 @@ class ContactsCell: UITableViewCell {
 
 extension ContactsCell {
     
-    static func makeDefaultInfos() -> [CellModel] {
+    static func makeDefaultInfos() -> [InfoTableViewCellModel] {
         return [
-            CellModel.contacts(ContactsCell.Info(address: "Александровский парк, 7 м. Горьковская, Санкт-Петербург", phone: "89992318807"))
+            InfoTableViewCellModel.contacts(ContactsCell.Info(address: "Александровский парк, 7 м. Горьковская, Санкт-Петербург", phone: "89992318807"))
         ]
     }
 }

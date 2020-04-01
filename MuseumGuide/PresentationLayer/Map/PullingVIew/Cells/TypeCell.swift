@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+
+
+
 final class TypeCell: UICollectionViewCell {
     
     private enum Layout {
@@ -18,7 +21,8 @@ final class TypeCell: UICollectionViewCell {
     }
     
     struct Info {
-        var text: String
+        var text: String { type.rawValue }
+        var type: PlaceType
         var size: CGSize
     }
     
@@ -47,7 +51,7 @@ final class TypeCell: UICollectionViewCell {
     func update(with info: Info) {
         textLabel.textAlignment = .center
         textLabel.text = info.text
-        contentView.backgroundColor = .randomDark
+        contentView.backgroundColor = info.type.color
     }
     
 }
@@ -58,7 +62,7 @@ extension TypeCell {
         return (1...100).map { _ in
             let text = "adfsdafadsfsdafasfdas" + String(Int.random(in: 1...12333))
             let size = CGSize(width: TypeCell.size(for: text), height: Layout.cellHeight)
-            return TypeCell.Info(text: text, size: size)
+            return TypeCell.Info(type: PlaceType.art, size: size)
         }
     }
     static func size(for text: String) -> CGFloat {

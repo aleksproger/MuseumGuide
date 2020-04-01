@@ -10,7 +10,7 @@
 		FA006FC1242FE8A5007F4D02 /* String+NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC0242FE8A5007F4D02 /* String+NumberFormatter.swift */; };
 		FA006FC32430F245007F4D02 /* InformationTableViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC22430F245007F4D02 /* InformationTableViewWorker.swift */; };
 		FA006FC62430F798007F4D02 /* InformationViewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC52430F798007F4D02 /* InformationViewWorker.swift */; };
-		FA006FC92430FD57007F4D02 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC82430FD57007F4D02 /* CellModel.swift */; };
+		FA006FC92430FD57007F4D02 /* InfoTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FC82430FD57007F4D02 /* InfoTableViewCellModel.swift */; };
 		FA006FCE243124B8007F4D02 /* DrawerView+InteractionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FCD243124B8007F4D02 /* DrawerView+InteractionState.swift */; };
 		FA006FD024313228007F4D02 /* PagingScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FCF24313228007F4D02 /* PagingScroll.swift */; };
 		FA006FD2243133FE007F4D02 /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA006FD1243133FE007F4D02 /* CGPoint+Distance.swift */; };
@@ -30,7 +30,6 @@
 		FA07C73A242BE10700CF2A01 /* TestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA07C739242BE10700CF2A01 /* TestAPI.swift */; };
 		FA0F220C241D06BA0087B96D /* UITabBarItem+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F220B241D06BA0087B96D /* UITabBarItem+Layout.swift */; };
 		FA0F220E241D0CEE0087B96D /* CGFloat+Degrees.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0F220D241D0CEE0087B96D /* CGFloat+Degrees.swift */; };
-		FA2AD40E241ACF75004B2DEE /* BottomTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2AD40D241ACF75004B2DEE /* BottomTabBarButton.swift */; };
 		FA500858242BEA37001505E7 /* String+EmtyLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA500857242BEA37001505E7 /* String+EmtyLine.swift */; };
 		FA56A71824180C8700FAC2CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71724180C8700FAC2CE /* AppDelegate.swift */; };
 		FA56A71A24180C8700FAC2CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56A71924180C8700FAC2CE /* SceneDelegate.swift */; };
@@ -47,9 +46,8 @@
 		FA578ECB242932AB0056D1B0 /* MapEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA578ECA242932AB0056D1B0 /* MapEvents.swift */; };
 		FA5D3934242FAE1E00A8DD3E /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D3933242FAE1E00A8DD3E /* ContactsCell.swift */; };
 		FA5E0037242E4D93005BC5B1 /* MuseumHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */; };
-		FA5E003A242E4F54005BC5B1 /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */; };
-		FA5E003C242E5429005BC5B1 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E003B242E5429005BC5B1 /* TestData.swift */; };
 		FA5E003E242F5B6D005BC5B1 /* MuseumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5E003D242F5B6D005BC5B1 /* MuseumCell.swift */; };
+		FA6DA3C624350D5600FDB252 /* PlaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6DA3C524350D5600FDB252 /* PlaceType.swift */; };
 		FA730207241975EA00BFF567 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA730206241975EA00BFF567 /* ContainerView.swift */; };
 		FA7302092419762800BFF567 /* ContainerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7302082419762800BFF567 /* ContainerAssembly.swift */; };
 		FA73021324197BA500BFF567 /* BottomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73021224197BA500BFF567 /* BottomTabBar.swift */; };
@@ -117,7 +115,7 @@
 		FA006FC0242FE8A5007F4D02 /* String+NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NumberFormatter.swift"; sourceTree = "<group>"; };
 		FA006FC22430F245007F4D02 /* InformationTableViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTableViewWorker.swift; sourceTree = "<group>"; };
 		FA006FC52430F798007F4D02 /* InformationViewWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewWorker.swift; sourceTree = "<group>"; };
-		FA006FC82430FD57007F4D02 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		FA006FC82430FD57007F4D02 /* InfoTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCellModel.swift; sourceTree = "<group>"; };
 		FA006FCD243124B8007F4D02 /* DrawerView+InteractionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DrawerView+InteractionState.swift"; sourceTree = "<group>"; };
 		FA006FCF24313228007F4D02 /* PagingScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingScroll.swift; sourceTree = "<group>"; };
 		FA006FD1243133FE007F4D02 /* CGPoint+Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Distance.swift"; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 		FA07C739242BE10700CF2A01 /* TestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPI.swift; sourceTree = "<group>"; };
 		FA0F220B241D06BA0087B96D /* UITabBarItem+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarItem+Layout.swift"; sourceTree = "<group>"; };
 		FA0F220D241D0CEE0087B96D /* CGFloat+Degrees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Degrees.swift"; sourceTree = "<group>"; };
-		FA2AD40D241ACF75004B2DEE /* BottomTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBarButton.swift; sourceTree = "<group>"; };
 		FA500857242BEA37001505E7 /* String+EmtyLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EmtyLine.swift"; sourceTree = "<group>"; };
 		FA56A71424180C8700FAC2CE /* MuseumGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuseumGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA56A71724180C8700FAC2CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -157,9 +154,8 @@
 		FA5D3933242FAE1E00A8DD3E /* ContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
 		FA5E000C242D35D3005BC5B1 /* Saint-Petersburg,Russia.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "Saint-Petersburg,Russia.gpx"; path = "MuseumGuide/SupportingFiles/Saint-Petersburg,Russia.gpx"; sourceTree = SOURCE_ROOT; };
 		FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumHeaderView.swift; sourceTree = "<group>"; };
-		FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
-		FA5E003B242E5429005BC5B1 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 		FA5E003D242F5B6D005BC5B1 /* MuseumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuseumCell.swift; sourceTree = "<group>"; };
+		FA6DA3C524350D5600FDB252 /* PlaceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceType.swift; sourceTree = "<group>"; };
 		FA730206241975EA00BFF567 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		FA7302082419762800BFF567 /* ContainerAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerAssembly.swift; sourceTree = "<group>"; };
 		FA73021224197BA500BFF567 /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
@@ -245,7 +241,7 @@
 		FA006FC72430FD19007F4D02 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA006FC82430FD57007F4D02 /* CellModel.swift */,
+				FA6DA3C524350D5600FDB252 /* PlaceType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				FA006FD824315B8A007F4D02 /* TypesView.swift */,
-				FA006FDA2432209B007F4D02 /* TypeCell.swift */,
 			);
 			path = TypesView;
 			sourceTree = "<group>";
@@ -309,14 +304,6 @@
 				FA07C725242B717400CF2A01 /* NetworkManager.swift */,
 			);
 			path = NetworkManager;
-			sourceTree = "<group>";
-		};
-		FA2AD40C241ACF41004B2DEE /* BottomTabBarButton */ = {
-			isa = PBXGroup;
-			children = (
-				FA2AD40D241ACF75004B2DEE /* BottomTabBarButton.swift */,
-			);
-			path = BottomTabBarButton;
 			sourceTree = "<group>";
 		};
 		FA3B839924181D3200EA979D /* Storyboards */ = {
@@ -409,11 +396,9 @@
 			isa = PBXGroup;
 			children = (
 				FA578EC224292E5B0056D1B0 /* Map */,
-				FA2AD40C241ACF41004B2DEE /* BottomTabBarButton */,
 				FA73021124197B8400BFF567 /* BottomTabBar */,
 				FA3B839924181D3200EA979D /* Storyboards */,
 				FA56A73324180F3F00FAC2CE /* BaseClasses */,
-				FA006FCF24313228007F4D02 /* PagingScroll.swift */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -438,6 +423,7 @@
 		FA56A73324180F3F00FAC2CE /* BaseClasses */ = {
 			isa = PBXGroup;
 			children = (
+				FA6DA3C9243511FA00FDB252 /* PagingScroll */,
 				FA95FEE82418C03B005C0832 /* Router */,
 				FA56A735241810F600FAC2CE /* BaseViewController */,
 				FA56A7362418110100FAC2CE /* BaseNavigationViewController */,
@@ -472,6 +458,7 @@
 		FA578EC224292E5B0056D1B0 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				FA5E0038242E4F22005BC5B1 /* PullingVIew */,
 				FA578EBF24292E230056D1B0 /* UserAnnotationView */,
 			);
 			path = Map;
@@ -492,13 +479,38 @@
 		FA5E0038242E4F22005BC5B1 /* PullingVIew */ = {
 			isa = PBXGroup;
 			children = (
-				FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */,
-				FA5E003B242E5429005BC5B1 /* TestData.swift */,
-				FA5E0039242E4F54005BC5B1 /* ShapeCell.swift */,
+				FA6DA3C72435110200FDB252 /* Cells */,
+				FA6DA3C82435113E00FDB252 /* HeaderView */,
+			);
+			path = PullingVIew;
+			sourceTree = "<group>";
+		};
+		FA6DA3C72435110200FDB252 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FA006FDA2432209B007F4D02 /* TypeCell.swift */,
+				FA006FC82430FD57007F4D02 /* InfoTableViewCellModel.swift */,
 				FA5E003D242F5B6D005BC5B1 /* MuseumCell.swift */,
 				FA5D3933242FAE1E00A8DD3E /* ContactsCell.swift */,
 			);
-			path = PullingVIew;
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FA6DA3C82435113E00FDB252 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				FA006FD724315B7C007F4D02 /* TypesView */,
+				FA5E0036242E4D93005BC5B1 /* MuseumHeaderView.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		FA6DA3C9243511FA00FDB252 /* PagingScroll */ = {
+			isa = PBXGroup;
+			children = (
+				FA006FCF24313228007F4D02 /* PagingScroll.swift */,
+			);
+			path = PagingScroll;
 			sourceTree = "<group>";
 		};
 		FA730205241975BD00BFF567 /* Container */ = {
@@ -535,7 +547,6 @@
 		FA95FED6241829F8005C0832 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				FA006FD724315B7C007F4D02 /* TypesView */,
 				FA006FC42430F24B007F4D02 /* Workers */,
 				FA578EC5242931320056D1B0 /* State */,
 				FA95FED724182A12005C0832 /* MapView.swift */,
@@ -543,7 +554,6 @@
 				FAB010AE2427D43D0015D43E /* MapPresenter.swift */,
 				FAB010B02427D4460015D43E /* MapRouter.swift */,
 				FAB010B22427D4C90015D43E /* MapContracts.swift */,
-				FA5E0038242E4F22005BC5B1 /* PullingVIew */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -795,7 +805,6 @@
 				FA578EC92429315E0056D1B0 /* MapState.swift in Sources */,
 				FAB010AF2427D43D0015D43E /* MapPresenter.swift in Sources */,
 				FA56A71C24180C8700FAC2CE /* BaseViewController.swift in Sources */,
-				FA5E003A242E4F54005BC5B1 /* ShapeCell.swift in Sources */,
 				FA9A2657241E302100386AE6 /* ContainerPresenter.swift in Sources */,
 				FA07C72C242B729600CF2A01 /* NetworkError.swift in Sources */,
 				FA006FCE243124B8007F4D02 /* DrawerView+InteractionState.swift in Sources */,
@@ -803,7 +812,6 @@
 				FA578EC42429310E0056D1B0 /* MapEffects.swift in Sources */,
 				FA07C734242BDF7F00CF2A01 /* ParameterEncoder.swift in Sources */,
 				FA07C737242BDFC300CF2A01 /* Response.swift in Sources */,
-				FA2AD40E241ACF75004B2DEE /* BottomTabBarButton.swift in Sources */,
 				FA95FED824182A12005C0832 /* MapView.swift in Sources */,
 				FAB010A12426454B0015D43E /* LocationState.swift in Sources */,
 				FA5E0037242E4D93005BC5B1 /* MuseumHeaderView.swift in Sources */,
@@ -829,12 +837,11 @@
 				FA56A71824180C8700FAC2CE /* AppDelegate.swift in Sources */,
 				FA07C73A242BE10700CF2A01 /* TestAPI.swift in Sources */,
 				FA56A71A24180C8700FAC2CE /* SceneDelegate.swift in Sources */,
-				FA006FC92430FD57007F4D02 /* CellModel.swift in Sources */,
+				FA006FC92430FD57007F4D02 /* InfoTableViewCellModel.swift in Sources */,
 				FAB010AB242694340015D43E /* Store.swift in Sources */,
 				FAB0109A2426415C0015D43E /* ServiceRequest.swift in Sources */,
 				FAB0109524263F840015D43E /* Result.swift in Sources */,
 				FA07C724242A80E600CF2A01 /* URLParameterEncoder.swift in Sources */,
-				FA5E003C242E5429005BC5B1 /* TestData.swift in Sources */,
 				FA9A2665241E33CA00386AE6 /* Typealiases.swift in Sources */,
 				FA0F220C241D06BA0087B96D /* UITabBarItem+Layout.swift in Sources */,
 				FA95FEE024182E3B005C0832 /* AppRouter.swift in Sources */,
@@ -842,6 +849,7 @@
 				FAB010AD2427C74A0015D43E /* LocationEvents.swift in Sources */,
 				FA0360F42433C5F500A1F56F /* UIView+Bounce.swift in Sources */,
 				FA07C732242BDF5C00CF2A01 /* JSONParameterEncoder.swift in Sources */,
+				FA6DA3C624350D5600FDB252 /* PlaceType.swift in Sources */,
 				FA578ECB242932AB0056D1B0 /* MapEvents.swift in Sources */,
 				FA9A2663241E339200386AE6 /* ErrorHandling.swift in Sources */,
 				FAB010A524264A5B0015D43E /* LocationEffects.swift in Sources */,

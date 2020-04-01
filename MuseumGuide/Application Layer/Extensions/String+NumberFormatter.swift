@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+fileprivate extension String {
     func applyPatternOnNumbers(pattern: String, replacmentCharacter: Character) -> String {
         var pureNumber = self.replacingOccurrences( of: "[^0-9]", with: "", options: .regularExpression)
         for index in 0 ..< pattern.count {
@@ -21,3 +21,16 @@ extension String {
         return pureNumber
     }
 }
+@propertyWrapper struct FormattedPhone {
+    typealias Value = String
+    
+    var wrappedValue: String {
+        didSet {
+            wrappedValue = wrappedValue.applyPatternOnNumbers(pattern: "+# (###) ###-####", replacmentCharacter: "#")
+        }
+    }
+    init(wrappedValue: String) {
+        self.wrappedValue = wrappedValue.applyPatternOnNumbers(pattern: "+# (###) ###-####", replacmentCharacter: "#")
+    }
+}
+

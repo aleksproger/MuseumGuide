@@ -24,7 +24,7 @@ protocol MapViewBehavior: class {
 }
 
 protocol TableViewWorker: NSObject, UITableViewDelegate, UITableViewDataSource {
-    func updateDataSource(with data: [CellModel])
+    func updateDataSource(with data: [InfoTableViewCellModel])
 }
 
 protocol PullingViewWorker: DrawerViewListener {

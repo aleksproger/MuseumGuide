@@ -31,9 +31,12 @@ final class MuseumHeaderView: UIView {
     }
     
     func update(with info: Info) {
-        let types = info.types.map { type -> TypeCell.Info in
-            let width = TypeCell.size(for: type)
-            return TypeCell.Info(text: type, size: CGSize(width: width, height: TypeCell.height))
+        let types = info.types.compactMap { title -> TypeCell.Info? in
+            let width = TypeCell.size(for: title)
+            guard let type = PlaceType(rawValue: title) else {
+                return nil
+            }
+            return TypeCell.Info(type: type, size: CGSize(width: width, height: TypeCell.height))
 
         }
         typesView.updateDataSource(types)

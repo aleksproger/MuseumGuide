@@ -72,7 +72,7 @@ extension TypesView: UICollectionViewDataSource {
     {
         let cellModel = dataSource[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(TypeCell.self)", for: indexPath) as! TypeCell
-        cell.update(with: TypeCell.Info(text: cellModel.text, size: cellModel.size))
+        cell.update(with: TypeCell.Info(type: cellModel.type, size: cellModel.size))
         return cell
     }
     

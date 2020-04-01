@@ -11,9 +11,9 @@ import UIKit
 
 class InformationTableViewWorker: NSObject, TableViewWorker {
     
-    private var cellInfos: [CellModel] = MuseumCell.makeDefaultInfos() + ContactsCell.makeDefaultInfos()
+    private var cellInfos: [InfoTableViewCellModel] = MuseumCell.makeDefaultInfos() + ContactsCell.makeDefaultInfos()
     
-    func updateDataSource(with data: [CellModel]) {
+    func updateDataSource(with data: [InfoTableViewCellModel]) {
         cellInfos = data
     }
     
@@ -39,8 +39,6 @@ class InformationTableViewWorker: NSObject, TableViewWorker {
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(MuseumCell.self)", for: indexPath) as! MuseumCell
             cell.update(with: museum)
             return cell
-        default:
-            fatalError()
             
         }
     }

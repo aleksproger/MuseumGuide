@@ -1,5 +1,5 @@
 //
-//  CellModel.swift
+//  InfoTableViewCellModel.swift
 //  MuseumGuide
 //
 //  Created by Alex on 29.03.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum CellModel {
+enum InfoTableViewCellModel {
     case info(MuseumCell.Info)
     case contacts(ContactsCell.Info)
 }
