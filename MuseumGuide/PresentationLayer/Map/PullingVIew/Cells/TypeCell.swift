@@ -21,7 +21,7 @@ final class TypeCell: UICollectionViewCell {
     }
     
     struct Info {
-        var text: String { type.rawValue }
+        var text: String { type.rawValue.capitalized }
         var type: PlaceType
         var size: CGSize
     }
